@@ -5,7 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MrTube - El canal de Mr.Jostin</title>
     <style>
-        /* PANTALLA DE BIENVENIDA (VERSIÓN DE PRUEBA) */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0f0f0f;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* PANTALLA DE BIENVENIDA (VERSIÓN BETA LARGO) */
         #welcome-screen {
             position: fixed;
             top: 0;
@@ -47,13 +55,15 @@
             padding: 25px;
             margin-bottom: 30px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            text-align: left;
         }
         .welcome-box h2 {
             color: #ff4444;
             margin-top: 0;
+            text-align: center;
         }
         .welcome-box p {
-            font-size: 16px;
+            font-size: 15px;
             line-height: 1.6;
             color: #ccc;
         }
@@ -66,23 +76,10 @@
             font-weight: bold;
             border-radius: 30px;
             cursor: pointer;
-            transition: transform 0.2s, background-color 0.2s;
-            margin-top: 10px;
             margin-bottom: 40px;
         }
-        .continue-btn:active {
-            transform: scale(0.95);
-            background-color: #cccccc;
-        }
 
-        /* ESTILOS DE LA PÁGINA PRINCIPAL */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #0f0f0f;
-            color: #ffffff;
-            margin: 0;
-            padding: 0;
-        }
+        /* BARRA DE NAVEGACIÓN */
         nav {
             background-color: #0f0f0f;
             display: flex;
@@ -98,6 +95,8 @@
             font-size: 22px;
             font-weight: bold;
             color: #ffffff;
+            cursor: pointer;
+            user-select: none;
         }
         .logo span {
             background-color: #ff0000;
@@ -106,14 +105,47 @@
             border-radius: 6px;
             margin-left: 4px;
         }
-        .search-bar {
-            background-color: #121212;
-            border: 1px solid #303030;
-            border-radius: 40px;
-            padding: 8px 15px;
-            width: 40%;
-            color: #fff;
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
+        
+        /* ENGRANAJE DE IDIOMA */
+        .settings-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 5px;
+        }
+        .lang-dropdown {
+            display: none;
+            position: absolute;
+            top: 55px;
+            right: 20px;
+            background-color: #282828;
+            border: 1px solid #3e3e3e;
+            border-radius: 8px;
+            overflow: hidden;
+            z-index: 200;
+        }
+        .lang-dropdown button {
+            background: none;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .lang-dropdown button:hover {
+            background-color: #3e3e3e;
+        }
+
+        /* CONTENEDOR PRINCIPAL Y REPRODUCTOR */
         .main-container {
             max-width: 1200px;
             margin: 20px auto;
@@ -152,17 +184,22 @@
             border-bottom: 1px solid #2f2f2f;
             padding-bottom: 15px;
         }
-        .avatar {
-            width: 45px;
-            height: 45px;
-            background-color: #ffcc00;
-            border-radius: 50%;
+        
+        /* CANAL Y AVATAR REAL */
+        .channel-profile {
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: #000;
+            gap: 12px;
         }
+        .avatar-img {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid #3e3e3e;
+        }
+        
+        /* BOTÓN SUSCRIBIRSE */
         .subscribe-btn {
             background-color: #f1f1f1;
             color: #0f0f0f;
@@ -170,7 +207,14 @@
             padding: 10px 20px;
             font-weight: bold;
             border-radius: 20px;
+            cursor: pointer;
         }
+        .subscribe-btn.subscribed {
+            background-color: #303030;
+            color: #aaa;
+        }
+
+        /* RECOMENDADOS (PRÓXIMAMENTE) */
         .section-title {
             font-size: 20px;
             margin: 30px 0 15px 0;
@@ -187,14 +231,15 @@
         .thumbnail {
             width: 100%;
             aspect-ratio: 16/9;
-            background-color: #2a2a2a;
+            background-color: #1a1a1a;
             border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 14px;
-            color: #aaa;
-            border: 1px solid #3e3e3e;
+            color: #777;
+            border: 1px solid #2f2f2f;
+            font-weight: bold;
         }
         .card-info {
             display: flex;
@@ -214,29 +259,33 @@
 </head>
 <body>
 
-    <!-- 1. PANTALLA DE BIENVENIDA -->
     <div id="welcome-screen">
         <div class="welcome-content">
-            <div class="welcome-logo">Mr<span>Tube</span></div>
+            <div class="welcome-logo">Mr<span id="welcome-span">Tube</span></div>
             
             <div class="welcome-box">
-                <h2>⚠️ ¡Bienvenido a la Versión de Prueba!</h2>
-                <p>Hola. Estás entrando a la fase beta oficial de <strong>MrTube</strong>.</p>
-                <p>Toma en cuenta que, al ser una versión de prueba, la página podría tener algunos errores de carga y notarás que algunos videos todavía no están disponibles o listos para reproducirse.</p>
-                <p>¡Gracias por tu apoyo y por probar la plataforma antes que nadie!</p>
+                <h2 id="beta-title">⚠️ ¡Bienvenido a la Versión Beta de Prueba!</h2>
+                <p id="beta-p1">Hola a todos los seguidores y visitantes. Estás ingresando oficialmente a la fase de pruebas técnicas y optimización de la plataforma independiente <strong>MrTube</strong>.</p>
+                <p id="beta-p2">Por favor, ten en cuenta lo siguiente antes de continuar:</p>
+                <p id="beta-p3">• <strong>Videos Faltantes:</strong> Por el momento, la grilla está en mantenimiento. Verás que varios apartados del sitio tienen la etiqueta de "Próximamente" mientras se indexan los archivos correspondientes.</p>
+                <p id="beta-p4">• <strong>Errores Temporales:</strong> Debido a que estamos probando las conexiones y los reproductores integrados, algunas funciones de interfaz de usuario podrían presentar retrasos leves de carga en dispositivos móviles.</p>
+                <p id="beta-p5">Agradecemos profundamente tu paciencia, reporte de fallas y apoyo continuo para expandir nuestras producciones a toda la comunidad.</p>
             </div>
 
-            <p style="color: #666; font-size: 14px; margin-bottom: 10px;">Desliza hacia abajo para continuar</p>
-            <!-- BOTÓN CONTINUAR HASTA ABAJO -->
-            <button class="continue-btn" onclick="entrarAMrTube()">Continuar</button>
+            <p id="scroll-text" style="color: #666; font-size: 14px; margin-bottom: 10px;">Desliza hacia abajo para continuar</p>
+            <button id="btn-continue" class="continue-btn" onclick="entrarAMrTube()">Continuar</button>
         </div>
     </div>
 
-    <!-- 2. CONTENIDO PRINCIPAL DE LA PÁGINA -->
     <nav>
-        <div class="logo">Mr<span>Tube</span></div>
-        <input type="text" class="search-bar" placeholder="Buscar en MrTube..." disabled>
-        <div style="width: 40px;"></div>
+        <div class="logo" onclick="recargarPagina()">Mr<span>Tube</span></div>
+        <div class="nav-right">
+            <button class="settings-btn" onclick="toggleLangMenu()">⚙️</button>
+            <div id="lang-menu" class="lang-dropdown">
+                <button onclick="cambiarIdioma('es')">Español</button>
+                <button onclick="cambiarIdioma('en')">English</button>
+            </div>
+        </div>
     </nav>
 
     <div class="main-container">
@@ -245,50 +294,50 @@
         </div>
         
         <div class="video-info">
-            <h1 class="video-title">El Misterio De Chicken Gun | Tráiler Oficial</h1>
+            <h1 id="main-video-title" class="video-title">El Misterio De Chicken Gun | Tráiler Oficial</h1>
             <div class="channel-row">
-                <div style="display: flex; align-items: center; gap: 12px;">
-                    <div class="avatar">MJ</div>
+                <div class="channel-profile">
+                    <img class="avatar-img" src="https://lh3.googleusercontent.com/d/1X6G047qXgDAnfWJq8NisS99g7Q2R7Acl" alt="Mr.Jostin Avatar">
                     <div>
                         <strong style="font-size: 16px;">Mr.Jostin</strong>
-                        <span style="font-size: 12px; color: #aaa; display: block;">ABG Productions®</span>
+                        <span id="sub-count" style="font-size: 12px; color: #aaa; display: block;">15.2 K suscriptores • ABG Productions®</span>
                     </div>
                 </div>
-                <button class="subscribe-btn">Suscribirse</button>
+                <button id="btn-sub" class="subscribe-btn" onclick="alternarSuscripcion()">Suscribirse</button>
             </div>
         </div>
 
-        <h2 class="section-title">Videos Recomendados</h2>
+        <h2 id="recommended-title" class="section-title">Videos Recomendados</h2>
         
         <div class="video-grid">
             <div class="video-card">
-                <div class="thumbnail">Miniatura: EMDCG Cap 1</div>
+                <div class="thumbnail" id="thumb1">PRÓXIMAMENTE</div>
                 <div class="card-info">
-                    <div class="avatar" style="width:30px; height:30px; font-size:12px;">MJ</div>
+                    <img class="avatar-img" style="width:30px; height:30px;" src="https://lh3.googleusercontent.com/d/1X6G047qXgDAnfWJq8NisS99g7Q2R7Acl">
                     <div class="card-text">
-                        <h4>El Misterio De Chicken Gun - Cap 1</h4>
+                        <h4 class="coming-soon-text">Próximamente</h4>
                         <p>ABG Productions®</p>
                     </div>
                 </div>
             </div>
 
             <div class="video-card">
-                <div class="thumbnail">Miniatura: Sprunki Animado</div>
+                <div class="thumbnail" id="thumb2">PRÓXIMAMENTE</div>
                 <div class="card-info">
-                    <div class="avatar" style="width:30px; height:30px; font-size:12px;">SA</div>
+                    <img class="avatar-img" style="width:30px; height:30px;" src="https://lh3.googleusercontent.com/d/1X6G047qXgDAnfWJq8NisS99g7Q2R7Acl">
                     <div class="card-text">
-                        <h4>Sprunki Animado - Las Aventuras de Gris</h4>
+                        <h4 class="coming-soon-text">Próximamente</h4>
                         <p>Sprunki Animations Studios</p>
                     </div>
                 </div>
             </div>
 
             <div class="video-card">
-                <div class="thumbnail">Miniatura: Dandy's World Show</div>
+                <div class="thumbnail" id="thumb3">PRÓXIMAMENTE</div>
                 <div class="card-info">
-                    <div class="avatar" style="width:30px; height:30px; font-size:12px;">MJ</div>
+                    <img class="avatar-img" style="width:30px; height:30px;" src="https://lh3.googleusercontent.com/d/1X6G047qXgDAnfWJq8NisS99g7Q2R7Acl">
                     <div class="card-text">
-                        <h4>Dandy's World Show - Próximamente</h4>
+                        <h4 class="coming-soon-text">Próximamente</h4>
                         <p>Mr.Jostin</p>
                     </div>
                 </div>
@@ -296,13 +345,107 @@
         </div>
     </div>
 
-    <!-- 3. MAGIA PARA HACER FUNCIONAR EL BOTÓN -->
     <script>
+        // Cierra la pantalla de bienvenida
         function entrarAMrTube() {
-            // Esto esconde la pantalla de bienvenida al apachar el botón
             document.getElementById('welcome-screen').style.display = 'none';
         }
-    </script>
 
+        // Recarga la página al hacer clic en el logo
+        function recargarPagina() {
+            location.reload();
+        }
+
+        // Muestra/Oculta el menú de idiomas
+        function toggleLangMenu() {
+            var menu = document.getElementById('lang-menu');
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'block';
+            }
+        }
+
+        // Sistema dinámico de Suscriptores
+        var suscrito = false;
+        function alternarSuscripcion() {
+            var btn = document.getElementById('btn-sub');
+            var count = document.getElementById('sub-count');
+            
+            if (!suscrito) {
+                btn.innerText = "Suscrito";
+                btn.classList.add('subscribed');
+                count.innerText = "15.3 K suscriptores • ABG Productions®"; // Sube un suscriptor
+                suscrito = true;
+            } else {
+                btn.innerText = "Suscribirse";
+                btn.classList.remove('subscribed');
+                count.innerText = "15.2 K suscriptores • ABG Productions®"; // Baja
+                suscrito = false;
+            }
+        }
+
+        // Traductor de Idiomas (Español / Inglés)
+        function cambiarIdioma(lang) {
+            document.getElementById('lang-menu').style.display = 'none';
+            var comingSoonElements = document.getElementsByClassName('coming-soon-text');
+            
+            if (lang === 'en') {
+                // Cambios a Inglés
+                document.getElementById('beta-title').innerText = "⚠️ Welcome to the Beta Test Version!";
+                document.getElementById('beta-p1').innerText = "Hello to all followers and visitors. You are officially entering the technical testing and optimization phase of the independent platform MrTube.";
+                document.getElementById('beta-p2').innerText = "Please keep the following in mind before continuing:";
+                document.getElementById('beta-p3').innerText = "• Missing Videos: For now, the grid is undergoing maintenance. You will see several sections of the site tagged as 'Coming Soon' while the corresponding files are indexed.";
+                document.getElementById('beta-p4').innerText = "• Temporary Errors: Because we are testing integrated players and connections, some user interface features may experience slight loading delays on mobile devices.";
+                document.getElementById('beta-p5').innerText = "We deeply appreciate your patience, bug reporting, and continuous support to expand our productions to the entire community.";
+                document.getElementById('scroll-text').innerText = "Scroll down to continue";
+                document.getElementById('btn-continue').innerText = "Continue";
+                
+                document.getElementById('recommended-title').innerText = "Recommended Videos";
+                document.getElementById('thumb1').innerText = "COMING SOON";
+                document.getElementById('thumb2').innerText = "COMING SOON";
+                document.getElementById('thumb3').innerText = "COMING SOON";
+                
+                for(var i=0; i<comingSoonElements.length; i++) {
+                    comingSoonElements[i].innerText = "Coming Soon";
+                }
+                
+                if(!suscrito) {
+                    document.getElementById('btn-sub').innerText = "Subscribe";
+                    document.getElementById('sub-count').innerText = "15.2 K subscribers • ABG Productions®";
+                } else {
+                    document.getElementById('btn-sub').innerText = "Subscribed";
+                    document.getElementById('sub-count').innerText = "15.3 K subscribers • ABG Productions®";
+                }
+            } else {
+                // Cambios a Español
+                document.getElementById('beta-title').innerText = "⚠️ ¡Bienvenido a la Versión Beta de Prueba!";
+                document.getElementById('beta-p1').innerText = "Hola a todos los seguidores y visitantes. Estás ingresando oficialmente a la fase de pruebas técnicas y optimización de la plataforma independiente MrTube.";
+                document.getElementById('beta-p2').innerText = "Por favor, ten en cuenta lo siguiente antes de continuar:";
+                document.getElementById('beta-p3').innerText = "• Videos Faltantes: Por el momento, la grilla está en mantenimiento. Verás que varios apartados del sitio tienen la etiqueta de 'Próximamente' mientras se indexan los archivos correspondientes.";
+                document.getElementById('beta-p4').innerText = "• Errores Temporales: Debido a que estamos probando las conexiones y los reproductores integrados, algunas funciones de interfaz de usuario podrían presentar retrasos leves de carga en dispositivos móviles.";
+                document.getElementById('beta-p5').innerText = "Agradecemos profundamente tu paciencia, reporte de fallas y apoyo continuo para expandir nuestras producciones a toda la comunidad.";
+                document.getElementById('scroll-text').innerText = "Desliza hacia abajo para continuar";
+                document.getElementById('btn-continue').innerText = "Continuar";
+                
+                document.getElementById('recommended-title').innerText = "Videos Recomendados";
+                document.getElementById('thumb1').innerText = "PRÓXIMAMENTE";
+                document.getElementById('thumb2').innerText = "PRÓXIMAMENTE";
+                document.getElementById('thumb3').innerText = "PRÓXIMAMENTE";
+                
+                for(var i=0; i<comingSoonElements.length; i++) {
+                    comingSoonElements[i].innerText = "Próximamente";
+                }
+                
+                if(!suscrito) {
+                    document.getElementById('btn-sub').innerText = "Suscribirse";
+                    document.getElementById('sub-count').innerText = "15.2 K suscriptores • ABG Productions®";
+                } else {
+                    document.getElementById('btn-sub').innerText = "Suscrito";
+                    document.getElementById('sub-count').innerText = "15.3 K suscriptores • ABG Productions®";
+                }
+            }
+        }
+    </script>
 </body>
 </html>
