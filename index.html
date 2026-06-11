@@ -39,6 +39,21 @@
             transition: none !important;
         }
 
+        /* MODO URS - ULTRA RENDIMIENTO SUPREMO (OPTIMIZADO PARA IPHONE/MÓVIL) */
+        .urs-mode {
+            --shadow-style: none !important;
+            --transition-speed: 0s !important;
+            background: #000000 !important;
+        }
+        .urs-mode .thumbnail {
+            background-image: none !important; /* Desactiva imágenes de fondo si es necesario para súper velocidad */
+            background-color: #222 !important;
+            border: 1px dashed #444 !important;
+        }
+        .urs-mode img {
+            content-visibility: auto; /* Optimiza renderizado en iOS */
+        }
+
         body {
             font-family: Arial, sans-serif;
             background-color: var(--bg-color);
@@ -157,7 +172,7 @@
             padding: 5px;
         }
 
-        /* NUEVA PESTAÑA / VENTANA FLOTANTE DE AJUSTES */
+        /* REVENTANA FLOTANTE DE AJUSTES */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -384,7 +399,7 @@
             background-color: rgba(255, 68, 68, 0.1);
         }
 
-        /* NUEVO AREA ABAJO PARA EL BOTÓN DIRECTO DE YOUTUBE */
+        /* BOTÓN DIRECTO DE YOUTUBE */
         .youtube-box {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -466,14 +481,16 @@
             <div class="settings-section">
                 <h3 id="ade-section-title">Rendimiento (ADE)</h3>
                 <button id="ade-btn" class="config-btn" onclick="toggleADE()">ADE: Apagado</button>
+                <button id="urs-btn" class="config-btn" style="background-color: #ff00aa;" onclick="toggleURS()">URS: Apagado</button>
                 <p id="ade-desc" style="font-size:12px; color:#aaa; margin-top:5px;">Activalo para consumir menos recursos y hacer la navegacion muy fluida.</p>
             </div>
 
             <div class="settings-section">
                 <h3 id="lang-section-title">Idioma de la Interfaz</h3>
                 <select id="lang-select-box" class="lang-select" onchange="cambiarIdioma(this.value)">
-                    <option value="epanola">ePaÑoLa</option>
                     <option value="es">Español</option>
+                    <option value="ultra_emoji">🔥 Ultra Emoji 😎💥</option>
+                    <option value="epanola">ePaÑoLa</option>
                     <option value="en">English</option>
                     <option value="ar">العربية (Árabe)</option>
                     <option value="morse">Código Morse (• —)</option>
@@ -512,35 +529,35 @@
         <h2 id="recommended-title" class="section-title">Videos Recomendados</h2>
         
         <div class="video-grid">
-            <div class="video-card" onclick="cargarVideo('https://www.youtube.com/embed/xs7MKyHpRh0', 'El Misterio De Chicken Gun T2 E2')">
-                <div class="thumbnail" style="background-image: url('https://img.youtube.com/vi/xs7MKyHpRh0/mqdefault.jpg'); text-indent: -9999px;">VIDEO</div>
+            <div class="video-card" onclick="cargarVideo('https://www.youtube.com/embed/qvhFdTaMyCs', 'Sprunki Animado T4 E5')">
+                <div class="thumbnail" style="background-image: url('https://img.youtube.com/vi/qvhFdTaMyCs/mqdefault.jpg'); text-indent: -9999px;">VIDEO</div>
                 <div class="card-info">
                     <img class="avatar-img" style="width:30px; height:30px;" src="avatar.png">
                     <div class="card-text">
-                        <h4>El Misterio De Chicken Gun T2 E2</h4>
+                        <h4>Sprunki Animado T4 E5</h4>
                         <p>ABG Productions®</p>
                     </div>
                 </div>
             </div>
 
-            <div class="video-card" onclick="cargarVideo('https://www.youtube.com/embed/-e9bjdtB8AI', 'Dandy’s World Show T2 E5')">
-                <div class="thumbnail" style="background-image: url('https://img.youtube.com/vi/-e9bjdtB8AI/mqdefault.jpg'); text-indent: -9999px;">VIDEO</div>
+            <div class="video-card" onclick="cargarVideo('https://www.youtube.com/embed/33VtpYpcw6A', 'Promoción de la Web 📡 💻')">
+                <div class="thumbnail" style="background-image: url('https://img.youtube.com/vi/33VtpYpcw6A/mqdefault.jpg'); text-indent: -9999px;">VIDEO</div>
                 <div class="card-info">
                     <img class="avatar-img" style="width:30px; height:30px;" src="avatar.png">
                     <div class="card-text">
-                        <h4>Dandy’s World Show T2 E5</h4>
+                        <h4>Promoción de la Web 📡 💻</h4>
                         <p>ABG Productions®</p>
                     </div>
                 </div>
             </div>
 
-            <div class="video-card">
-                <div class="thumbnail" id="thumb3">PROXIMAMENTE</div>
+            <div class="video-card" onclick="cargarVideo('https://www.youtube.com/embed/CAL4Or5iwC8', 'Jugando Minecraft con mi Primito Tavito 🎮')">
+                <div class="thumbnail" style="background-image: url('https://img.youtube.com/vi/CAL4Or5iwC8/mqdefault.jpg'); text-indent: -9999px;">VIDEO</div>
                 <div class="card-info">
                     <img class="avatar-img" style="width:30px; height:30px;" src="avatar.png">
                     <div class="card-text">
-                        <h4 class="coming-soon-text">Proximamente</h4>
-                        <p>Mr.Jostin</p>
+                        <h4>Jugando con mi Primito Tavito 🎮</h4>
+                        <p>Protagonista de EMDCG (El Hechicero)</p>
                     </div>
                 </div>
             </div>
@@ -550,8 +567,7 @@
             <button id="btn-clear-history" class="clear-history-btn" onclick="borrarHistorial()">Borrar HV</button>
             <h2 id="history-title" class="section-title">HV (Historial de Videos)</h2>
         </div>
-        <div id="history-grid" class="video-grid">
-            </div>
+        <div id="history-grid" class="video-grid"></div>
 
         <div class="youtube-box">
             <h3 id="yt-box-title" style="margin-top:0;">¿Quieres ver mas contenido oficial?</h3>
@@ -561,8 +577,36 @@
     </div>
 
     <script>
-        // TRADUCCIONES GLOBALES ACTUALIZADAS (13 IDIOMAS CON HISTORIAL INCLUIDO)
         const traducciones = {
+            ultra_emoji: {
+                beta_title: "⚠️🔥 ¡BIENVENIDO AL BETA SUPER EXTREMO! 💥😎",
+                beta_p1: "👋 ¡Hola, cracks y leyendas! 🌟 Están entrando al laboratorio tecnológico de optimización masiva de la plataforma independiente 🚀 <strong>MrTube</strong> 🎮❗",
+                beta_p2: "⚡ ¡MIRA ESTO ANTES DE SEGUIR, CRACK! 👇🔥:",
+                beta_p3: "• 🎬 <strong>Falta Contenido:</strong> ¡La grilla está que arde en mantenimiento! 🛠️ Verás carteles locos mientras indexamos todo a máxima velocidad! 🌐💥",
+                beta_p4: "• 👾 <strong>Errores Locos:</strong> ¡Probamos reproductores al límite! 🔥 Algunas cosas podrían ir lentas si tu dispositivo no tiene el poder! 📱💨",
+                beta_p5: "🙏 ¡Millones de gracias por el aguante y por apoyar las animaciones de los mejores estudios! 🎬💥✨",
+                scroll_text: "👇 ¡Baja por completo para desbloquear el poder! 👇",
+                btn_continue: "🚀 ¡ENTRAR A MRTUBE AHORA! 💥",
+                recommended_title: "🔥 VIDEOS RECOMENDADOS DE HOY 😎🎬",
+                coming_soon: "🚀 PRÓXIMAMENTE DISPONIBLE 💥",
+                sub_text: "🔴 SUSCRIBIRSE AL CANAL 🔥",
+                subbed_text: "✅ ¡YA ERES MIEMBRO CRACK! 😎",
+                sub_count_suffix: "🔥 suscriptores premium • ABG Productions® 🎬✨",
+                settings_title: "⚙️ CONFIGURACIÓN SUPREMA 🛠️",
+                theme_title: "🎨 ESTILO VISUAL DE LA WEB 💥",
+                logo_title: "🌈 COLOR DEL LOGO INCREÍBLE 🔥",
+                ade_title: "⚡ RENDIMIENTO ULTRA (ADE) 🚀",
+                ade_on: "🚀 ADE: PRENDIDÍSIMO 🔥",
+                ade_off: "❌ ADE: APAGADO 😴",
+                ade_desc: "⚡ ¡Prende el ADE o el URS para que tu iPhone o Android corra a nivel Dios! 📱💨",
+                lang_title: "🗣️ IDIOMA DE LA INTERFAZ 🌍",
+                yt_title: "📺 ¿QUIERES VER MÁS CONTENIDO OFICIAL? 🔥🎬",
+                yt_desc: "💥 Apoya los proyectos y animaciones originales directamente en el canal oficial de YouTube! 🚀⚡",
+                yt_btn: "🔴 SUSCRIBIRSE EN YOUTUBE AHORA 💥🎬",
+                history_title: "👑 HV (HISTORIAL DE PODER real) 📊🎬",
+                history_empty: "❌ ¡No has visto ningún video todavía, crack! 🎬🍿",
+                history_clear: "🗑️ LIMPIAR HISTORIAL HV 💥"
+            },
             epanola: {
                 beta_title: "⚠️ ¡Benbenio a la Bersio Beta de Pruebax! Xd",
                 beta_p1: "Ola a tos los fologüers y bisitantes. Tas emtrando ofisialmete a las pruebas tecnicas de la pajina flama de <strong>MrTube</strong> XD.",
@@ -950,7 +994,6 @@
             location.reload();
         }
 
-        // CONTROL DE VENTANA DE AJUSTES (NUEVA PESTAÑA INTERNA)
         function abrirAjustes() {
             document.getElementById('settings-modal').style.display = 'flex';
         }
@@ -959,7 +1002,6 @@
             document.getElementById('settings-modal').style.display = 'none';
         }
 
-        // SISTEMA DE CAMBIO DE TEMA (BLANCO / NEGRO)
         function cambiarTema(tema) {
             if (tema === 'claro') {
                 document.body.classList.add('light-theme');
@@ -968,13 +1010,12 @@
             }
         }
 
-        // NUEVA FUNCIÓN PARA CAMBIAR EL COLOR DEL LOGO (MANTENIENDO PREFERENCIA EN CACHE)
         function cambiarColorLogo(color) {
             document.documentElement.style.setProperty('--logo-bg-color', color);
             localStorage.setItem('mrtube_logo_color', color);
         }
 
-        // SISTEMA ADE (AHORRO DE ESPACIO / RECURSOS)
+        // SISTEMA ADE (AHORRO DE ENERGÍA)
         var adeActivo = false;
         function toggleADE() {
             adeActivo = !adeActivo;
@@ -983,11 +1024,31 @@
             if (adeActivo) {
                 document.body.classList.add('ade-mode');
                 btn.classList.add('active');
-                btn.innerText = traducciones[idiomaActual].ade_on;
+                btn.innerText = "ADE: Prendido";
             } else {
                 document.body.classList.remove('ade-mode');
                 btn.classList.remove('active');
-                btn.innerText = traducciones[idiomaActual].ade_off;
+                btn.innerText = "ADE: Apagado";
+            }
+        }
+
+        // SISTEMA URS (ULTRA RENDIMIENTO SUPREMO PARA IPHONE)
+        var ursActivo = false;
+        function toggleURS() {
+            ursActivo = !ursActivo;
+            var btn = document.getElementById('urs-btn');
+            
+            if (ursActivo) {
+                document.body.classList.add('urs-mode');
+                btn.classList.add('active');
+                btn.innerText = "URS: ACTIVADO 🔥";
+                // Forzar apagado de efectos extra
+                if(!adeActivo) toggleADE();
+            } else {
+                document.body.classList.remove('urs-mode');
+                btn.classList.remove('active');
+                btn.innerText = "URS: Apagado";
+                if(adeActivo) toggleADE();
             }
         }
 
@@ -995,18 +1056,14 @@
         var colorLogoGuardado = localStorage.getItem('mrtube_logo_color') ? localStorage.getItem('mrtube_logo_color') : '#ff0000';
         cambiarColorLogo(colorLogoGuardado);
 
-        // FUNCIÓN DINÁMICA PARA REPRODUCIR VIDEOS Y GUARDAR EN EL HISTORIAL (HV)
         function cargarVideo(urlEmbed, tituloVideo) {
             document.getElementById('main-iframe').src = urlEmbed + "?autoplay=1";
             document.getElementById('main-video-title').innerText = tituloVideo;
             
-            // Registrar el video en el historial real
             agregarAlHistorial(urlEmbed, tituloVideo);
-            
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // CONTROL DE HISTORIAL REAL (HV) USANDO LOCALSTORAGE
         function obtenerHistorial() {
             var historial = localStorage.getItem('mrtube_history');
             return historial ? JSON.parse(historial) : [];
@@ -1015,15 +1072,12 @@
         function agregarAlHistorial(url, titulo) {
             var historial = obtenerHistorial();
             
-            // Eliminar el video si ya existía antes para que se mueva al inicio
             historial = historial.filter(function(item) {
                 return item.url !== url;
             });
             
-            // Agregar el nuevo video al inicio del historial
             historial.unshift({ url: url, titulo: titulo });
             
-            // Limitar el historial a los últimos 6 videos para no saturar la pantalla
             if (historial.length > 6) {
                 historial.pop();
             }
@@ -1050,13 +1104,16 @@
             }
             
             historial.forEach(function(video) {
-                // Obtener el ID del video de YouTube para cargar su miniatura real de forma automática
-                var videoId = video.url.split('/embed/')[1];
+                var videoId;
+                if(video.url.includes('/embed/')) {
+                    videoId = video.url.split('/embed/')[1];
+                } else if(video.url.includes('youtu.be/')) {
+                    videoId = video.url.split('youtu.be/')[1];
+                }
                 var thumbUrl = 'https://img.youtube.com/vi/' + videoId + '/mqdefault.jpg';
                 
                 var card = document.createElement('div');
                 card.className = 'video-card';
-                // Al darle "pacho" a un video del historial, vuelve a cargarse arriba
                 card.onclick = function() {
                     cargarVideo(video.url, video.titulo);
                 };
@@ -1075,7 +1132,6 @@
             });
         }
 
-        // CONTROL DE IDIOMAS GLOBALIZADO
         var idiomaActual = localStorage.getItem('mrtube_lang') ? localStorage.getItem('mrtube_lang') : 'es';
         document.getElementById('lang-select-box').value = idiomaActual;
 
@@ -1117,7 +1173,6 @@
             localStorage.setItem('mrtube_lang', lang);
             var t = traducciones[lang];
             
-            // Reemplazar textos de la bienvenida
             document.getElementById('beta-title').innerText = t.beta_title;
             document.getElementById('beta-p1').innerHTML = t.beta_p1.replace('MrTube', '<strong>MrTube</strong>');
             document.getElementById('beta-p2').innerText = t.beta_p2;
@@ -1127,16 +1182,8 @@
             document.getElementById('scroll-text').innerText = t.scroll_text;
             document.getElementById('btn-continue').innerText = t.btn_continue;
             
-            // Reemplazar textos de la página
             document.getElementById('recommended-title').innerText = t.recommended_title;
-            document.getElementById('thumb3').innerText = t.coming_soon.toUpperCase();
             
-            var comingSoonElements = document.getElementsByClassName('coming-soon-text');
-            for(var i=0; i<comingSoonElements.length; i++) {
-                comingSoonElements[i].innerText = t.coming_soon;
-            }
-
-            // Textos de Ajustes
             document.getElementById('modal-settings-title').innerText = t.settings_title;
             document.getElementById('theme-section-title').innerText = t.theme_title;
             document.getElementById('logo-section-title').innerText = t.logo_title;
@@ -1147,12 +1194,10 @@
             var btnADE = document.getElementById('ade-btn');
             btnADE.innerText = adeActivo ? t.ade_on : t.ade_off;
 
-            // Caja Inferior de YouTube
             document.getElementById('yt-box-title').innerText = t.yt_title;
             document.getElementById('yt-box-desc').innerText = t.yt_desc;
             document.getElementById('yt-main-btn-text').innerText = t.yt_btn;
             
-            // Nuevos Textos de la Sección HV
             document.getElementById('history-title').innerText = t.history_title;
             document.getElementById('btn-clear-history').innerText = t.history_clear;
             
@@ -1160,7 +1205,6 @@
             renderizarHistorial();
         }
 
-        // Ejecutar idioma inicial e historial al cargar
         cambiarIdioma(idiomaActual);
     </script>
 </body>
