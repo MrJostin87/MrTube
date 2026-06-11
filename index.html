@@ -314,7 +314,7 @@
             color: #aaa;
         }
 
-        /* RECOMENDADOS */
+        /* RECOMENDADOS Y HISTORIAL */
         .section-title {
             font-size: 20px;
             margin: 30px 0 15px 0;
@@ -358,6 +358,30 @@
             margin: 0;
             font-size: 12px;
             color: #aaa;
+        }
+
+        /* ELEMENTOS DEL HISTORIAL DE VIDEOS (HV) */
+        .empty-history-msg {
+            color: #888;
+            font-style: italic;
+            grid-column: 1 / -1;
+            text-align: left;
+            margin-top: 5px;
+        }
+        .clear-history-btn {
+            background-color: transparent;
+            color: #ff4444;
+            border: 1px solid #ff4444;
+            padding: 6px 12px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: bold;
+            float: right;
+            margin-top: -5px;
+        }
+        .clear-history-btn:hover {
+            background-color: rgba(255, 68, 68, 0.1);
         }
 
         /* NUEVO AREA ABAJO PARA EL BOTÓN DIRECTO DE YOUTUBE */
@@ -522,6 +546,13 @@
             </div>
         </div>
 
+        <div style="clear: both; overflow: hidden; margin-top: 20px;">
+            <button id="btn-clear-history" class="clear-history-btn" onclick="borrarHistorial()">Borrar HV</button>
+            <h2 id="history-title" class="section-title">HV (Historial de Videos)</h2>
+        </div>
+        <div id="history-grid" class="video-grid">
+            </div>
+
         <div class="youtube-box">
             <h3 id="yt-box-title" style="margin-top:0;">¿Quieres ver mas contenido oficial?</h3>
             <p id="yt-box-desc" style="color:#aaa; font-size:14px; margin-bottom:20px;">Apoya las producciones originales del canal directamente en YouTube.</p>
@@ -530,7 +561,7 @@
     </div>
 
     <script>
-        // TRADUCCIONES GLOBALES ACTUALIZADAS (13 IDIOMAS CON ÁRABE Y MORSE)
+        // TRADUCCIONES GLOBALES ACTUALIZADAS (13 IDIOMAS CON HISTORIAL INCLUIDO)
         const traducciones = {
             epanola: {
                 beta_title: "⚠️ ¡Benbenio a la Bersio Beta de Pruebax! Xd",
@@ -556,7 +587,10 @@
                 lang_title: "Idioma Raro xd",
                 yt_title: "¿Keres ber mas bideos orijinalis? XD",
                 yt_desc: "Apoya el canal de Yutub para mas capis xd.",
-                yt_btn: "Suscribise en Yutub XD"
+                yt_btn: "Suscribise en Yutub XD",
+                history_title: "HV (Bideos Vistos xd)",
+                history_empty: "No as bisto ningun bideo todabia xd",
+                history_clear: "Limpiar HV xd"
             },
             ar: {
                 beta_title: "⚠️ مرحبًا بك في النسخة التجريبية (Beta)!",
@@ -582,7 +616,10 @@
                 lang_title: "لغة الواجهة",
                 yt_title: "هل تريد رؤية المزيد من المحتوى الرسمي؟",
                 yt_desc: "ادعم الإنتاجات الأصلية للقناة مباشرة على YouTube.",
-                yt_btn: "الاشتراك في YouTube"
+                yt_btn: "الاشتراك في YouTube",
+                history_title: "HV (سجل الفيديوهات)",
+                history_empty: "لم تشاهد أي فيديو بعد",
+                history_clear: "مسح السجل"
             },
             morse: {
                 beta_title: "⚠️ •— •••— •—•• ——— ——— ••— •—•—•",
@@ -608,7 +645,10 @@
                 lang_title: "•—•• •— —• ——•",
                 yt_title: "•—• ——— •——— ———",
                 yt_desc: "••• ••— •—•—•",
-                yt_btn: "••• ••— ••• ——— —• YouTube"
+                yt_btn: "••• ••— ••• ——— —• YouTube",
+                history_title: "HV (••— •• —••)",
+                history_empty: "• —— •——• •—•—•",
+                history_clear: "••—•• — —•"
             },
             en: {
                 beta_title: "⚠️ Welcome to the Beta Test Version!",
@@ -634,7 +674,10 @@
                 lang_title: "Interface Language",
                 yt_title: "Want to see more official content?",
                 yt_desc: "Support original productions directly on YouTube.",
-                yt_btn: "Subscribe on YouTube"
+                yt_btn: "Subscribe on YouTube",
+                history_title: "HV (Video History)",
+                history_empty: "You haven't watched any videos yet",
+                history_clear: "Clear HV"
             },
             es: {
                 beta_title: "⚠️ ¡Bienvenido a la Version Beta de Prueba!",
@@ -660,14 +703,17 @@
                 lang_title: "Idioma de la Interfaz",
                 yt_title: "¿Quieres ver mas contenido oficial?",
                 yt_desc: "Apoya las producciones originales del canal directamente en YouTube.",
-                yt_btn: "Suscribirse en YouTube"
+                yt_btn: "Suscribirse en YouTube",
+                history_title: "HV (Historial de Videos)",
+                history_empty: "No has visto ningun video todavia",
+                history_clear: "Borrar HV"
             },
             af: {
                 beta_title: "⚠️ Welkom by die Beta-toetsweergawe!",
                 beta_p1: "Hallo aan alle volgelinge en besoekers. Jy betree amptelik die tegniese toets- en optimeringsfase van die onafhanklike platform MrTube.",
                 beta_p2: "Hou asseblief die volgende in gedagte voordat u voortgaan:",
                 beta_p3: "• Ontbrekende video's: Vir eers is die rooster onder instandhouding. Jy sal sien dat verskeie afdelings as 'Binnekort beskikbaar' gemerk is.",
-                beta_p4: "• Tydelike foute: Omdat ons geïntegreerde spelers toets, kan some funksies ligte laai-vertragings op selfone ervaar.",
+                beta_p4: "• Tydelike foute: Omdat ons geïntegreerde spelers toets, kan some funksies ligte laai-vertragings op selfone eervaar.",
                 beta_p5: "Ons waardeer u geduld, foutverslaggewing en voortgesette ondersteuning om ons produksies na die hele gemeenskap uit te brei.",
                 scroll_text: "Rolle af om voort te gaan",
                 btn_continue: "Voortgaan",
@@ -686,7 +732,10 @@
                 lang_title: "Koppelvlak-taal",
                 yt_title: "Wil jy meer amptelike inhoud sien?",
                 yt_desc: "Ondersteun oorspronklike produksies direk op YouTube.",
-                yt_btn: "Teken in op YouTube"
+                yt_btn: "Teken in op YouTube",
+                history_title: "HV (Video Geskiedenis)",
+                history_empty: "Jy het nog geen video's gekyk nie",
+                history_clear: "Vee HV uit"
             },
             ru: {
                 beta_title: "⚠️ Добро пожаловать в бета-версию!",
@@ -712,7 +761,10 @@
                 lang_title: "Язык интерфейса",
                 yt_title: "Хотите больше контента?",
                 yt_desc: "Поддержите наши оригинальные проекты на YouTube.",
-                yt_btn: "Подписаться на YouTube"
+                yt_btn: "Подписаться на YouTube",
+                history_title: "HV (История просмотров)",
+                history_empty: "Вы еще не посмотрели ни одного видео",
+                history_clear: "Очистить HV"
             },
             pt: {
                 beta_title: "⚠️ Bem-vindo à Versão Beta de Teste!",
@@ -738,7 +790,10 @@
                 lang_title: "Idioma da Interface",
                 yt_title: "Quer ver mais conteúdo oficial?",
                 yt_desc: "Apoie as produções originais direto no YouTube.",
-                yt_btn: "Inscrever-se no YouTube"
+                yt_btn: "Inscrever-se no YouTube",
+                history_title: "HV (Histórico de Vídeos)",
+                history_empty: "Você ainda não assistiu a nenhum vídeo",
+                history_clear: "Limpar HV"
             },
             zh: {
                 beta_title: "⚠️ 欢迎来到测试版本！",
@@ -764,7 +819,10 @@
                 lang_title: "界面语言",
                 yt_title: "想看更多官方内容吗？",
                 yt_desc: "前往 YouTube 直接支持我们的原创作品。",
-                yt_btn: "在 YouTube 上订阅"
+                yt_btn: "在 YouTube 上订阅",
+                history_title: "HV (观看历史记录)",
+                history_empty: "您还没有看过任何视频",
+                history_clear: "清除历史"
             },
             ja: {
                 beta_title: "⚠️ ベータテスト版へようこそ！",
@@ -790,7 +848,10 @@
                 lang_title: "インターフェース言語",
                 yt_title: "公式コンテンツをもっと見たいですか？",
                 yt_desc: "YouTubeでオリジナル作品を直接応援しよう。",
-                yt_btn: "YouTubeで登録する"
+                yt_btn: "YouTubeで登録する",
+                history_title: "HV (再生履歴)",
+                history_empty: "まだ動画を視聴していません",
+                history_clear: "履歴を削除"
             },
             ko: {
                 beta_title: "⚠️  베타 테스트 버전에 오신 것을 환영합니다!",
@@ -816,14 +877,17 @@
                 lang_title: "인터페이스 언어",
                 yt_title: "공식 콘텐츠를 더 보고 싶으신가요?",
                 yt_desc: "YouTube에서 오리지널 프로덕션을 직접 응원해 주세요.",
-                yt_btn: "YouTube에서 구독하기"
+                yt_btn: "YouTube에서 구독하기",
+                history_title: "HV (시청 기록)",
+                history_empty: "아직 시청한 동영상이 없습니다",
+                history_clear: "기록 삭제"
             },
             es_es: {
                 beta_title: "⚠️ ¡Bienvenido a la Version Beta de Prueba!",
                 beta_p1: "Saludos a todos los seguidores y visitantes. Estas ingresando oficialmente en la fase de pruebas tecnicas y optimizacion de la plataforma independiente MrTube.",
                 beta_p2: "Por favor, ten en cuenta lo siguiente antes de continuar:",
                 beta_p3: "• Videos Faltantes: Por el momento, la parrilla esta en mantenimiento. Veras que varios apartados del sitio tienen la etiqueta de 'Proximamente'.",
-                beta_p4: "• Errores Temporales: Debido a las pruebas de reproductores integrados, podrias notar cierta ralentizacion en dispositivos móviles.",
+                beta_p4: "• Errores Temporales: Debido a las pruebas de reproductores integrados, podrias notar certa ralentizacion en dispositivos móviles.",
                 beta_p5: "Agradecemos profundamente vuestra paciencia y apoyo continuo para expandir nuestras producciones a toda la comunidad.",
                 scroll_text: "Desliza hacia abajo para continuar",
                 btn_continue: "Continuar",
@@ -842,7 +906,10 @@
                 lang_title: "Idioma de la Interfaz",
                 yt_title: "¿Quieres ver mas contenido oficial?",
                 yt_desc: "Apoya los proyectos originales del canal directamente en YouTube.",
-                yt_btn: "Suscribirse en YouTube"
+                yt_btn: "Suscribirse en YouTube",
+                history_title: "HV (Historial de Vídeos)",
+                history_empty: "No has visto ningún vídeo todavía",
+                history_clear: "Borrar HV"
             },
             es_la: {
                 beta_title: "⚠️ ¡Bienvenido a la Version Beta de Prueba!",
@@ -868,7 +935,10 @@
                 lang_title: "Idioma de la Interfaz",
                 yt_title: "¿Quieres ver mas contenido oficial?",
                 yt_desc: "Apoya las producciones originales del canal directamente en YouTube.",
-                yt_btn: "Suscribirse en YouTube"
+                yt_btn: "Suscribirse en YouTube",
+                history_title: "HV (Historial de Videos)",
+                history_empty: "No has visto ningún video todavía",
+                history_clear: "Borrar HV"
             }
         };
 
@@ -925,11 +995,84 @@
         var colorLogoGuardado = localStorage.getItem('mrtube_logo_color') ? localStorage.getItem('mrtube_logo_color') : '#ff0000';
         cambiarColorLogo(colorLogoGuardado);
 
-        // FUNCIÓN DINÁMICA PARA REPRODUCIR VIDEOS DESDE LA GRILLA
+        // FUNCIÓN DINÁMICA PARA REPRODUCIR VIDEOS Y GUARDAR EN EL HISTORIAL (HV)
         function cargarVideo(urlEmbed, tituloVideo) {
             document.getElementById('main-iframe').src = urlEmbed + "?autoplay=1";
             document.getElementById('main-video-title').innerText = tituloVideo;
+            
+            // Registrar el video en el historial real
+            agregarAlHistorial(urlEmbed, tituloVideo);
+            
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // CONTROL DE HISTORIAL REAL (HV) USANDO LOCALSTORAGE
+        function obtenerHistorial() {
+            var historial = localStorage.getItem('mrtube_history');
+            return historial ? JSON.parse(historial) : [];
+        }
+
+        function agregarAlHistorial(url, titulo) {
+            var historial = obtenerHistorial();
+            
+            // Eliminar el video si ya existía antes para que se mueva al inicio
+            historial = historial.filter(function(item) {
+                return item.url !== url;
+            });
+            
+            // Agregar el nuevo video al inicio del historial
+            historial.unshift({ url: url, titulo: titulo });
+            
+            // Limitar el historial a los últimos 6 videos para no saturar la pantalla
+            if (historial.length > 6) {
+                historial.pop();
+            }
+            
+            localStorage.setItem('mrtube_history', JSON.stringify(historial));
+            renderizarHistorial();
+        }
+
+        function borrarHistorial() {
+            localStorage.removeItem('mrtube_history');
+            renderizarHistorial();
+        }
+
+        function renderizarHistorial() {
+            var grid = document.getElementById('history-grid');
+            var historial = obtenerHistorial();
+            var t = traducciones[idiomaActual];
+            
+            grid.innerHTML = '';
+            
+            if (historial.length === 0) {
+                grid.innerHTML = '<p id="history-empty-msg" class="empty-history-msg">' + t.history_empty + '</p>';
+                return;
+            }
+            
+            historial.forEach(function(video) {
+                // Obtener el ID del video de YouTube para cargar su miniatura real de forma automática
+                var videoId = video.url.split('/embed/')[1];
+                var thumbUrl = 'https://img.youtube.com/vi/' + videoId + '/mqdefault.jpg';
+                
+                var card = document.createElement('div');
+                card.className = 'video-card';
+                // Al darle "pacho" a un video del historial, vuelve a cargarse arriba
+                card.onclick = function() {
+                    cargarVideo(video.url, video.titulo);
+                };
+                
+                card.innerHTML = 
+                    '<div class="thumbnail" style="background-image: url(\'' + thumbUrl + '\'); text-indent: -9999px;">VIDEO</div>' +
+                    '<div class="card-info">' +
+                        '<img class="avatar-img" style="width:30px; height:30px;" src="avatar.png">' +
+                        '<div class="card-text">' +
+                            '<h4>' + video.titulo + '</h4>' +
+                            '<p>ABG Productions®</p>' +
+                        '</div>' +
+                    '</div>';
+                
+                grid.appendChild(card);
+            });
         }
 
         // CONTROL DE IDIOMAS GLOBALIZADO
@@ -996,7 +1139,7 @@
             // Textos de Ajustes
             document.getElementById('modal-settings-title').innerText = t.settings_title;
             document.getElementById('theme-section-title').innerText = t.theme_title;
-            document.getElementById('logo-section-title').innerText = t.logo_title; // Traducción para el color del logo
+            document.getElementById('logo-section-title').innerText = t.logo_title;
             document.getElementById('ade-section-title').innerText = t.ade_title;
             document.getElementById('ade-desc').innerText = t.ade_desc;
             document.getElementById('lang-section-title').innerText = t.lang_title;
@@ -1009,10 +1152,15 @@
             document.getElementById('yt-box-desc').innerText = t.yt_desc;
             document.getElementById('yt-main-btn-text').innerText = t.yt_btn;
             
+            // Nuevos Textos de la Sección HV
+            document.getElementById('history-title').innerText = t.history_title;
+            document.getElementById('btn-clear-history').innerText = t.history_clear;
+            
             actualizarPantallaSubs();
+            renderizarHistorial();
         }
 
-        // Ejecutar idioma inicial al cargar
+        // Ejecutar idioma inicial e historial al cargar
         cambiarIdioma(idiomaActual);
     </script>
 </body>
