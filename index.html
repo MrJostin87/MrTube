@@ -56,7 +56,7 @@
             background: #000000 !important;
         }
         .urs-mode .thumbnail {
-            background-image: none !important;
+            /* SOLUCIÓN BUG 1: Se eliminó 'background-image: none' para conservar las miniaturas visibles */
             background-color: #222 !important;
             border: 1px dashed #444 !important;
         }
@@ -725,7 +725,6 @@
                 history_empty: "No has visto ningun video todavia",
                 history_clear: "Borrar HV"
             }
-            // (Nota: El resto de idiomas se mantienen igual internamente)
         };
 
         function entrarAMrTube() {
