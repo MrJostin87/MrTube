@@ -41,6 +41,28 @@
             --shadow-style: 0 4px 15px rgba(0,0,0,0.3);
         }
 
+        /* NUEVO TEMA: AZUL */
+        .blue-theme {
+            --bg-color: #001f3f;
+            --text-color: #ffffff;
+            --card-bg: #003366;
+            --border-color: #004488;
+            --btn-sub-bg: #0077ff;
+            --btn-sub-text: #ffffff;
+            --shadow-style: 0 4px 15px rgba(0,0,0,0.4);
+        }
+
+        /* NUEVO TEMA: ROJO */
+        .red-theme {
+            --bg-color: #3b0000;
+            --text-color: #ffffff;
+            --card-bg: #5c0000;
+            --border-color: #7a0000;
+            --btn-sub-bg: #ff3333;
+            --btn-sub-text: #ffffff;
+            --shadow-style: 0 4px 15px rgba(0,0,0,0.4);
+        }
+
         /* CLASES DE FUENTES CONFIGURABLES */
         .font-montserrat { --web-font: 'Montserrat', sans-serif !important; }
         .font-rubik { --web-font: 'Rubik', sans-serif !important; }
@@ -510,7 +532,7 @@
                 <p id="beta-p1">Hola a todos los seguidores y visitantes. Estas ingresando oficialmente a la fase de pruebas tecnicas y optimizacion de la plataforma independiente <strong>MrTube</strong>.</p>
                 <p id="beta-p2">Por favor, ten en cuenta lo siguiente antes d continuar:</p>
                 <p id="beta-p3">• <strong>Videos Faltantes:</strong> Por el momento, la grilla esta en mantenimiento. Veras que varios apartados del sitio tienen la etiqueta de "Proximamente" mientras se indexan los archivos correspondientes.</p>
-                <p id="beta-p4">• <strong>Errores Temporales:</strong> Debido a que estamos probando las conexiones y los reproductores integrados, algunas funciones de interfaz d usuario podrian presentar retrasos leves d carga en dispositivos moviles.</p>
+                <p id="beta-p4">• <strong>Errores Temporales:</strong> Debido a que estamos probando las conexiones y los reproductores integrados, algunas funciones d interfaz d usuario podrian presentar retrasos leves d carga en dispositivos moviles.</p>
                 <p id="beta-p5">Agradecemos profundamente tu paciencia, reporte d fallas y apoyo continuo para expandir nuestras producciones a toda la comunidad.</p>
             </div>
 
@@ -543,6 +565,13 @@
                 <button class="config-btn" onclick="cambiarTema('oscuro')">Negro</button>
                 <button class="config-btn" style="background-color:#ccc; color:#000;" onclick="cambiarTema('claro')">Blanco</button>
                 <button class="config-btn" style="background-color:#888888; color:#fff;" onclick="cambiarTema('gris')">Gris</button>
+                <button class="config-btn" style="background-color:#0055ff; color:#fff;" onclick="cambiarTema('azul')">Azul</button>
+                <button class="config-btn" style="background-color:#ff2222; color:#fff;" onclick="cambiarTema('rojo')">Rojo</button>
+            </div>
+
+            <div class="settings-section">
+                <h3 id="sound-effects-section-title">🔊 Efectos de Sonidos</h3>
+                <button id="sound-btn" class="config-btn" style="background-color: #333; width: 100%;" onclick="toggleEfectosSonido()">Sonido: Apagado 🔇</button>
             </div>
 
             <div class="settings-section">
@@ -641,6 +670,50 @@
         <h2 id="recommended-title" class="section-title">Videos Recomendados</h2>
         
         <div id="recommended-video-grid" class="video-grid">
+            <div class="video-card" onclick="cargarVideo('https://www.youtube.com/embed/8wNVZ5ca7BA', 'El Mystery De Chicken Gun T1 E9')">
+                <div class="thumbnail" style="background-image: url('https://img.youtube.com/vi/8wNVZ5ca7BA/mqdefault.jpg'); text-indent: -9999px;">VIDEO</div>
+                <div class="card-info">
+                    <img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG">
+                    <div class="card-text">
+                        <h4>El Misterio De Chicken Gun T1 E9</h4>
+                        <p>ABG Productions®</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" onclick="cargarVideo('https://www.youtube.com/embed/Dd_wgRMbud8', 'El Misterio De Chicken Gun T1 E8')">
+                <div class="thumbnail" style="background-image: url('https://img.youtube.com/vi/Dd_wgRMbud8/mqdefault.jpg'); text-indent: -9999px;">VIDEO</div>
+                <div class="card-info">
+                    <img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG">
+                    <div class="card-text">
+                        <h4>El Misterio De Chicken Gun T1 E8</h4>
+                        <p>ABG Productions®</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" onclick="cargarVideo('https://www.youtube.com/embed/AT3nqI7btI0', '¿Cómo conseguir mucho ichor en dandy\'s world? 🤔💧')">
+                <div class="thumbnail" style="background-image: url('https://img.youtube.com/vi/AT3nqI7btI0/mqdefault.jpg'); text-indent: -9999px;">VIDEO</div>
+                <div class="card-info">
+                    <img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG">
+                    <div class="card-text">
+                        <h4>¿Cómo conseguir mucho ichor en dandy's world? 🤔💧</h4>
+                        <p>Sprunki Animations Studios®</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" onclick="cargarVideo('https://www.youtube.com/embed/-72lvELfYT0', 'Dandy\'s world Show T2 E4')">
+                <div class="thumbnail" style="background-image: url('https://img.youtube.com/vi/-72lvELfYT0/mqdefault.jpg'); text-indent: -9999px;">VIDEO</div>
+                <div class="card-info">
+                    <img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG">
+                    <div class="card-text">
+                        <h4>Dandy's world Show T2 E4</h4>
+                        <p>Sprunki Animations Studios®</p>
+                    </div>
+                </div>
+            </div>
+
             <div class="video-card" onclick="cargarVideo('https://www.youtube.com/embed/ZFvr7ptM02o', 'Servidor Town000: 😱 ¡¡El lugar donde los jugadores desaparecen!! 😱')">
                 <div class="thumbnail" style="background-image: url('https://img.youtube.com/vi/ZFvr7ptM02o/mqdefault.jpg'); text-indent: -9999px;">VIDEO</div>
                 <div class="card-info">
@@ -805,6 +878,16 @@
             <div class="video-card dynamic-coming-soon"><div class="thumbnail">Próximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">Próximamente</h4><p>ABG Productions®</p></div></div></div>
             <div class="video-card dynamic-coming-soon"><div class="thumbnail">Próximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">Próximamente</h4><p>ABG Productions®</p></div></div></div>
             <div class="video-card dynamic-coming-soon"><div class="thumbnail">Próximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">Próximamente</h4><p>ABG Productions®</p></div></div></div>
+            <div class="video-card dynamic-coming-soon"><div class="thumbnail">Próximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">Próximamente</h4><p>ABG Productions®</p></div></div></div>
+            <div class="video-card dynamic-coming-soon"><div class="thumbnail">Próximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">Próximamente</h4><p>ABG Productions®</p></div></div></div>
+            <div class="video-card dynamic-coming-soon"><div class="thumbnail">Próximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">Próximamente</h4><p>ABG Productions®</p></div></div></div>
+            <div class="video-card dynamic-coming-soon"><div class="thumbnail">Próximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">Próximamente</h4><p>ABG Productions®</p></div></div></div>
+            <div class="video-card dynamic-coming-soon"><div class="thumbnail">Próximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">Próximamente</h4><p>ABG Productions®</p></div></div></div>
+            <div class="video-card dynamic-coming-soon"><div class="thumbnail">Próximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">Próximamente</h4><p>ABG Productions®</p></div></div></div>
+            <div class="video-card dynamic-coming-soon"><div class="thumbnail">Próximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">Próximamente</h4><p>ABG Productions®</p></div></div></div>
+            <div class="video-card dynamic-coming-soon"><div class="thumbnail">Próximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">Próximamente</h4><p>ABG Productions®</p></div></div></div>
+            <div class="video-card dynamic-coming-soon"><div class="thumbnail">Próximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">Próximamente</h4><p>ABG Productions®</p></div></div></div>
+            <div class="video-card dynamic-coming-soon"><div class="thumbnail">Próximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">Próximamente</h4><p>ABG Productions®</p></div></div></div>
         </div>
 
         <div style="clear: both; overflow: hidden; margin-top: 20px;">
@@ -821,6 +904,10 @@
     </div>
 
     <script>
+        // OBJETO AUDIO GLOBAL REUTILIZANDO TU ARCHIVO DE SONIDO
+        var audioEfecto = new Audio('Boton.mp3');
+        var efectosSonidoActivos = false;
+
         // TRADUCCIONES COMPLETAS CORREGIDAS MAS LOS NUEVOS IDIOMAS
         const traducciones = {
             ultra_emoji: {
@@ -869,7 +956,7 @@
                 recommended_title: "Bideos Recomendados pal man que entro a la wev xd osea literal miren estos capis xq si entraron a la pajina y no ven lo q les recomiendo d bdd q no se para que entran jskajskaj xdxd rre funable mi comentario de bdd pero esq q flojera con la jente q entra a un sitio de animasiones y se queda viendo la pantalla en blanco sin darle clik a nada xd de bdd q da alta peresa ponerles las cosas en bandeja d plata con calidad trillonaria para q al final no bean nada xdxd usen el mause o el dedo che xd pero bueno mentira jiji se les qre un monton <3 xd por sicierto muchisimas grasias por todo el apoyo incondisinal q le dan siempre a las animasiones y prolletos d bdd xd son los mas cracks de todo el planeta tierra xd d todo corason se les agradese un universo entero x aguantar mis uevadas y x estar ai siempre al pie del cañon xd enserio son la rre clave jente muchisimas gracias totales xd sigan asi d cracks xd",
                 coming_soon: "Prosimamete xd osea literal esperense un cacho xq las cosas buenas toman tiempo jente xdxd q flojera con la jente q quiere todo ya de inmediato como si animar con calidad trillonaria fuera soplar y aser botellas jskajskaj xd rre funable mi comentario de bdd pero esq si no tienen pasensia les va a dar un patatús xd de bdd q da alta peresa ver q preguntan cada sinto segundos cuando sale el prosimo capi o el prosimo prolleto xdxd dehen trabajar a los estudios en pas che xd pero bueno mentira jiji se les qre un montonaso <3 xd por sicierto muchisimas grasias por todo el apoyo incondisinal q le dan siempre a las animasiones y series de bdd xd son los mas cracks de todo el planeta tierra xd d todo corason se les agradese un universo entero x aguantar mis uevadas y x estar ai siempre firmes al pie del cañon xd enserio son la rre clave jente muchisimas gracias totales xd sigan asi d cracks xd",
                 sub_text: "Suscribise XD osea literal vayan a romper ese boton d una ves xq si entran a ver las series gratis y ni se suscriben de bdd q no tienen corason xdxd q flojera estar animando horas y horas con calidad trillonaria para jente q ve los capis y se va sin dehar su lay jskajskaj xd rre funable pero sicierto xd de bdd q si no se suscriben les va a caer la maldision del lag eterno en el cel xdxd pero bueno mentira jiji se les qre un monton <3 xd por sicierto muchisimas grasias por todo el apoyo incondisinal q le dan siempre a los prolletos y a los canales xd son los mas cracks d todo el planeta tierra d bdd xd d todo corason se les agradese un universo entero x aguantar mis uevadas y x estar ai siempre firmes xd son la rre clave jente enserio xd muchisimas gracias totales xd sigan asi d cracks xd",
-                subbed_text: "Ya tas Suscrito xd osea oviamente si ya le diste clik antes ya eres parte del bando d los cracks xd aunque d seguro andas dándole clik otra ves solo para ver q sale xq no tienes nada mas q aser jskajskaj xdxd rre funable el comentario d bdd pero esq q flojera con la jente q le da clik a lo tonto a los botones q ya estan activados xd de bdd q me da una peresa trillonaria ver q intentan romper el sistema xdxd pero bueno mentira jiji se les qre un montonaso <3 xd de bdd muchisimas gracias por ser un suscriptor fiel y x todo el apoyo q le dan siempre a las series y animasiones xd son la rre clave de todo el multiverso jente xd d todo corason muchisimas gracias x bancarme en cada locura xd enserio se les agradese un trillon xd muchisimas gracias totales xd sigan asi d cracks xd",
+                subbed_text: "Ya tas Suscrito xd osea oviamente si ya le diste clik antes ya eres parte del bando d los cracks xd aunque d seguro Schuyler andas dándole clik otra ves solo para ver q sale xq no tienes nada mas q aser jskajskaj xdxd rre funable el comentario d bdd pero esq q flojera con la jente q le da clik a lo tonto a los botones q ya estan activados xd de bdd q me da una peresa trillonaria ver q intentan romper el sistema xdxd pero bueno mentira jiji se les qre un montonaso <3 xd de bdd muchisimas gracias por ser un suscriptor fiel y x todo el apoyo q le dan siempre a las series y animasiones xd son la rre clave de todo el multiverso jente xd d todo corason muchisimas gracias x bancarme en cada locura xd enserio se les agradese un trillon xd muchisimas gracias totales xd sigan asi d cracks xd",
                 sub_count_suffix: "suscritores • ABG Productions® Xd osea miren ese numero jente xd ay bamos subiendo de a poquitisimo xq seguro ai un monton d jente filtrada q ve los capis piratas o ni deha su lay jskajskaj xdxd rre funable pero sicierto xd q flojera con la jente q no se suscribe al canal oficial para llegar mas rapido a las placas de yutub de bdd xd q peresa trillonaria me da pensar en eso xd pero bueno mentira jiji se les qre un montonaso <3 xd de bdd muchisimas gracias a los suscritores fiels q de verdad apoyan a los estudios y se ven todas las series completitas xd son la rre clave de todo el multiverso jente xd d todo corason muchisimas gracias x bancarme en cada locura y en cada animasion xd enserio se les agradese un trillon xd muchisimas gracias totales xd sigan asi d cracks xd",
                 settings_title: "Ajutes del ćitio (pa q no te aburas aka xd) osea literal entren aki a rebisar las opsiones xq si entran a la pajina y dehan todo por defecto d bdd q son alta peresa jskajskaj xdxd rre funable mi comentario d bdd pero esq q flojera programar un panel de konfigurasion con calidad trillonaria para q la jente ni se digne a darle clik xd de bdd q si se aburren es x su culpa x no picarle a los botones xdxd usen las opsiones che xd pero bueno mentira jiji se les qre un monton <3 xd por sicierto muchisimas grasias por todo el apoyo incondisinal q le dan siempre a los prolletos y a las animasiones xd son los mas cracks d todo el planeta tierra d bdd xd d todo corason se les agradese un universo entero x aguantar mis uevadas y x estar ai siempre firmes xd son la rre clave jente enserio xd muchisimas gracias totales xd sigan asi d cracks xd",
                 theme_title: "Colo de fodo (aca puede canbiar el color a tu justo xd pero me da una peresa total xk el editor q me dise que aga esto no me pagua lo sufisiente Xd pa aser eta uevada xdxd ademas q flojera programar o diseñar para jente q seguro ni se ba a dar cuenta xd de bdd q a veses pienso q el publico no tiene ic xdxd rre funable el comentario jsnfkskd pero sicierto xd mentira jiji se les qre un monton <3 xd de bdd muchisimas gracias por el apoyo jente xd son los mejores del mundo mundial xd grasias x ver mis tonterias y bancarme siempre xd de verdad c les agradese con todo el corason xdxd sigan asi d cracks aunq canbiar este color sea un dolor d kabesa xd grasias totales xddd)",
@@ -897,7 +984,7 @@
                 beta_p2: "Por favor, ten en cuenta lo siguiente antes de continuar:",
                 beta_p3: "• Videos Faltantes: Por el momento, la grilla esta en mantenimiento. Veras que varios apartados del sitio tienen la etiqueta de 'Proximamente' mientras se indexan los archivos correspondientes.",
                 beta_p4: "• Errores Temporales: Debido a que estamos probando las conexiones y los reproductores integrados, algunas funciones de interfaz de usuario podrian presentar retrasos leves de carga en dispositivos moviles.",
-                beta_p5: "Agradecemos profundamente tu paciencia, reporte de fallas y apoyo continuo para expandir nuestras producciones a toda la comunidad.",
+                beta_p5: "Agradecomendos profundamente tu paciencia, reporte de fallas y apoyo continuo para expandir nuestras producciones a toda la comunidad.",
                 scroll_text: "Desliza hacia abajo para continuar",
                 btn_continue: "Continuar",
                 recommended_title: "Videos Recomendados",
@@ -1158,11 +1245,15 @@
         }
 
         function cambiarTema(tema) {
-            document.body.classList.remove('light-theme', 'gray-theme');
+            document.body.classList.remove('light-theme', 'gray-theme', 'blue-theme', 'red-theme');
             if (tema === 'claro') {
                 document.body.classList.add('light-theme');
             } else if (tema === 'gris') {
                 document.body.classList.add('gray-theme');
+            } else if (tema === 'azul') {
+                document.body.classList.add('blue-theme');
+            } else if (tema === 'rojo') {
+                document.body.classList.add('red-theme');
             }
         }
 
@@ -1170,6 +1261,30 @@
             document.documentElement.style.setProperty('--logo-bg-color', color);
             localStorage.setItem('mrtube_logo_color', color);
         }
+
+        // CONTROL DE EFECTOS DE SONIDO PARA CUALQUIER BOTÓN
+        function toggleEfectosSonido() {
+            efectosSonidoActivos = !efectosSonidoActivos;
+            var btn = document.getElementById('sound-btn');
+            if(efectosSonidoActivos) {
+                btn.style.backgroundColor = "#00aa00";
+                btn.innerText = "Sonido: Encendido 🔊";
+                // Reproducir uno de prueba al activar
+                audioEfecto.play().catch(function(e){ console.log("Interacción requerida"); });
+            } else {
+                btn.style.backgroundColor = "#333";
+                btn.innerText = "Sonido: Apagado 🔇";
+            }
+        }
+
+        // Asignar evento de sonido global a todos los botones clickeados
+        document.addEventListener('click', function(event) {
+            if (efectosSonidoActivos && event.target.tagName.toLowerCase() === 'button') {
+                // Clonar o resetear el audio para permitir clics rápidos consecutivos sin cortes
+                audioEfecto.currentTime = 0;
+                audioEfecto.play().catch(function(e) { console.log("Audio Bloqueado por Navegador"); });
+            }
+        });
 
         // COMANDO CF: EJECUCIÓN REAL DE CAMBIO DE FUENTE
         function cambiarFuente(tipoFuente) {
@@ -1382,7 +1497,6 @@
             else { totalSuscriptores -= 1; estadoSuscrito = false; }
             localStorage.setItem('mrtube_subs', totalSuscriptores);
             localStorage.setItem('mrtube_is_subbed', estadoSuscrito);
-            actualizarPantacitySubs();
             actualizarPantallaSubs();
         }
 
