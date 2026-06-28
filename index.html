@@ -508,7 +508,7 @@
             <div class="welcome-box">
                 <h2 id="beta-title">⚠️ ¡Bienvenido a la Version Beta de Prueba!</h2>
                 <p id="beta-p1">Hola a todos los seguidores y visitantes. Estas ingresando oficialmente a la fase de pruebas tecnicas y optimizacion de la plataforma independiente <strong>MrTube</strong>.</p>
-                <p id="beta-p2">Por favor, ten en cuenta lo siguiente antes de continuar:</p>
+                <p id="beta-p2">Por favor, ten en cuenta lo siguiente antes d continuar:</p>
                 <p id="beta-p3">• <strong>Videos Faltantes:</strong> Por el momento, la grilla esta en mantenimiento. Veras que varios apartados del sitio tienen la etiqueta de "Proximamente" mientras se indexan los archivos correspondientes.</p>
                 <p id="beta-p4">• <strong>Errores Temporales:</strong> Debido a que estamos probando las conexiones y los reproductores integrados, algunas funciones de interfaz d usuario podrian presentar retrasos leves d carga en dispositivos moviles.</p>
                 <p id="beta-p5">Agradecemos profundamente tu paciencia, reporte d fallas y apoyo continuo para expandir nuestras producciones a toda la comunidad.</p>
@@ -600,6 +600,11 @@
             </div>
 
             <div class="settings-section">
+                <h3 id="random-section-title">🔀 Entretenimiento Random</h3>
+                <button class="config-btn" style="background-color: #8a2be2; width: 100%; color: #fff; font-size: 15px;" onclick="reproducirVideoAleatorio()">Video Aleatorio 🎲</button>
+            </div>
+
+            <div class="settings-section">
                 <h3 id="jb-section-title">JB (Juego en Beta)</h3>
                 <button class="config-btn" style="background-color: #ff6600; width: 100%;" onclick="window.open('https://mrjostin87.github.io/mrtube-jb/', '_blank')">Abrir Chicken Strike NPC 🎮</button>
             </div>
@@ -636,6 +641,39 @@
         <h2 id="recommended-title" class="section-title">Videos Recomendados</h2>
         
         <div id="recommended-video-grid" class="video-grid">
+            <div class="video-card" onclick="cargarVideo('https://www.youtube.com/embed/ZFvr7ptM02o', 'Servidor Town000: 😱 ¡¡El lugar donde los jugadores desaparecen!! 😱')">
+                <div class="thumbnail" style="background-image: url('https://img.youtube.com/vi/ZFvr7ptM02o/mqdefault.jpg'); text-indent: -9999px;">VIDEO</div>
+                <div class="card-info">
+                    <img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG">
+                    <div class="card-text">
+                        <h4>Servidor Town000: 😱 ¡¡El lugar donde los jugadores desaparecen!! 😱</h4>
+                        <p>ABG Productions®</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" onclick="cargarVideo('https://www.youtube.com/embed/jXcnZ-zQoig', 'Sprunki Animado T4 E3')">
+                <div class="thumbnail" style="background-image: url('https://img.youtube.com/vi/jXcnZ-zQoig/mqdefault.jpg'); text-indent: -9999px;">VIDEO</div>
+                <div class="card-info">
+                    <img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG">
+                    <div class="card-text">
+                        <h4>Sprunki Animado T4 E3</h4>
+                        <p>Sprunki Animations Studios®</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" onclick="cargarVideo('https://www.youtube.com/embed/IXWZrR9_ffw', '¿Cómo conseguir 1000 monedas en Chicken Gun? 🤔💵')">
+                <div class="thumbnail" style="background-image: url('https://img.youtube.com/vi/IXWZrR9_ffw/mqdefault.jpg'); text-indent: -9999px;">VIDEO</div>
+                <div class="card-info">
+                    <img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG">
+                    <div class="card-text">
+                        <h4>¿Cómo conseguir 1000 monedas en Chicken Gun? 🤔💵</h4>
+                        <p>ABG Productions®</p>
+                    </div>
+                </div>
+            </div>
+
             <div class="video-card" onclick="cargarVideo('https://www.youtube.com/embed/R0SaU4p-yKk', '🎮 2 Mapas con Modelos Ocultos y Secretos ✨')">
                 <div class="thumbnail" style="background-image: url('https://img.youtube.com/vi/R0SaU4p-yKk/mqdefault.jpg'); text-indent: -9999px;">VIDEO</div>
                 <div class="card-info">
@@ -757,66 +795,16 @@
                 </div>
             </div>
 
-            <div class="video-card dynamic-coming-soon">
-                <div class="thumbnail">Próximamente</div>
-                <div class="card-info">
-                    <img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG">
-                    <div class="card-text">
-                        <h4 class="coming-soon-text">Próximamente</h4>
-                        <p>ABG Productions®</p>
-                    </div>
-                </div>
-            </div>
-            <div class="video-card dynamic-coming-soon">
-                <div class="thumbnail">Próximamente</div>
-                <div class="card-info">
-                    <img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG">
-                    <div class="card-text">
-                        <h4 class="coming-soon-text">Próximamente</h4>
-                        <p>ABG Productions®</p>
-                    </div>
-                </div>
-            </div>
-            <div class="video-card dynamic-coming-soon">
-                <div class="thumbnail">Próximamente</div>
-                <div class="card-info">
-                    <img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG">
-                    <div class="card-text">
-                        <h4 class="coming-soon-text">Próximamente</h4>
-                        <p>ABG Productions®</p>
-                    </div>
-                </div>
-            </div>
-            <div class="video-card dynamic-coming-soon">
-                <div class="thumbnail">Próximamente</div>
-                <div class="card-info">
-                    <img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG">
-                    <div class="card-text">
-                        <h4 class="coming-soon-text">Próximamente</h4>
-                        <p>ABG Productions®</p>
-                    </div>
-                </div>
-            </div>
-            <div class="video-card dynamic-coming-soon">
-                <div class="thumbnail">Próximamente</div>
-                <div class="card-info">
-                    <img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG">
-                    <div class="card-text">
-                        <h4 class="coming-soon-text">Próximamente</h4>
-                        <p>ABG Productions®</p>
-                    </div>
-                </div>
-            </div>
-            <div class="video-card dynamic-coming-soon">
-                <div class="thumbnail">Próximamente</div>
-                <div class="card-info">
-                    <img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG">
-                    <div class="card-text">
-                        <h4 class="coming-soon-text">Próximamente</h4>
-                        <p>ABG Productions®</p>
-                    </div>
-                </div>
-            </div>
+            <div class="video-card dynamic-coming-soon"><div class="thumbnail">Próximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">Próximamente</h4><p>ABG Productions®</p></div></div></div>
+            <div class="video-card dynamic-coming-soon"><div class="thumbnail">Próximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">Próximamente</h4><p>ABG Productions®</p></div></div></div>
+            <div class="video-card dynamic-coming-soon"><div class="thumbnail">Próximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">Próximamente</h4><p>ABG Productions®</p></div></div></div>
+            <div class="video-card dynamic-coming-soon"><div class="thumbnail">Próximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">Próximamente</h4><p>ABG Productions®</p></div></div></div>
+            <div class="video-card dynamic-coming-soon"><div class="thumbnail">Próximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">Próximamente</h4><p>ABG Productions®</p></div></div></div>
+            <div class="video-card dynamic-coming-soon"><div class="thumbnail">Próximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">Próximamente</h4><p>ABG Productions®</p></div></div></div>
+            <div class="video-card dynamic-coming-soon"><div class="thumbnail">Próximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">Próximamente</h4><p>ABG Productions®</p></div></div></div>
+            <div class="video-card dynamic-coming-soon"><div class="thumbnail">Próximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">Próximamente</h4><p>ABG Productions®</p></div></div></div>
+            <div class="video-card dynamic-coming-soon"><div class="thumbnail">Próximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">Próximamente</h4><p>ABG Productions®</p></div></div></div>
+            <div class="video-card dynamic-coming-soon"><div class="thumbnail">Próximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">Próximamente</h4><p>ABG Productions®</p></div></div></div>
         </div>
 
         <div style="clear: both; overflow: hidden; margin-top: 20px;">
@@ -1148,7 +1136,7 @@
             pt: { beta_title: "⚠️ Versão Beta!", beta_p1: "Olá a todos.", beta_p2: "Lembre-se:", beta_p3: "• Vídeos Ausentes", beta_p4: "• Erros", beta_p5: "Agradecemos o apoio.", scroll_text: "Deslize para baixo", btn_continue: "Continuar", recommended_title: "Recomendados", coming_soon: "Em breve", sub_text: "Inscrever-se", subbed_text: "Inscrito", sub_count_suffix: "inscritos • ABG Productions®", settings_title: "Configurações", theme_title: "Tema", logo_title: "Cor do Logo", ade_title: "Desempenho (ADE)", ade_on: "ADE: Ligado", ade_off: "ADE: Desligado", ade_desc: "Navegar de forma super fluida.", lang_title: "Idioma", yt_title: "Conteúdo oficial?", yt_desc: "Apoie no YouTube.", yt_btn: "Inscrever-se", history_title: "HV (Histórico)", history_empty: "Vazio", history_clear: "Limpar", cf_title: "CF (Mudar Fonte)", vc_title: "VC (Versão de PC)", vc_btn_on: "Mudar para Celular", vc_btn_off: "Mudar para Computador", dv_btn_text: "📥 DV: Baixar Vídeo Seguro" },
             zh: { beta_title: "⚠️ 测试版本！", grid_p1: "粉丝大家好。", beta_p2: "请注意：", beta_p3: "• 视频缺失", beta_p4: "• 临时错误", beta_p5: "感谢支持。", scroll_text: "向下滚动", btn_continue: "继续", recommended_title: "推荐视频", coming_soon: "即将推出", sub_text: "订阅", subbed_text: "已订阅", sub_count_suffix: "位订阅者 • ABG Productions®", settings_title: "设置", theme_title: "主题", logo_title: "标志颜色", ade_title: "性能 (ADE)", ade_on: "ADE: 开启", ade_off: "ADE: 关闭", ade_desc: "让页面流畅运行。", lang_title: "语言", yt_title: "官方内容？", yt_desc: "前往 YouTube 支持。", yt_btn: "订阅", history_title: "HV (历史)", history_empty: "无历史记录", history_clear: "清除历史", cf_title: "CF (修改字体)", vc_title: "VC (电脑模式)", vc_btn_on: "切换回手机", vc_btn_off: "切换到电脑", dv_btn_text: "📥 DV: 安全下载视频" },
             ja: { beta_title: "⚠️ ベータ版！", beta_p1: "皆様こんにちは。", beta_p2: "ご注意：", beta_p3: "• 動画未登録", beta_p4: "• エラーの可能性", beta_p5: "ご協力感謝します。", scroll_text: "下へスクロール", btn_continue: "続行", recommended_title: "おすすめ", coming_soon: "まもなく公開", sub_text: "登録", subbed_text: "登録済み", sub_count_suffix: "人 • ABG Productions®", settings_title: "設定", theme_title: "テーマ", logo_color: "ロゴの色", ade_title: "省電力 (ADE)", ade_on: "ADE: オン", ade_off: "ADE: オフ", ade_desc: "动作を軽くします。", lang_title: "言語", yt_title: "公式動画？", yt_desc: "YouTubeで応援。", yt_btn: "登録する", history_title: "HV (再生履歴)", history_empty: "履歴なし", history_clear: "削除", cf_title: "CF (フォント変更)", vc_title: "VC (PC版サイト)", vc_btn_on: "スマホ版に戻す", vc_btn_off: "PC版に切り替え", dv_btn_text: "📥 DV: 安全に動画をダウンロード" },
-            ko: { beta_title: "⚠️ 베타 버전!", beta_p1: "안녕하세요 구독자 여러분.", beta_p2: "주의 사항:", beta_p3: "• 누락된 비디오", beta_p4: "• 로딩 지연 오류", beta_p5: "감사합니다.", scroll_text: "아래로 스크롤", btn_continue: "계속하기", recommended_title: "추천 영상", coming_soon: "개봉 박두", sub_text: "구독", subbed_text: "구독중", sub_count_suffix: "명 • ABG Productions®", settings_title: "설정", theme_title: "시각 테마", logo_title: "로고 색상", ade_title: "성능 모드 (ADE)", ade_on: "ADE: 켜짐", ade_off: "ADE: 꺼짐", ade_desc: "웹을 빠르게 만듭니다.", lang_title: "언어 설정", yt_title: "공식 콘텐츠?", yt_desc: "YouTube 응원.", yt_btn: "구독하기", history_title: "HV (시청 기록)", history_empty: "기록 없음", history_clear: "기록 삭제", cf_title: "CF (글꼴 변경)", vc_title: "VC (PC 버전)", vc_btn_on: "모바일 모드", vc_btn_off: "컴퓨터 모드", dv_btn_text: "📥 DV: 안전한 비디오 다운로드" },
+            ko: { beta_title: "⚠️ 베타 버전!", beta_p1: "안녕하세요 구독자 여러분.", beta_p2: "주의 사항:", beta_p3: "• 누락된 비디오", beta_p4: "• 로딩 지연 오류", beta_p5: "감사합니다.", scroll_text: "아래로 스크롤", btn_continue: "계속하기", recommended_title: "추chen 영상", coming_soon: "개봉 박두", sub_text: "구독", subbed_text: "구독중", sub_count_suffix: "명 • ABG Productions®", settings_title: "설정", theme_title: "시각 테마", logo_title: "로고 색상", ade_title: "성능 모드 (ADE)", ade_on: "ADE: 켜짐", ade_off: "ADE: 꺼짐", ade_desc: "웹을 빠르게 만듭니다.", lang_title: "언어 설정", yt_title: "공식 콘텐츠?", yt_desc: "YouTube 응원.", yt_btn: "구독하기", history_title: "HV (시청 기록)", history_empty: "기록 없음", history_clear: "기록 삭제", cf_title: "CF (글꼴 변경)", vc_title: "VC (PC 버전)", vc_btn_on: "모바일 모드", vc_btn_off: "컴퓨터 모드", dv_btn_text: "📥 DV: 안전한 비디오 다운로드" },
             es_es: { beta_title: "⚠️ Versión Beta!", beta_p1: "Saludos a todos.", beta_p2: "A tener en cuenta:", beta_p3: "• Parrilla en mantenimiento", beta_p4: "• Errores temporales", beta_p5: "Gracias por vuestra paciencia.", scroll_text: "Desliza abajo", btn_continue: "Continuar", recommended_title: "Recomendados", coming_soon: "Proximamente", sub_text: "Suscribirse", subbed_text: "Suscrito", sub_count_suffix: "suscriptores • ABG Productions®", settings_title: "Ajustes", theme_title: "Estilo Visual", logo_title: "Color del Logo", ade_title: "Rendimiento (ADE)", ade_on: "ADE: Activado", ade_off: "ADE: Desactivado", ade_desc: "Navegar con total fluidez.", lang_title: "Idioma", yt_title: "Contenido oficial?", yt_desc: "Apoya en YouTube.", yt_btn: "Suscribirse", history_title: "HV (Historial)", history_empty: "Sin vídeos", history_clear: "Borrar", cf_title: "CF (Cambiar Letra)", vc_title: "VC (Versión PC)", vc_btn_on: "Volver a Móvil", vc_btn_off: "Poner modo PC", dv_btn_text: "📥 DV: Descargar Vídeo Seguro" },
             es_la: { beta_title: "⚠️ Versión Beta!", beta_p1: "Hola a todos.", beta_p2: "Ten en cuenta:", beta_p3: "• Grilla en mantenimiento", beta_p4: "• Retrasos leves", beta_p5: "Gracias por tu apoyo.", scroll_text: "Desliza abajo", btn_continue: "Continuar", recommended_title: "Recomendados", coming_soon: "Proximamente", sub_text: "Suscribirse", subbed_text: "Suscrito", sub_count_suffix: "suscriptores • ABG Productions®", settings_title: "Configuracion", theme_title: "Tema Visual", logo_title: "Color del Logo", ade_title: "Rendimiento (ADE)", ade_on: "ADE: Activado", ade_off: "ADE: Desactivado", ade_desc: "Hace que la pagina vaya super fluida.", lang_title: "Idioma", yt_title: "Contenido oficial?", yt_desc: "Apoya en YouTube.", yt_btn: "Suscribirse", history_title: "HV (Historial)", history_empty: "Sin videos", history_clear: "Borrar HV", cf_title: "CF (Cambiar Letra)", vc_title: "VC (Modo Escritorio)", vc_btn_on: "Regresar a Celular", vc_btn_off: "Forzar Modo Computadora", dv_btn_text: "📥 DV: Descargar Video Seguro" }
         };
@@ -1266,16 +1254,34 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
+        // ACCIÓN DEL NUEVO BOTÓN: VIDEO ALEATORIO (3)
+        function reproducirVideoAleatorio() {
+            var grid = document.getElementById('recommended-video-grid');
+            var tarjetas = grid.getElementsByClassName('video-card');
+            var videosDisponibles = [];
+
+            // Filtrar solo las tarjetas que contienen un video con función onclick ejecutable
+            for (var i = 0; i < tarjetas.length; i++) {
+                if (tarjetas[i].hasAttribute('onclick')) {
+                    videosDisponibles.push(tarjetas[i]);
+                }
+            }
+
+            // Seleccionar uno al azar e imitar el clic del usuario
+            if (videosDisponibles.length > 0) {
+                var indiceRandom = Math.floor(Math.random() * videosDisponibles.length);
+                cerrarAjustes(); // Cierra el modal automáticamente para que disfrute el video
+                videosDisponibles[indiceRandom].click();
+            }
+        }
+
         // ACCIÓN DEL BOTÓN DV (DESCARGADOR DE VIDEOS DIRECTO)
         function descargarVideoActual() {
-            // Convierte el enlace embed en un enlace estándar de YouTube de manera segura
             var videoId = "";
             if (urlVideoActual.includes('/embed/')) {
                 videoId = urlVideoActual.split('/embed/')[1];
             }
             var youtubeUrlCompleto = "https://www.youtube.com/watch?v=" + videoId;
-            
-            // Abre una pestaña de descarga segura externa basada en la URL sin anuncios intrusivos directos
             var enlaceDescarga = "https://www.ssyoutube.com/watch?v=" + videoId;
             window.open(enlaceDescarga, '_blank');
         }
@@ -1287,14 +1293,13 @@
             var tarjetas = grid.getElementsByClassName('video-card');
 
             for (var i = 0; i < tarjetas.length; i++) {
-                // Comprobamos si es tarjeta con título real o un "Próximamente"
                 var h4Element = tarjetas[i].getElementsByTagName('h4')[0];
                 if (h4Element) {
                     var titulo = h4Element.innerText.toLowerCase();
                     if (titulo.includes(input)) {
-                        tarjetas[i].style.display = ""; // Lo muestra
+                        tarjetas[i].style.display = ""; 
                     } else {
-                        tarjetas[i].style.display = "none"; // Lo oculta
+                        tarjetas[i].style.display = "none"; 
                     }
                 }
             }
@@ -1377,6 +1382,7 @@
             else { totalSuscriptores -= 1; estadoSuscrito = false; }
             localStorage.setItem('mrtube_subs', totalSuscriptores);
             localStorage.setItem('mrtube_is_subbed', estadoSuscrito);
+            actualizarPantacitySubs();
             actualizarPantallaSubs();
         }
 
