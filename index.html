@@ -403,9 +403,50 @@
             transform: scale(0.95);
         }
 
+        /* NUEVO BOTÓN PERSONALIZADO AZUL RGB */
+        .custom-button-container {
+            margin: 20px 0 5px 0;
+            display: flex;
+            justify-content: flex-start;
+        }
+        .btn-rgb-custom {
+            background-color: #0055ff; /* Base Azul */
+            color: #ffffff;
+            font-family: var(--web-font);
+            font-size: 15px;
+            font-weight: bold;
+            padding: 12px 28px;
+            border-radius: 25px;
+            cursor: pointer;
+            outline: none;
+            position: relative;
+            border: 3px solid transparent;
+            background-clip: padding-box;
+            box-shadow: 0 4px 15px rgba(0, 85, 255, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        /* Capa trasera para simular el borde RGB dinámico */
+        .btn-rgb-custom::after {
+            content: '';
+            position: absolute;
+            top: -3px; bottom: -3px; left: -3px; right: -3px;
+            background: conic-gradient(from 0deg, #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff, #ff0000);
+            border-radius: 25px;
+            z-index: -1;
+            animation: rgb-border 4s linear infinite;
+        }
+        .btn-rgb-custom:active {
+            transform: scale(0.97);
+        }
+        @keyframes rgb-border {
+            100% {
+                filter: hue-rotate(360deg);
+            }
+        }
+
         /* ESTILO PARA EL BUSCADOR DE VIDEOS (BV) */
         .search-container {
-            margin: 25px 0 10px 0;
+            margin: 5px 0 10px 0; /* Ajustado el margen superior para acoplarse bajo el botón */
             display: flex;
             justify-content: flex-start;
         }
@@ -529,7 +570,7 @@
             
             <div class="welcome-box">
                 <h2 id="beta-title">⚠️ ¡Bienvenido a la Version Beta de Prueba!</h2>
-                <p id="beta-p1">Hola a todos los seguidores y visitantes. Estas ingresando oficialmente a la fase de pruebas tecnicas y optimizacion de la plataforma independiente <strong>MrTube</strong>.</p>
+                <p id="beta-p1">Hola a todos los seguidores y visitantes. Estas ingresando oficialmente a la fase de pruebas tecnicas y optimizacion d la plataforma independiente <strong>MrTube</strong>.</p>
                 <p id="beta-p2">Por favor, ten en cuenta lo siguiente antes d continuar:</p>
                 <p id="beta-p3">• <strong>Videos Faltantes:</strong> Por el momento, la grilla esta en mantenimiento. Veras que varios apartados del sitio tienen la etiqueta de "Proximamente" mientras se indexan los archivos correspondientes.</p>
                 <p id="beta-p4">• <strong>Errores Temporales:</strong> Debido a que estamos probando las conexiones y los reproductores integrados, algunas funciones d interfaz d usuario podrian presentar retrasos leves d carga en dispositivos moviles.</p>
@@ -661,6 +702,11 @@
             <div class="download-container">
                 <button id="download-video-btn" class="download-btn" onclick="descargarVideoActual()">📥 DV: Descargar Video Seguro</button>
             </div>
+        </div>
+
+        <!-- INTEGRACIÓN: SECCIÓN DEL NUEVO BOTÓN RGB ARRIBA DEL BUSCADOR -->
+        <div class="custom-button-container">
+            <button class="btn-rgb-custom" onclick="alert('¡Botón RGB de MrTube Activado!')">Nuevo Botón</button>
         </div>
 
         <div class="search-container">
@@ -966,7 +1012,7 @@
                 ade_off: "ADE: Apagao xd",
                 ade_desc: "Prendelo para que la pajina no te explote el cel xd osea literal prendanlo xq si no su telefono tercermundista va a terminar sies pies vajo tierra del lag jskajskaj xdxd rre funable mi comentario de bdd pero esq si no lo activan la pajina les va a minar asta el alma y les va a dehar el cel mas caliente que el sol xdxd que flojera optimizar para telefonos q parecesen ladrillos de bdd xd mentira jiji se les qre un monton <3 xd por sicierto muchisimas grasias por todo el apoyo que le dan siempre al canal de bdd xd son los mas cracks de todo el multiverso xd de todo corason muchisimas gracias x aguantar mis uevadas y x estar ai al pie del cañon xd enserio se les agradese un trillon xdxd son la rre clave jente xd muchisimas gracias totales xd sigan asi de cracks xd.",
                 lang_title: "Idioma muy raro Xd osea literal activen esta uevada si quieren q toda la pajina se buelva un rrebolu d letras q seguro ni van a entender jskajskaj xdxd rre funable mi comentario d bdd pero esq a veses pienso q el publico no sabe ni ler y solo le dan clik a lo tonto a ber q pasa xd q flojera gastar codigo y neuronas en aser un idioma tan pro y secreto para q piensen q es un error del sistema de bdd xdxd alta peresa da la jente asi pero bueno mentira jiji se les qre un montonaso <3 xd por sicierto muchisimas grasias por todo el apoyo incondisinal q le dan siempre a los prolletos y a las series d bdd xd son los mas cracks de todo el planeta tierra xd d todo corason se les agradese un universo entero x aguantar mis uevadas y x estar ai siempre al pie del cañon xd enserio son la rre clave jente muchisimas gracias totales xd sigan asi d cracks xd",
-                yt_title: "¿Keres ber mas bideos orijinalis? XD",
+                yt_title: "Keres ber mas bideos orijinalis? XD",
                 yt_desc: "Apoya el canal de Yutub para ma capis y prolletos como ete xd osea literal vayan a suscribirse y dejen su lay porfavor xq si no apoyan no pienso subir mas capitulos d bdd xd q flojeraesforzarse... mucho gracias totales xd",
                 yt_btn: "Suscribise en Yutub XD",
                 history_title: "HV (Bideos Vistos xd)",
@@ -980,7 +1026,7 @@
             },
             es: {
                 beta_title: "⚠️ ¡Bienvenido a la Version Beta de Prueba!",
-                beta_p1: "Hola a todos los seguidores y visitantes. Estas ingresando oficialmente a la fase de pruebas tecnicas y optimizacion d la plataforma independiente MrTube.",
+                beta_p1: "Hola a todos los seguidores y visitantes. Estas ingresando oficialmente a la fase d pruebas tecnicas y optimizacion d la plataforma independiente MrTube.",
                 beta_p2: "Por favor, ten en cuenta lo siguiente antes de continuar:",
                 beta_p3: "• Videos Faltantes: Por el momento, la grilla esta en mantenimiento. Veras que varios apartados del sitio tienen la etiqueta de 'Proximamente' mientras se indexan los archivos correspondientes.",
                 beta_p4: "• Errores Temporales: Debido a que estamos probando las conexiones y los reproductores integrados, algunas funciones de interfaz de usuario podrian presentar retrasos leves de carga en dispositivos moviles.",
@@ -1168,7 +1214,7 @@
                 ade_title: "Prestazioni (ADE)",
                 ade_on: "ADE: Attivo",
                 ade_off: "ADE: Disattivato",
-                ade_desc: "Attivalo per rendere la navigazione super fluida.",
+                ade_desc: "Attivalo per rendere la navigatione super fluida.",
                 lang_title: "Lingua dell'Interfaccia",
                 yt_title: "Vuoi vedere altri contenuti ufficiali?",
                 yt_desc: "Sostieni le produzioni originali direttamente su YouTube.",
