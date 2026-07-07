@@ -6,75 +6,6 @@
     <title>MrTube - El canal de Mr.Jostin</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Rubik:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* ======================================================= */
-        /* 🌟 ESTILOS DE LA TARJETA DE REPRODUCCIÓN AUTOMÁTICA 🌟 */
-        /* ======================================================= */
-        .main-container {
-          position: relative;
-        }
-
-        .autoplay-card {
-          position: absolute;
-          bottom: 60px;
-          right: 20px;
-          background: rgba(15, 15, 15, 0.95);
-          color: white;
-          padding: 12px;
-          border-radius: 12px;
-          width: 240px;
-          font-family: sans-serif;
-          box-shadow: 0px 4px 15px rgba(0,0,0,0.5);
-          transition: opacity 0.3s ease;
-          z-index: 99;
-        }
-
-        .autoplay-card img {
-          width: 100%;
-          border-radius: 8px;
-          margin: 6px 0;
-        }
-
-        .autoplay-card .tag {
-          font-size: 11px;
-          color: #00ffcc;
-          font-weight: bold;
-          margin: 0;
-        }
-
-        .autoplay-card h3 {
-          font-size: 13px;
-          margin: 4px 0 8px 0;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-        }
-
-        .autoplay-card button {
-          background: #ffffff;
-          color: #000000;
-          border: none;
-          padding: 8px;
-          width: 100%;
-          border-radius: 6px;
-          cursor: pointer;
-          font-weight: bold;
-          font-size: 13px;
-        }
-
-        .autoplay-card .timer {
-          font-size: 11px;
-          text-align: center;
-          margin-top: 6px;
-          color: #aaaaaa;
-        }
-
-        .hidden {
-          display: none !important;
-        }
-        /* ======================================================= */
-
-        /* Tus otros estilos actuales continúan aquí abajo... */
-
         /* VARIABLES PARA CAMBIO DE TEMA Y ESTILOS */
         :root {
             --bg-color: #0f0f0f;
@@ -754,19 +685,9 @@
     </div>
 
     <div id="main-web-container" class="main-container">
-    <div class="main-player">
-        <iframe id="main-iframe" src="https://www.youtube.com/embed/qvhFdTaMyCs?enablejsapi=1" title="MrTube Player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </div>
-
-    <div id="autoplay-card" class="autoplay-card hidden">
-      <div class="card-content">
-        <p class="tag">A CONTINUACIÓN</p>
-        <img id="next-thumbnail" src="" alt="Miniatura del siguiente video">
-        <h3 id="next-title">Título del Video</h3>
-        <button id="btn-next">Ver ahora</button>
-        <p class="timer">El video comenzará en <span id="countdown">10</span>s</p>
-      </div>
-    </div>
+        <div class="main-player">
+            <iframe id="main-iframe" src="https://www.youtube.com/embed/qvhFdTaMyCs" title="MrTube Player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
         
         <div class="video-info">
             <h1 id="main-video-title" class="video-title">Sprunki Animado T4 E5</h1>
@@ -1659,7 +1580,7 @@
             document.getElementById('beta-title').innerText = t.beta_title;
             document.getElementById('beta-p1').innerHTML = t.beta_p1;
             document.getElementById('beta-p2').innerText = t.beta_p2;
-            document.getElementById('beta-p3').innerText = t.beta_p3;
+            document.getElementById('beta-p3').innerHTML = t.beta_p3;
             document.getElementById('beta-p4').innerHTML = t.beta_p4;
             document.getElementById('beta-p5').innerText = t.beta_p5;
             document.getElementById('scroll-text').innerText = t.scroll_text;
@@ -1693,103 +1614,6 @@
             aplicarEstiloComputadora();
             renderizarHistorial();
         }
-
-        // =========================================================================
-        // 🌟 NUEVO SISTEMA DE REPRODUCCIÓN AUTOMÁTICA (YOUTUBE API) 🌟
-        // =========================================================================
-        
-        // La lista de tus videos para alternar (Cambia las IDs por tus videos reales)
-        const listaVideos = [
-          { id: "qvhFdTaMyCs", titulo: "El Misterio de Chicken Gun - Ep 1", miniatura: "https://img.youtube.com/vi/qvhFdTaMyCs/mqdefault.jpg" },
-          { id: "VIDEO_ID_2", titulo: "Sprunki Animado - Especial", miniatura: "https://img.youtube.com/vi/VIDEO_ID_2/mqdefault.jpg" },
-          { id: "VIDEO_ID_3", titulo: "Dandy's World Show - Capítulo 1", miniatura: "https://img.youtube.com/vi/VIDEO_ID_3/mqdefault.jpg" }
-        ];
-
-        // Cargar la API de Iframe de YouTube de forma asíncrona
-        var tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-        let player;
-        let videoSeleccionado = null;
-        let tarjetaMostrada = false;
-        let intervaloContador = null;
-        let tiempoRestante = 10;
-
-        // Capturar los elementos de la tarjeta flotante
-        const card = document.getElementById('autoplay-card');
-        const nextThumb = document.getElementById('next-thumbnail');
-        const nextTitle = document.getElementById('next-title');
-        const countdownEl = document.getElementById('countdown');
-        const btnNext = document.getElementById('btn-next');
-
-        function onYouTubeIframeAPIReady() {
-          player = new YT.Player('main-iframe', {
-            events: {
-              'onStateChange': onPlayerStateChange
-            }
-          });
-        }
-
-        function onPlayerStateChange(event) {
-          if (event.data == YT.PlayerState.PLAYING) {
-            intervaloContador = setInterval(revisarTiempoVideo, 1000);
-          } else {
-            clearInterval(intervaloContador);
-          }
-        }
-
-        function revisarTiempoVideo() {
-          if (!player || typeof player.getDuration !== 'function') return;
-
-          const duracionTotal = player.getDuration();
-          const tiempoActual = player.getCurrentTime();
-          const tiempoParaTerminar = duracionTotal - tiempoActual;
-
-          if (tiempoParaTerminar <= 10 && !tarjetaMostrada && duracionTotal > 0) {
-            tarjetaMostrada = true;
-            clearInterval(intervaloContador);
-
-            // Selecciona el próximo video aleatorio
-            videoSeleccionado = listaVideos[Math.floor(Math.random() * listaVideos.length)];
-
-            nextThumb.src = videoSeleccionado.miniatura;
-            nextTitle.innerText = videoSeleccionado.titulo;
-
-            card.classList.remove('hidden');
-            iniciarCuentaRegresiva();
-          }
-        }
-
-        function iniciarCuentaRegresiva() {
-          tiempoRestante = 10;
-          countdownEl.innerText = tiempoRestante;
-
-          const reloj = setInterval(() => {
-            tiempoRestante--;
-            countdownEl.innerText = tiempoRestante;
-
-            if (tiempoRestante <= 0) {
-              clearInterval(reloj);
-              reproducirSiguiente();
-            }
-          }, 1000);
-
-          btnNext.onclick = function() {
-            clearInterval(reloj);
-            reproducirSiguiente();
-          };
-        }
-
-        function reproducirSiguiente() {
-          if (videoSeleccionado) {
-            player.loadVideoById(videoSeleccionado.id);
-            card.classList.add('hidden');
-            tarjetaMostrada = false;
-          }
-        }
-        // =========================================================================
 
         window.onload = function() {
             var colorGuardado = localStorage.getItem('mrtube_logo_color');
