@@ -685,9 +685,19 @@
     </div>
 
     <div id="main-web-container" class="main-container">
-        <div class="main-player">
-            <iframe id="main-iframe" src="https://www.youtube.com/embed/qvhFdTaMyCs" title="MrTube Player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
+    <div class="main-player">
+        <iframe id="main-iframe" src="https://www.youtube.com/embed/qvhFdTaMyCs" title="MrTube Player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+
+    <div id="autoplay-card" class="autoplay-card hidden">
+      <div class="card-content">
+        <p class="tag">A CONTINUACIÓN</p>
+        <img id="next-thumbnail" src="" alt="Miniatura del siguiente video">
+        <h3 id="next-title">Título del Video</h3>
+        <button id="btn-next">Ver ahora</button>
+        <p class="timer">El video comenzará en <span id="countdown">10</span>s</p>
+      </div>
+    </div>
         
         <div class="video-info">
             <h1 id="main-video-title" class="video-title">Sprunki Animado T4 E5</h1>
