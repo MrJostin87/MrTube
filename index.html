@@ -1737,20 +1737,98 @@
             
             cambiarIdioma(idiomaActual);
         };
+            // --- INICIO LÓGICA SHORTS ABG ---
+        const listaShorts = [
+            {id: "9YtzEEgYzqY", titulo: "¡EL TOUR DEFINITIVO POR CHICKEN GUN! 🐔🔥"},
+            {id: "cwRx1sdB0zM", titulo: "SPIT IT OUT 🎹"},
+            {id: "7pc5wVNsvKU", titulo: "Rainbow Money 😏"},
+            {id: "aEMg8lehXXs", titulo: "PRIMER ANIVERSARIO: El Comienzo de Todo 💎🎬"},
+            {id: "fC_CJEp3zBU", titulo: "Los Episodios De Miedo De Chicken Gun 🔬👻"},
+            {id: "xRPsnua0_Vo", titulo: "¡NO HAY SALIDA! 🚪"},
+            {id: "HxM1drymBao", titulo: "¡MI IA ADQUIRIÓ CONCIENCIA REAL! 🤖"},
+            {id: "NQlzY4hRoik", titulo: "¡La Rueda de Colores! 🌈🎡"},
+            {id: "4-Ssohw1DrY", titulo: "¡LOS MAPAS QUE YA NO EXISTEN! 🚫"},
+            {id: "vztwvymJ__E", titulo: "EL REGRESO DEL LÍDER 🔴🕶️"}
+        ];
+
+        let shortsOrdenados = [...listaShorts].sort(() => Math.random() - 0.5);
+        let indiceShortActual = 0;
+        let autoScrollShorts = false;
+        let playerShorts;
+
+        // Cargar API de YouTube
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        document.head.appendChild(tag);
+
+        function onYouTubeIframeAPIReady() {
+            playerShorts = new YT.Player('shorts-player', {
+                height: '100%',
+                width: '100%',
+                videoId: shortsOrdenados[0].id,
+                playerVars: { 'autoplay': 0, 'controls': 1 },
+                events: { 'onStateChange': onShortsStateChange }
+            });
+        }
+
+        function abrirShorts() {
+            cerrarAjustes();
+            document.getElementById('shorts-overlay').style.display = 'block';
+            playerShorts.loadVideoById(shortsOrdenados[indiceShortActual].id);
+            actualizarInfoShort();
+        }
+
+        function onShortsStateChange(event) {
+            if (event.data === YT.PlayerState.ENDED && autoScrollShorts) {
+                siguienteShort();
+            }
+        }
+
+        function siguienteShort() {
+            indiceShortActual = (indiceShortActual + 1) % shortsOrdenados.length;
+            playerShorts.loadVideoById(shortsOrdenados[indiceShortActual].id);
+            actualizarInfoShort();
+        }
+
+        function actualizarInfoShort() {
+            document.getElementById('shorts-title').innerText = shortsOrdenados[indiceShortActual].titulo;
+            const liked = localStorage.getItem('like_' + shortsOrdenados[indiceShortActual].id);
+            document.getElementById('like-btn').innerText = liked ? '❤️' : '🤍';
+        }
+
+        function toggleLike() {
+            const videoId = shortsOrdenados[indiceShortActual].id;
+            const key = 'like_' + videoId;
+            if(localStorage.getItem(key)) {
+                localStorage.removeItem(key);
+                document.getElementById('like-btn').innerText = '🤍';
+            } else {
+                localStorage.setItem(key, 'true');
+                document.getElementById('like-btn').innerText = '❤️';
+            }
+        }
+
+        function toggleAutoScroll() {
+            autoScrollShorts = !autoScrollShorts;
+            document.getElementById('btn-autoscroll').innerText = autoScrollShorts ? "↕️ Auto: ON" : "↕️ Auto: OFF";
+        }
+
+        function cerrarShorts() {
+            document.getElementById('shorts-overlay').style.display = 'none';
+            playerShorts.stopVideo();
+        }
+        // --- FIN LÓGICA SHORTS ABG ---
     </script>
 
-    <!-- CONTENEDOR DE SHORTS -->
     <div id="shorts-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:black; z-index:9999;">
         <div id="shorts-player" style="width:100%; height:100%;"></div>
         
-        <!-- Botones de control -->
         <button onclick="cerrarShorts()" style="position:absolute; top:20px; left:20px; background:rgba(0,0,0,0.5); border:none; color:white; font-size:24px; z-index:10000; cursor:pointer;">❌</button>
-        <h3 id="shorts-title" style="color:white; position:absolute; bottom:100px; width:100%; text-align:center; text-shadow: 2px 2px 4px #000; pointer-events:none;"></h3>
+        <h3 id="shorts-title" style="color:white; position:absolute; bottom:120px; width:100%; text-align:center; text-shadow: 2px 2px 4px #000; pointer-events:none;"></h3>
         
-        <button id="like-btn" onclick="toggleLike()" style="position:absolute; bottom:30px; right:20px; background:none; border:none; font-size:30px; z-index:10000; cursor:pointer;">🤍</button>
-        <button onclick="siguienteShort()" style="position:absolute; bottom:30px; left:20px; background:rgba(255,255,255,0.2); border:none; color:white; padding:10px; border-radius:10px; z-index:10000; cursor:pointer;">⏭️ Siguiente</button>
+        <button id="like-btn" onclick="toggleLike()" style="position:absolute; bottom:50px; right:20px; background:none; border:none; font-size:30px; z-index:10000; cursor:pointer;">🤍</button>
+        <button onclick="siguienteShort()" style="position:absolute; bottom:50px; left:20px; background:rgba(255,255,255,0.2); border:none; color:white; padding:10px; border-radius:10px; z-index:10000; cursor:pointer;">⏭️ Siguiente</button>
         <button id="btn-autoscroll" onclick="toggleAutoScroll()" style="position:absolute; top:20px; right:20px; background:rgba(0,0,0,0.5); border:none; color:white; padding:8px; border-radius:10px; z-index:10000; cursor:pointer;">↕️ Auto: OFF</button>
     </div>
-
 </body>
 </html>
