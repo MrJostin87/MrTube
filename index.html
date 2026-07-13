@@ -1349,7 +1349,6 @@
             if(efectosSonidoActivos) {
                 btn.style.backgroundColor = "#00aa00";
                 btn.innerText = "Sonido: Encendido 🔊";
-                // Reproducir uno de prueba al activar
                 audioEfecto.play().catch(function(e){ console.log("Interacción requerida"); });
             } else {
                 btn.style.backgroundColor = "#333";
@@ -1357,16 +1356,13 @@
             }
         }
 
-        // Asignar evento de sonido global a todos los botones clickeados
         document.addEventListener('click', function(event) {
             if (efectosSonidoActivos && (event.target.tagName.toLowerCase() === 'button' || event.target.tagName.toLowerCase() === 'a')) {
-                // Clonar o resetear el audio para permitir clics rápidos consecutivos sin cortes
                 audioEfecto.currentTime = 0;
                 audioEfecto.play().catch(function(e) { console.log("Audio Bloqueado por Navegador"); });
             }
         });
 
-        // COMANDO CF: EJECUCIÓN REAL DE CAMBIO DE FUENTE
         function cambiarFuente(tipoFuente) {
             document.body.classList.remove('font-montserrat', 'font-rubik', 'font-arno');
             if (tipoFuente === 'montserrat') document.body.classList.add('font-montserrat');
@@ -1375,13 +1371,10 @@
             localStorage.setItem('mrtube_font', tipoFuente);
         }
 
-        // COMANDO VC: SIMULADOR DE ENTORNO DE ESCRITORIO
         var modoComputadoraActivo = localStorage.getItem('mrtube_vc_mode') === 'true';
         function toggleVersionComputadora() {
             modoComputadoraActivo = !modoComputadoraActivo;
             localStorage.setItem('mrtube_vc_mode', modoComputadoraActivo);
-            
-            // Forzar recarga guardando estado para mantener el historial intacto
             location.reload();
         }
 
@@ -1401,7 +1394,6 @@
             }
         }
 
-        // SISTEMA ADE
         var adeActivo = false;
         function toggleADE() {
             adeActivo = !adeActivo;
@@ -1419,7 +1411,6 @@
             }
         }
 
-        // SISTEMA URS
         var ursActivo = false;
         function toggleURS() {
             ursActivo = !ursActivo;
@@ -1438,35 +1429,148 @@
             }
         }
 
-        // LÓGICA DE DETECCIÓN Y CAMBIO DE VIDEO EN EL REPRODUCTOR
         var urlVideoActual = 'https://www.youtube.com/embed/qvhFdTaMyCs';
 
         function cargarVideo(urlEmbed, tituloVideo) {
-            urlVideoActual = urlEmbed; // Actualiza la URL para el descargador
+            urlVideoActual = urlEmbed;
             document.getElementById('main-iframe').src = urlEmbed + "?autoplay=1";
             document.getElementById('main-video-title').innerText = tituloVideo;
             agregarAlHistorial(urlEmbed, tituloVideo);
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // ACCIÓN DEL NUEVO BOTÓN: VIDEO ALEATORIO (3)
         function reproducirVideoAleatorio() {
             var grid = document.getElementById('recommended-video-grid');
             var tarjetas = grid.getElementsByClassName('video-card');
             var videosDisponibles = [];
 
-            // Filtrar solo las tarjetas que contienen un video con función onclick ejecutable
             for (var i = 0; i < tarjetas.length; i++) {
                 if (tarjetas[i].hasAttribute('onclick')) {
                     videosDisponibles.push(tarjetas[i]);
                 }
             }
 
-            // Seleccionar uno al azar e imitar el clic del usuario
             if (videosDisponibles.length > 0) {
                 var indiceRandom = Math.floor(Math.random() * videosDisponibles.length);
-                cerrarAjustes(); // Cierra el modal automáticamente para que disfrute el video
+                cerrarAjustes();
                 videosDisponibles[indiceRandom].click();
+            }
+        }
+
+        // ==========================================
+        // SISTEMA DE SHORTS ABG ⚒️
+        // ==========================================
+        const listaShorts = [
+            {id: "9YtzEEgYzqY", titulo: "¡EL TOUR DEFINITIVO POR CHICKEN GUN! 🐔🔥 | Todos Los Mapas P1"},
+            {id: "cwRx1sdB0zM", titulo: "SPIT IT OUT 🎹"},
+            {id: "7pc5wVNsvKU", titulo: "Rainbow Money 😏"},
+            {id: "aEMg8lehXXs", titulo: "PRIMER ANIVERSARIO: El Comienzo de Todo (2024-2026) 💎🎬"},
+            {id: "fC_CJEp3zBU", titulo: "Los Episodios De Miedo De El Misterio De Chicken Gun 🔬👻"},
+            {id: "xRPsnua0_Vo", titulo: "¡NO HAY SALIDA! 🚪"},
+            {id: "HxM1drymBao", titulo: "¡MI IA ADQUIRIÓ CONCIENCIA REAL! 🤖"},
+            {id: "NQlzY4hRoik", titulo: "¡La Rueda de Colores! 🌈🎡"},
+            {id: "4-Ssohw1DrY", titulo: "¡LOS MAPAS QUE YA NO EXISTEN! 🚫 | Mapas Eliminados / Vacíos 🐥✨"},
+            {id: "vztwvymJ__E", titulo: "EL REGRESO DEL LÍDER 🔴🕶️ | El Misterio de Chicken Gun T2"}
+        ];
+
+        let shortsOrdenados = [];
+        let indiceShortActual = 0;
+        let autoScrollShorts = false;
+        let reproductorShorts = null;
+
+        var tagScript = document.createElement('script');
+        tagScript.src = "https://www.youtube.com/iframe_api";
+        var firstScript = document.getElementsByTagName('script')[0];
+        firstScript.parentNode.insertBefore(tagScript, firstScript);
+
+        function mezclarShorts() {
+            shortsOrdenados = [...listaShorts];
+            shortsOrdenados.sort(() => Math.random() - 0.5);
+        }
+
+        function abrirShorts() {
+            cerrarAjustes();
+            document.getElementById('shorts-overlay').style.display = 'block';
+            mezclarShorts();
+            indiceShortActual = 0;
+            
+            if (!reproductorShorts) {
+                reproductorShorts = new YT.Player('shorts-player', {
+                    height: '100%',
+                    width: '100%',
+                    videoId: shortsOrdenados[indiceShortActual].id,
+                    playerVars: { 'autoplay': 1, 'controls': 1, 'rel': 0 },
+                    events: {
+                        'onReady': function(event) { event.target.playVideo(); },
+                        'onStateChange': onShortsStateChange
+                    }
+                });
+            } else {
+                cargarShort(0);
+            }
+            actualizarInfoShort();
+        }
+
+        function onShortsStateChange(event) {
+            if (event.data === YT.PlayerState.ENDED && autoScrollShorts) {
+                siguienteShort();
+            }
+        }
+
+        function cargarShort(index) {
+            indiceShortActual = index;
+            const video = shortsOrdenados[indiceShortActual];
+            if (reproductorShorts && reproductorShorts.loadVideoById) {
+                reproductorShorts.loadVideoById(video.id);
+            }
+            actualizarInfoShort();
+        }
+
+        function actualizarInfoShort() {
+            const video = shortsOrdenados[indiceShortActual];
+            document.getElementById('shorts-title').innerText = video.titulo;
+            const liked = localStorage.getItem('like_short_' + video.id);
+            document.getElementById('like-btn').innerText = liked ? '❤️' : '🤍';
+        }
+
+        function siguienteShort() {
+            indiceShortActual++;
+            if (indiceShortActual >= shortsOrdenados.length) {
+                mezclarShorts();
+                indiceShortActual = 0;
+            }
+            cargarShort(indiceShortActual);
+        }
+
+        function toggleLike() {
+            const video = shortsOrdenados[indiceShortActual];
+            const key = 'like_short_' + video.id;
+            const btnLike = document.getElementById('like-btn');
+            if(localStorage.getItem(key)) {
+                localStorage.removeItem(key);
+                btnLike.innerText = '🤍';
+            } else {
+                localStorage.setItem(key, 'true');
+                btnLike.innerText = '❤️';
+            }
+        }
+
+        function toggleAutoScroll() {
+            autoScrollShorts = !autoScrollShorts;
+            const btn = document.getElementById('btn-autoscroll');
+            if(autoScrollShorts) {
+                btn.style.color = '#00ffcc';
+                btn.innerText = '↕️ Auto: ON';
+            } else {
+                btn.style.color = 'white';
+                btn.innerText = '↕️ Auto: OFF';
+            }
+        }
+
+        function cerrarShorts() {
+            document.getElementById('shorts-overlay').style.display = 'none';
+            if (reproductorShorts && reproductorShorts.pauseVideo) {
+                reproductorShorts.pauseVideo();
             }
         }
 
