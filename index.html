@@ -181,7 +181,7 @@
             margin-bottom: 40px;
         }
 
-        /* BARRA DE NAVEGACIÃN */
+        /* BARRA DE NAVEGACIÓN */
         nav {
             background-color: var(--bg-color);
             display: flex;
@@ -214,7 +214,7 @@
             gap: 15px;
         }
         
-        /* ENGRANAJE DE CONFIGURACIÃN */
+        /* ENGRANAJE DE CONFIGURACIÓN */
         .settings-btn {
             background: none;
             border: none;
@@ -285,7 +285,7 @@
             background-color: #00aa00;
         }
         
-        /* BOTONES DE CONFIGURACIÃN DE COLORES */
+        /* BOTONES DE CONFIGURACIÓN DE COLORES */
         .color-picker-btn {
             border: 2px solid transparent;
             padding: 10px 15px;
@@ -367,7 +367,7 @@
             background-color: #1a1a1a;
         }
         
-        /* BOTONES DE SUSCRIPCIÃN */
+        /* BOTONES DE SUSCRIPCIÓN */
         .subscribe-btn {
             background-color: var(--btn-sub-bg);
             color: var(--btn-sub-text);
@@ -406,7 +406,7 @@
             transform: scale(0.95);
         }
 
-        /* BOTÃN AZUL CON EFECTO DE BORDES ANIMADOS RGB */
+        /* BOTÓN AZUL CON EFECTO DE BORDES ANIMADOS RGB */
         .custom-button-container {
             margin: 20px 0 5px 0;
             display: flex;
@@ -431,7 +431,7 @@
             align-items: center;
             transition: transform 0.2s, box-shadow 0.2s;
         }
-        /* Capa trasera para simular el borde RGB dinÃ¡mico */
+        /* Capa trasera para simular el borde RGB dinámico */
         .btn-rgb-custom::after {
             content: '';
             position: absolute;
@@ -452,7 +452,7 @@
 
         /* ESTILO PARA EL BUSCADOR DE VIDEOS (BV) */
         .search-container {
-            margin: 5px 0 10px 0; /* Ajustado el margen superior para acoplarse bajo el botÃ³n */
+            margin: 5px 0 10px 0; /* Ajustado el margen superior para acoplarse bajo el botón */
             display: flex;
             justify-content: flex-start;
         }
@@ -542,7 +542,7 @@
             background-color: rgba(255, 68, 68, 0.1);
         }
 
-        /* BOTÃN DIRECTO DE YOUTUBE */
+        /* BOTÓN DIRECTO DE YOUTUBE */
         .youtube-box {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -575,11 +575,11 @@
             <div class="welcome-logo">Mr<span id="welcome-span">Tube</span></div>
             
             <div class="welcome-box">
-                <h2 id="beta-title">â ï¸ Â¡Bienvenido a la Version Beta de Prueba!</h2>
+                <h2 id="beta-title">⚠️ ¡Bienvenido a la Version Beta de Prueba!</h2>
                 <p id="beta-p1">Hola a todos los seguidores y visitantes. Estas ingresando oficialmente a la fase de pruebas tecnicas y optimizacion d la plataforma independiente <strong>MrTube</strong>.</p>
                 <p id="beta-p2">Por favor, ten en cuenta lo siguiente antes d continuar:</p>
-                <p id="beta-p3">â¢ <strong>Videos Faltantes:</strong> Por el momento, la grilla esta en mantenimiento. Veras que varios apartados del sitio tienen la etiqueta de "Proximamente" mientras se indexan los archivos correspondientes.</p>
-                <p id="beta-p4">â¢ <strong>Errores Temporales:</strong> Debido a que estamos probando las conexiones y los reproductores integrados, algunas funciones d interfaz d usuario podrian presentar retrasos leves d carga en dispositivos moviles.</p>
+                <p id="beta-p3">• <strong>Videos Faltantes:</strong> Por el momento, la grilla esta en mantenimiento. Veras que varios apartados del sitio tienen la etiqueta de "Proximamente" mientras se indexan los archivos correspondientes.</p>
+                <p id="beta-p4">• <strong>Errores Temporales:</strong> Debido a que estamos probando las conexiones y los reproductores integrados, algunas funciones d interfaz d usuario podrian presentar retrasos leves d carga en dispositivos moviles.</p>
                 <p id="beta-p5">Agradecemos profundamente tu paciencia, reporte d fallas y apoyo continuo para expandir nuestras producciones a toda la comunidad.</p>
             </div>
 
@@ -591,13 +591,13 @@
     <nav>
         <div class="logo" onclick="recargarPagina()">Mr<span class="logo-text-box">Tube</span></div>
         <div class="nav-right">
-            <button class="settings-btn" onclick="abrirAjustes()">âï¸</button>
+            <button class="settings-btn" onclick="abrirAjustes()">⚙️</button>
         </div>
     </nav>
 
     <div id="settings-modal" class="modal-overlay">
         <div class="modal-content">
-            <button class="close-modal-btn" onclick="cerrarAjustes()">â</button>
+            <button class="close-modal-btn" onclick="cerrarAjustes()">✕</button>
             <h2 id="modal-settings-title" style="margin-top:0; text-align: left;">Configuracion</h2>
             
             <div class="settings-section">
@@ -617,15 +617,15 @@
             </div>
 
             <div class="settings-section">
-                <h3 id="sound-effects-section-title">ð Efectos de Sonidos</h3>
-                <button id="sound-btn" class="config-btn" style="background-color: #333; width: 100%;" onclick="toggleEfectosSonido()">Sonido: Apagado ð</button>
+                <h3 id="sound-effects-section-title">🔊 Efectos de Sonidos</h3>
+                <button id="sound-btn" class="config-btn" style="background-color: #333; width: 100%;" onclick="toggleEfectosSonido()">Sonido: Apagado 🔇</button>
             </div>
 
             <div class="settings-section">
                 <h3 id="logo-section-title">Color del Logo</h3>
                 <button class="color-picker-btn" style="background-color: #ff0000;" onclick="cambiarColorLogo('#ff0000')">Rojo</button>
                 <button class="color-picker-btn" style="background-color: #00bfff;" onclick="cambiarColorLogo('#00bfff')">Celeste</button>
-                <button class="color-picker-btn" style="background-color: #8b4513;" onclick="cambiarColorLogo('#8b4513')">CafÃ©</button>
+                <button class="color-picker-btn" style="background-color: #8b4513;" onclick="cambiarColorLogo('#8b4513')">Café</button>
                 <button class="color-picker-btn" style="background-color: #ff6600;" onclick="cambiarColorLogo('#ff6600')">Anaranjado</button>
                 <button class="color-picker-btn" style="background-color: #ffcc00; color: #000;" onclick="cambiarColorLogo('#ffcc00')">Amarillo</button>
                 <button class="color-picker-btn" style="background-color: #00aa00;" onclick="cambiarColorLogo('#00aa00')">Verde</button>
@@ -639,8 +639,8 @@
             </div>
 
             <div class="settings-section">
-                <h3 id="pc-section-title">VC (VersiÃ³n de Computadora)</h3>
-                <button id="vc-btn" class="config-btn" style="background-color: #00aa00; width: 100%;" onclick="toggleVersionComputadora()">Activar Modo Escritorio ð»</button>
+                <h3 id="pc-section-title">VC (Versión de Computadora)</h3>
+                <button id="vc-btn" class="config-btn" style="background-color: #00aa00; width: 100%;" onclick="toggleVersionComputadora()">Activar Modo Escritorio 💻</button>
             </div>
 
             <div class="settings-section">
@@ -653,41 +653,41 @@
             <div class="settings-section">
                 <h3 id="lang-section-title">Idioma de la Interfaz</h3>
                 <select id="lang-select-box" class="lang-select" onchange="cambiarIdioma(this.value)">
-                    <option value="es">EspaÃ±ol</option>
-                    <option value="ultra_emoji">ð¥ Ultra Emoji ðð¥</option>
-                    <option value="epanola">ePaÃoLa</option>
+                    <option value="es">Español</option>
+                    <option value="ultra_emoji">🔥 Ultra Emoji 😎💥</option>
+                    <option value="epanola">ePaÑoLa</option>
                     <option value="en">English</option>
-                    <option value="fr">FranÃ§ais (FrancÃ©s)</option>
-                    <option value="de">Deutsch (AlemÃ¡n)</option>
+                    <option value="fr">Français (Francés)</option>
+                    <option value="de">Deutsch (Alemán)</option>
                     <option value="id">Bahasa Indonesia (Indonesia)</option>
                     <option value="it">Italiano (Italiano)</option>
-                    <option value="zh_mv">ð¡ ä¸­æ (Chino MandarÃ­n)</option>
-                    <option value="ar">Ø§ÙØ¹Ø±Ø¨ÙØ© (Ãrabe)</option>
-                    <option value="morse">CÃ³digo Morse (â¢ â)</option>
-                    <option value="af">Afrikaans (Ãfrica)</option>
-                    <option value="ru">Ð ÑÑÑÐºÐ¸Ð¹ (Ruso)</option>
-                    <option value="pt">PortuguÃªs (PortuguÃ©s)</option>
-                    <option value="zh">ä¸­æ (Chino)</option>
-                    <option value="ja">æ¥æ¬èª (JaponÃ©s)</option>
-                    <option value="ko">íêµ­ì´ (Coreano)</option>
-                    <option value="es_es">EspaÃ±ol (EspaÃ±a)</option>
-                    <option value="es_la">EspaÃ±ol (Latinoamerica)</option>
+                    <option value="zh_mv">💡 中文 (Chino Mandarín)</option>
+                    <option value="ar">العربية (Árabe)</option>
+                    <option value="morse">Código Morse (• —)</option>
+                    <option value="af">Afrikaans (África)</option>
+                    <option value="ru">Русский (Ruso)</option>
+                    <option value="pt">Português (Portugués)</option>
+                    <option value="zh">中文 (Chino)</option>
+                    <option value="ja">日本語 (Japonés)</option>
+                    <option value="ko">한국어 (Coreano)</option>
+                    <option value="es_es">Español (España)</option>
+                    <option value="es_la">Español (Latinoamerica)</option>
                 </select>
             </div>
             
             <div class="settings-section">
-                <h3 id="shorts-section-title">ð± Shorts ABG âï¸</h3>
-                <button class="config-btn" style="background-color: #ff0055; width: 100%; color: #fff; font-size: 15px;" onclick="abrirShorts()">Ver Shorts ð±</button>
+                <h3 id="shorts-section-title">📱 Shorts ABG ⚒️</h3>
+                <button class="config-btn" style="background-color: #ff0055; width: 100%; color: #fff; font-size: 15px;" onclick="abrirShorts()">Ver Shorts 📱</button>
             </div>
 
             <div class="settings-section">
-                <h3 id="random-section-title">ð Entretenimiento Random</h3>
-                <button class="config-btn" style="background-color: #8a2be2; width: 100%; color: #fff; font-size: 15px;" onclick="reproducirVideoAleatorio()">Video Aleatorio ð²</button>
+                <h3 id="random-section-title">🔀 Entretenimiento Random</h3>
+                <button class="config-btn" style="background-color: #8a2be2; width: 100%; color: #fff; font-size: 15px;" onclick="reproducirVideoAleatorio()">Video Aleatorio 🎲</button>
             </div>
 
             <div class="settings-section">
                 <h3 id="jb-section-title">JB (Juego en Beta)</h3>
-                <button class="config-btn" style="background-color: #ff6600; width: 100%;" onclick="window.open('https://mrjostin87.github.io/mrtube-jb/', '_blank')">Abrir Chicken Strike NPC ð®</button>
+                <button class="config-btn" style="background-color: #ff6600; width: 100%;" onclick="window.open('https://mrjostin87.github.io/mrtube-jb/', '_blank')">Abrir Chicken Strike NPC 🎮</button>
             </div>
         </div>
     </div>
@@ -704,14 +704,14 @@
                     <img class="avatar-img" src="avatar.PNG" alt="Mr.Jostin Avatar">
                     <div>
                         <strong style="font-size: 16px;">Mr.Jostin</strong>
-                        <span id="sub-count" style="font-size: 12px; color: #aaa; display: block;">0 suscriptores â¢ ABG ProductionsÂ®</span>
+                        <span id="sub-count" style="font-size: 12px; color: #aaa; display: block;">0 suscriptores • ABG Productions®</span>
                     </div>
                 </div>
                 <button id="btn-sub" class="subscribe-btn" onclick="alternarSuscripcion()">Suscribirse</button>
             </div>
             
             <div class="download-container">
-                <button id="download-video-btn" class="download-btn" onclick="descargarVideoActual()">ð¥ DV: Descargar Video Seguro</button>
+                <button id="download-video-btn" class="download-btn" onclick="descargarVideoActual()">📥 DV: Descargar Video Seguro</button>
             </div>
         </div>
 
@@ -720,19 +720,19 @@
         </div>
 
         <div class="search-container">
-            <input type="text" id="video-search-bar" class="search-input" onkeyup="filtrarVideos()" placeholder="ð BV: Buscador videos">
+            <input type="text" id="video-search-bar" class="search-input" onkeyup="filtrarVideos()" placeholder="🔍 BV: Buscador videos">
         </div>
 
         <h2 id="recommended-title" class="section-title">Videos Recomendados</h2>
         
         <div id="recommended-video-grid" class="video-grid">
-            <div class="video-card" onclick="cargarVideo('https://www.youtube.com/embed/eu0bxUP2HUk', 'â ï¸ [ERROR_DIMENSIONAL] â ï¸ El Misterio De Chicken Gun T2 T1 E3 E11 â ï¸ [ERROR_DIMENSIONAL] â ï¸')">
+            <div class="video-card" onclick="cargarVideo('https://www.youtube.com/embed/eu0bxUP2HUk', '⚠️ [ERROR_DIMENSIONAL] ⚠️ El Misterio De Chicken Gun T2 T1 E3 E11 ⚠️ [ERROR_DIMENSIONAL] ⚠️')">
                 <div class="thumbnail" style="background-image: url('https://img.youtube.com/vi/eu0bxUP2HUk/mqdefault.jpg'); text-indent: -9999px;">VIDEO</div>
                 <div class="card-info">
                     <img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG">
                     <div class="card-text">
-                        <h4>â ï¸ [ERROR_DIMENSIONAL] â ï¸ El Misterio De Chicken Gun T2 T1 E3 E11 â ï¸ [ERROR_DIMENSIONAL] â ï¸</h4>
-                        <p>ABG ProductionsÂ®</p>
+                        <h4>⚠️ [ERROR_DIMENSIONAL] ⚠️ El Misterio De Chicken Gun T2 T1 E3 E11 ⚠️ [ERROR_DIMENSIONAL] ⚠️</h4>
+                        <p>ABG Productions®</p>
                     </div>
                 </div>
             </div>
@@ -743,7 +743,7 @@
                     <img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG">
                     <div class="card-text">
                         <h4>El Misterio De Chicken Gun T1 E9</h4>
-                        <p>ABG ProductionsÂ®</p>
+                        <p>ABG Productions®</p>
                     </div>
                 </div>
             </div>
@@ -754,18 +754,18 @@
                     <img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG">
                     <div class="card-text">
                         <h4>El Misterio De Chicken Gun T1 E8</h4>
-                        <p>ABG ProductionsÂ®</p>
+                        <p>ABG Productions®</p>
                     </div>
                 </div>
             </div>
 
-            <div class="video-card" onclick="cargarVideo('https://www.youtube.com/embed/AT3nqI7btI0', 'Â¿CÃ³mo conseguir mucho Ichor en Dandy\'s World? ð¤ð§')">
+            <div class="video-card" onclick="cargarVideo('https://www.youtube.com/embed/AT3nqI7btI0', '¿Cómo conseguir mucho Ichor en Dandy\'s World? 🤔💧')">
                 <div class="thumbnail" style="background-image: url('https://img.youtube.com/vi/AT3nqI7btI0/mqdefault.jpg'); text-indent: -9999px;">VIDEO</div>
                 <div class="card-info">
                     <img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG">
                     <div class="card-text">
-                        <h4>Â¿CÃ³mo conseguir mucho Ichor en Dandy's World? ð¤ð§</h4>
-                        <p>Sprunki Animations StudiosÂ®</p>
+                        <h4>¿Cómo conseguir mucho Ichor en Dandy's World? 🤔💧</h4>
+                        <p>Sprunki Animations Studios®</p>
                     </div>
                 </div>
             </div>
@@ -776,18 +776,18 @@
                     <img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG">
                     <div class="card-text">
                         <h4>Dandy's world Show T2 E4</h4>
-                        <p>Sprunki Animations StudiosÂ®</p>
+                        <p>Sprunki Animations Studios®</p>
                     </div>
                 </div>
             </div>
 
-            <div class="video-card" onclick="cargarVideo('https://www.youtube.com/embed/ZFvr7ptM02o', 'Servidor Town000: ð± Â¡Â¡El lugar donde los jugadores desaparecen!! ð±')">
+            <div class="video-card" onclick="cargarVideo('https://www.youtube.com/embed/ZFvr7ptM02o', 'Servidor Town000: 😱 ¡¡El lugar donde los jugadores desaparecen!! 😱')">
                 <div class="thumbnail" style="background-image: url('https://img.youtube.com/vi/ZFvr7ptM02o/mqdefault.jpg'); text-indent: -9999px;">VIDEO</div>
                 <div class="card-info">
                     <img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG">
                     <div class="card-text">
-                        <h4>Servidor Town000: ð± Â¡Â¡El lugar donde los jugadores desaparecen!! ð±</h4>
-                        <p>ABG ProductionsÂ®</p>
+                        <h4>Servidor Town000: 😱 ¡¡El lugar donde los jugadores desaparecen!! 😱</h4>
+                        <p>ABG Productions®</p>
                     </div>
                 </div>
             </div>
@@ -798,29 +798,40 @@
                     <img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG">
                     <div class="card-text">
                         <h4>Sprunki Animado T4 E3</h4>
-                        <p>Sprunki Animations StudiosÂ®</p>
+                        <p>Sprunki Animations Studios®</p>
                     </div>
                 </div>
             </div>
 
-            <div class="video-card" onclick="cargarVideo('https://www.youtube.com/embed/IXWZrR9_ffw', 'Â¿CÃ³mo conseguir 1000 monedas en Chicken Gun? ð¤ðµ')">
+            <div class="video-card" onclick="cargarVideo('https://www.youtube.com/embed/IXWZrR9_ffw', '¿Cómo conseguir 1000 monedas en Chicken Gun? 🤔💵')">
                 <div class="thumbnail" style="background-image: url('https://img.youtube.com/vi/IXWZrR9_ffw/mqdefault.jpg'); text-indent: -9999px;">VIDEO</div>
                 <div class="card-info">
                     <img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG">
                     <div class="card-text">
-                        <h4>Â¿CÃ³mo conseguir 1000 monedas en Chicken Gun? ð¤ðµ</h4>
-                        <p>ABG ProductionsÂ®</p>
+                        <h4>¿Cómo conseguir 1000 monedas en Chicken Gun? 🤔💵</h4>
+                        <p>ABG Productions®</p>
                     </div>
                 </div>
             </div>
 
-            <div class="video-card" onclick="cargarVideo('https://www.youtube.com/embed/R0SaU4p-yKk', 'ð® 2 Mapas con Modelos Ocultos y Secretos â¨')">
+            <div class="video-card" onclick="cargarVideo('https://www.youtube.com/embed/IXWZrR9_ffw', '¿Cómo conseguir 1000 monedas en Chicken Gun? 🤔💵')">
+                <div class="thumbnail" style="background-image: url('https://img.youtube.com/vi/IXWZrR9_ffw/mqdefault.jpg'); text-indent: -9999px;">VIDEO</div>
+                <div class="card-info">
+                    <img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG">
+                    <div class="card-text">
+                        <h4>¿Cómo conseguir 1000 monedas en Chicken Gun? 🤔💵</h4>
+                        <p>ABG Productions®</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" onclick="cargarVideo('https://www.youtube.com/embed/R0SaU4p-yKk', '🎮 2 Mapas con Modelos Ocultos y Secretos ✨')">
                 <div class="thumbnail" style="background-image: url('https://img.youtube.com/vi/R0SaU4p-yKk/mqdefault.jpg'); text-indent: -9999px;">VIDEO</div>
                 <div class="card-info">
                     <img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG">
                     <div class="card-text">
-                        <h4>ð® 2 Mapas con Modelos Ocultos y Secretos â¨</h4>
-                        <p>ABG ProductionsÂ®</p>
+                        <h4>🎮 2 Mapas con Modelos Ocultos y Secretos ✨</h4>
+                        <p>ABG Productions®</p>
                     </div>
                 </div>
             </div>
@@ -831,7 +842,7 @@
                     <img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG">
                     <div class="card-text">
                         <h4>Sprunki Animado T4 E6</h4>
-                        <p>Sprunki Animations StudiosÂ®</p>
+                        <p>Sprunki Animations Studios®</p>
                     </div>
                 </div>
             </div>
@@ -842,29 +853,29 @@
                     <img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG">
                     <div class="card-text">
                         <h4>Sprunki Animado T4 E5</h4>
-                        <p>Sprunki Animations StudiosÂ®</p>
+                        <p>Sprunki Animations Studios®</p>
                     </div>
                 </div>
             </div>
 
-            <div class="video-card" onclick="cargarVideo('https://www.youtube.com/embed/33VtpYpcw6A', 'PromociÃ³n de MrTube ð¡ð¥ï¸')">
+            <div class="video-card" onclick="cargarVideo('https://www.youtube.com/embed/33VtpYpcw6A', 'Promoción de MrTube 📡🖥️')">
                 <div class="thumbnail" style="background-image: url('https://img.youtube.com/vi/33VtpYpcw6A/mqdefault.jpg'); text-indent: -9999px;">VIDEO</div>
                 <div class="card-info">
                     <img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG">
                     <div class="card-text">
-                        <h4>PromociÃ³n de MrTube ð¡ð¥ï¸</h4>
-                        <p>ABG ProductionsÂ®</p>
+                        <h4>Promoción de MrTube 📡🖥️</h4>
+                        <p>ABG Productions®</p>
                     </div>
                 </div>
             </div>
 
-            <div class="video-card" onclick="cargarVideo('https://www.youtube.com/embed/CAL4Or5iwC8', 'Jugando Minecraft con mi Primito Tavito ð®')">
+            <div class="video-card" onclick="cargarVideo('https://www.youtube.com/embed/CAL4Or5iwC8', 'Jugando Minecraft con mi Primito Tavito 🎮')">
                 <div class="thumbnail" style="background-image: url('https://img.youtube.com/vi/CAL4Or5iwC8/mqdefault.jpg'); text-indent: -9999px;">VIDEO</div>
                 <div class="card-info">
                     <img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG">
                     <div class="card-text">
-                        <h4>Jugando con mi Primito Tavito ð®</h4>
-                        <p>ABG ProductionsÂ®</p>
+                        <h4>Jugando con mi Primito Tavito 🎮</h4>
+                        <p>ABG Productions®</p>
                     </div>
                 </div>
             </div>
@@ -875,18 +886,18 @@
                     <img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG">
                     <div class="card-text">
                         <h4>El Misterio De Chicken Gun T2 E2</h4>
-                        <p>ABG ProductionsÂ®</p>
+                        <p>ABG Productions®</p>
                     </div>
                 </div>
             </div>
 
-            <div class="video-card" onclick="cargarVideo('https://www.youtube.com/embed/-e9bjdtB8AI', 'Dandyâs World Show T2 E5')">
+            <div class="video-card" onclick="cargarVideo('https://www.youtube.com/embed/-e9bjdtB8AI', 'Dandy’s World Show T2 E5')">
                 <div class="thumbnail" style="background-image: url('https://img.youtube.com/vi/-e9bjdtB8AI/mqdefault.jpg'); text-indent: -9999px;">VIDEO</div>
                 <div class="card-info">
                     <img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG">
                     <div class="card-text">
-                        <h4>Dandyâs World Show T2 E5</h4>
-                        <p>Sprunki Animations StudiosÂ®</p>
+                        <h4>Dandy’s World Show T2 E5</h4>
+                        <p>Sprunki Animations Studios®</p>
                     </div>
                 </div>
             </div>
@@ -897,7 +908,7 @@
                     <img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG">
                     <div class="card-text">
                         <h4>2econd 2ight 2eer || DW</h4>
-                        <p>Sprunki Animations StudiosÂ®</p>
+                        <p>Sprunki Animations Studios®</p>
                     </div>
                 </div>
             </div>
@@ -908,18 +919,18 @@
                     <img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG">
                     <div class="card-text">
                         <h4>Sprunki Animado T4 E4</h4>
-                        <p>Sprunki Animations StudiosÂ®</p>
+                        <p>Sprunki Animations Studios®</p>
                     </div>
                 </div>
             </div>
 
-            <div class="video-card" onclick="cargarVideo('https://www.youtube.com/embed/e-WLd80odDo', '3 IDEAS QUE CAMBIARÃAN CG PARA SIEMPRE ð±ð¥')">
+            <div class="video-card" onclick="cargarVideo('https://www.youtube.com/embed/e-WLd80odDo', '3 IDEAS QUE CAMBIARÍAN CG PARA SIEMPRE 😱🔥')">
                 <div class="thumbnail" style="background-image: url('https://img.youtube.com/vi/e-WLd80odDo/mqdefault.jpg'); text-indent: -9999px;">VIDEO</div>
                 <div class="card-info">
                     <img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG">
                     <div class="card-text">
-                        <h4>3 IDEAS QUE CAMBIARÃAN CG PARA SIEMPRE ð±ð¥</h4>
-                        <p>ABG ProductionsÂ®</p>
+                        <h4>3 IDEAS QUE CAMBIARÍAN CG PARA SIEMPRE 😱🔥</h4>
+                        <p>ABG Productions®</p>
                     </div>
                 </div>
             </div>
@@ -930,31 +941,31 @@
                     <img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG">
                     <div class="card-text">
                         <h4>El Misterio De Chicken Gun T2 E1</h4>
-                        <p>ABG ProductionsÂ®</p>
+                        <p>ABG Productions®</p>
                     </div>
                 </div>
             </div>
 
-            <div class="video-card dynamic-coming-soon"><div class="thumbnail">PrÃ³ximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">PrÃ³ximamente</h4><p>ABG ProductionsÂ®</p></div></div></div>
-            <div class="video-card dynamic-coming-soon"><div class="thumbnail">PrÃ³ximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">PrÃ³ximamente</h4><p>ABG ProductionsÂ®</p></div></div></div>
-            <div class="video-card dynamic-coming-soon"><div class="thumbnail">PrÃ³ximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">PrÃ³ximamente</h4><p>ABG ProductionsÂ®</p></div></div></div>
-            <div class="video-card dynamic-coming-soon"><div class="thumbnail">PrÃ³ximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">PrÃ³ximamente</h4><p>ABG ProductionsÂ®</p></div></div></div>
-            <div class="video-card dynamic-coming-soon"><div class="thumbnail">PrÃ³ximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">PrÃ³ximamente</h4><p>ABG ProductionsÂ®</p></div></div></div>
-            <div class="video-card dynamic-coming-soon"><div class="thumbnail">PrÃ³ximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">PrÃ³ximamente</h4><p>ABG ProductionsÂ®</p></div></div></div>
-            <div class="video-card dynamic-coming-soon"><div class="thumbnail">PrÃ³ximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">PrÃ³ximamente</h4><p>ABG ProductionsÂ®</p></div></div></div>
-            <div class="video-card dynamic-coming-soon"><div class="thumbnail">PrÃ³ximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">PrÃ³ximamente</h4><p>ABG ProductionsÂ®</p></div></div></div>
-            <div class="video-card dynamic-coming-soon"><div class="thumbnail">PrÃ³ximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">PrÃ³ximamente</h4><p>ABG ProductionsÂ®</p></div></div></div>
-            <div class="video-card dynamic-coming-soon"><div class="thumbnail">PrÃ³ximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">PrÃ³ximamente</h4><p>ABG ProductionsÂ®</p></div></div></div>
-            <div class="video-card dynamic-coming-soon"><div class="thumbnail">PrÃ³ximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">PrÃ³ximamente</h4><p>ABG ProductionsÂ®</p></div></div></div>
-            <div class="video-card dynamic-coming-soon"><div class="thumbnail">PrÃ³ximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">PrÃ³ximamente</h4><p>ABG ProductionsÂ®</p></div></div></div>
-            <div class="video-card dynamic-coming-soon"><div class="thumbnail">PrÃ³ximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">PrÃ³ximamente</h4><p>ABG ProductionsÂ®</p></div></div></div>
-            <div class="video-card dynamic-coming-soon"><div class="thumbnail">PrÃ³ximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">PrÃ³ximamente</h4><p>ABG ProductionsÂ®</p></div></div></div>
-            <div class="video-card dynamic-coming-soon"><div class="thumbnail">PrÃ³ximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">PrÃ³ximamente</h4><p>ABG ProductionsÂ®</p></div></div></div>
-            <div class="video-card dynamic-coming-soon"><div class="thumbnail">PrÃ³ximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">PrÃ³ximamente</h4><p>ABG ProductionsÂ®</p></div></div></div>
-            <div class="video-card dynamic-coming-soon"><div class="thumbnail">PrÃ³ximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">PrÃ³ximamente</h4><p>ABG ProductionsÂ®</p></div></div></div>
-            <div class="video-card dynamic-coming-soon"><div class="thumbnail">PrÃ³ximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">PrÃ³ximamente</h4><p>ABG ProductionsÂ®</p></div></div></div>
-            <div class="video-card dynamic-coming-soon"><div class="thumbnail">PrÃ³ximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">PrÃ³ximamente</h4><p>ABG ProductionsÂ®</p></div></div></div>
-            <div class="video-card dynamic-coming-soon"><div class="thumbnail">PrÃ³ximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">PrÃ³ximamente</h4><p>ABG ProductionsÂ®</p></div></div></div>
+            <div class="video-card dynamic-coming-soon"><div class="thumbnail">Próximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">Próximamente</h4><p>ABG Productions®</p></div></div></div>
+            <div class="video-card dynamic-coming-soon"><div class="thumbnail">Próximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">Próximamente</h4><p>ABG Productions®</p></div></div></div>
+            <div class="video-card dynamic-coming-soon"><div class="thumbnail">Próximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">Próximamente</h4><p>ABG Productions®</p></div></div></div>
+            <div class="video-card dynamic-coming-soon"><div class="thumbnail">Próximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">Próximamente</h4><p>ABG Productions®</p></div></div></div>
+            <div class="video-card dynamic-coming-soon"><div class="thumbnail">Próximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">Próximamente</h4><p>ABG Productions®</p></div></div></div>
+            <div class="video-card dynamic-coming-soon"><div class="thumbnail">Próximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">Próximamente</h4><p>ABG Productions®</p></div></div></div>
+            <div class="video-card dynamic-coming-soon"><div class="thumbnail">Próximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">Próximamente</h4><p>ABG Productions®</p></div></div></div>
+            <div class="video-card dynamic-coming-soon"><div class="thumbnail">Próximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">Próximamente</h4><p>ABG Productions®</p></div></div></div>
+            <div class="video-card dynamic-coming-soon"><div class="thumbnail">Próximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">Próximamente</h4><p>ABG Productions®</p></div></div></div>
+            <div class="video-card dynamic-coming-soon"><div class="thumbnail">Próximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">Próximamente</h4><p>ABG Productions®</p></div></div></div>
+            <div class="video-card dynamic-coming-soon"><div class="thumbnail">Próximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">Próximamente</h4><p>ABG Productions®</p></div></div></div>
+            <div class="video-card dynamic-coming-soon"><div class="thumbnail">Próximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">Próximamente</h4><p>ABG Productions®</p></div></div></div>
+            <div class="video-card dynamic-coming-soon"><div class="thumbnail">Próximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">Próximamente</h4><p>ABG Productions®</p></div></div></div>
+            <div class="video-card dynamic-coming-soon"><div class="thumbnail">Próximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">Próximamente</h4><p>ABG Productions®</p></div></div></div>
+            <div class="video-card dynamic-coming-soon"><div class="thumbnail">Próximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">Próximamente</h4><p>ABG Productions®</p></div></div></div>
+            <div class="video-card dynamic-coming-soon"><div class="thumbnail">Próximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">Próximamente</h4><p>ABG Productions®</p></div></div></div>
+            <div class="video-card dynamic-coming-soon"><div class="thumbnail">Próximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">Próximamente</h4><p>ABG Productions®</p></div></div></div>
+            <div class="video-card dynamic-coming-soon"><div class="thumbnail">Próximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">Próximamente</h4><p>ABG Productions®</p></div></div></div>
+            <div class="video-card dynamic-coming-soon"><div class="thumbnail">Próximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">Próximamente</h4><p>ABG Productions®</p></div></div></div>
+            <div class="video-card dynamic-coming-soon"><div class="thumbnail">Próximamente</div><div class="card-info"><img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG"><div class="card-text"><h4 class="coming-soon-text">Próximamente</h4><p>ABG Productions®</p></div></div></div>
         </div>
 
         <div style="clear: both; overflow: hidden; margin-top: 20px;">
@@ -964,8 +975,8 @@
         <div id="history-grid" class="video-grid"></div>
 
         <div class="youtube-box">
-            <h3 id="yt-box-title" style="margin-top:0;">Â¿Quieres ver mas contenido oficial y original?</h3>
-            <p id="yt-box-desc" style="color:#aaa; font-size:14px; margin-bottom:20px;">Â¡Apoya las producciones originales d nuestro canal directamente en YouTube!</p>
+            <h3 id="yt-box-title" style="margin-top:0;">¿Quieres ver mas contenido oficial y original?</h3>
+            <p id="yt-box-desc" style="color:#aaa; font-size:14px; margin-bottom:20px;">¡Apoya las producciones originales d nuestro canal directamente en YouTube!</p>
             <a href="https://youtube.com/@mr.jostin_oficial?si=wDrRGvnlRJUFWfWN" target="_blank" id="yt-main-btn-text" class="youtube-channel-btn">Suscribirse en YouTube</a>
         </div>
     </div>
@@ -978,79 +989,79 @@
         // TRADUCCIONES COMPLETAS CORREGIDAS MAS LOS NUEVOS IDIOMAS
         const traducciones = {
             ultra_emoji: {
-                beta_title: "â ï¸ð¥ Â¡BIENVENIDO AL BETA SUPER EXTREMO! ð¥ð",
-                beta_p1: "ð Â¡Hola, cracks y leyendas! ð EstÃ¡n entrando al laboratorio tecnolÃ³gico de optimizaciÃ³n masiva de la plataforma independiente ð <strong>MrTube</strong> ð®Flux!",
-                beta_p2: "â¡ Â¡MIRA ESTO ANTES DE SEGUIR, CRACK! ðð¥:",
-                beta_p3: "â¢ ð¬ <strong>Falta Contenido:</strong> Â¡La grilla estÃ¡ que arde en mantenimiento! ð ï¸ VerÃ¡s carteles locos mientras indexamos todo a mÃ¡xima velocidad! ðð¥",
-                beta_p4: "â¢ ð¾ <strong>Errores Locos:</strong> Â¡Probamos reproductores al lÃ­mite! ð¥ Algunas cosas podrÃ­an ir lentas si tu dispositivo no tiene el poder! ð±ð¨",
-                beta_p5: "ð Â¡Millones de gracias por el aguante y por apoyar las animaciones de los mejores estudios! ð¬ð¥â¨",
-                scroll_text: "ð Â¡Baja por completo para desbloquear el poder! ð",
-                btn_continue: "ð Â¡ENTRAR A MRTUBE AHORA! ð¥",
-                recommended_title: "ð¥ VIDEOS RECOMENDADOS DE HOY ðð¬",
-                coming_soon: "ð PRÃXIMAMENTE DISPONIBLE ð¥",
-                sub_text: "ð´ SUSCRIBIRSE AL CANAL ð¥",
-                subbed_text: "â Â¡YA ERES MIEMBRO CRACK! ð",
-                sub_count_suffix: "ð¥ suscriptores premium â¢ ABG ProductionsÂ® ð¬â¨",
-                settings_title: "âï¸ CONFIGURACIÃN SUPREMA ð ï¸",
-                theme_title: "ð¨ ESTILO VISUAL DE LA WEB ð¥",
-                logo_title: "ð COLOR DEL LOGO INCREÃBLE ð¥",
-                ade_title: "â¡ RENDIMIENTO ULTRA (ADE) ð",
-                ade_on: "ð ADE: PRENDIDÃSIMO ð¥",
-                ade_off: "â ADE: APAGADO ð´",
-                ade_desc: "â¡ Â¡Prende el ADE o el URS para que tu iPhone o Android corra a nivel Dios! ð±ð¨",
-                lang_title: "ð£ï¸ IDIOMA DE LA INTERFAZ ð",
-                yt_title: "ðº Â¿QUIERES VER MÃS CONTENIDO OFICIAL? ð¥ð¬",
-                yt_desc: "ð¥ Apoya los proyectos y animaciones originales directamente en el canal oficial de YouTube! ðâ¡",
-                yt_btn: "ð´ SUSCRIBIRSE EN YOUTUBE AHORA ð¥ð¬",
-                history_title: "ð HV (HISTORIAL DE PODER REAL) ðð¬",
-                history_empty: "â Â¡No has visto ningÃºn video todavÃ­a, crack! ð¬ð¿",
-                history_clear: "ðï¸ LIMPIAR HISTORIAL HV ð¥",
-                cf_title: "ð¤ CF (FUENTES DEL CANAL)",
-                vc_title: "ð» VC (SISTEMA DE ESCRITORIO)",
-                vc_btn_on: "ð³ Cambiar a Modo Celular",
-                vc_btn_off: "ð» Cambiar a Modo Computadora",
-                dv_btn_text: "ð¥ DV: Descargar Video Seguro"
+                beta_title: "⚠️🔥 ¡BIENVENIDO AL BETA SUPER EXTREMO! 💥😎",
+                beta_p1: "👋 ¡Hola, cracks y leyendas! 🌟 Están entrando al laboratorio tecnológico de optimización masiva de la plataforma independiente 🚀 <strong>MrTube</strong> 🎮Flux!",
+                beta_p2: "⚡ ¡MIRA ESTO ANTES DE SEGUIR, CRACK! 👇🔥:",
+                beta_p3: "• 🎬 <strong>Falta Contenido:</strong> ¡La grilla está que arde en mantenimiento! 🛠️ Verás carteles locos mientras indexamos todo a máxima velocidad! 🌐💥",
+                beta_p4: "• 👾 <strong>Errores Locos:</strong> ¡Probamos reproductores al límite! 🔥 Algunas cosas podrían ir lentas si tu dispositivo no tiene el poder! 📱💨",
+                beta_p5: "🙏 ¡Millones de gracias por el aguante y por apoyar las animaciones de los mejores estudios! 🎬💥✨",
+                scroll_text: "👇 ¡Baja por completo para desbloquear el poder! 👇",
+                btn_continue: "🚀 ¡ENTRAR A MRTUBE AHORA! 💥",
+                recommended_title: "🔥 VIDEOS RECOMENDADOS DE HOY 😎🎬",
+                coming_soon: "🚀 PRÓXIMAMENTE DISPONIBLE 💥",
+                sub_text: "🔴 SUSCRIBIRSE AL CANAL 🔥",
+                subbed_text: "✅ ¡YA ERES MIEMBRO CRACK! 😎",
+                sub_count_suffix: "🔥 suscriptores premium • ABG Productions® 🎬✨",
+                settings_title: "⚙️ CONFIGURACIÓN SUPREMA 🛠️",
+                theme_title: "🎨 ESTILO VISUAL DE LA WEB 💥",
+                logo_title: "🌈 COLOR DEL LOGO INCREÍBLE 🔥",
+                ade_title: "⚡ RENDIMIENTO ULTRA (ADE) 🚀",
+                ade_on: "🚀 ADE: PRENDIDÍSIMO 🔥",
+                ade_off: "❌ ADE: APAGADO 😴",
+                ade_desc: "⚡ ¡Prende el ADE o el URS para que tu iPhone o Android corra a nivel Dios! 📱💨",
+                lang_title: "🗣️ IDIOMA DE LA INTERFAZ 🌍",
+                yt_title: "📺 ¿QUIERES VER MÁS CONTENIDO OFICIAL? 🔥🎬",
+                yt_desc: "💥 Apoya los proyectos y animaciones originales directamente en el canal oficial de YouTube! 🚀⚡",
+                yt_btn: "🔴 SUSCRIBIRSE EN YOUTUBE AHORA 💥🎬",
+                history_title: "👑 HV (HISTORIAL DE PODER REAL) 📊🎬",
+                history_empty: "❌ ¡No has visto ningún video todavía, crack! 🎬🍿",
+                history_clear: "🗑️ LIMPIAR HISTORIAL HV 💥",
+                cf_title: "🔤 CF (FUENTES DEL CANAL)",
+                vc_title: "💻 VC (SISTEMA DE ESCRITORIO)",
+                vc_btn_on: "📳 Cambiar a Modo Celular",
+                vc_btn_off: "💻 Cambiar a Modo Computadora",
+                dv_btn_text: "📥 DV: Descargar Video Seguro"
             },
             epanola: {
-                beta_title: "â ï¸ Benbenio a las Flipantes aventura de la pajina que se me olvido el nombre xddddddddddddddddddddddd",
-                beta_p1: "Ola a tos los fologÃ¼ers y bisitantes. Tas emtrando ofisialmete a las pruebas tecnicas de la pajina flama de <strong>MrTube</strong> XD.",
+                beta_title: "⚠️ Benbenio a las Flipantes aventura de la pajina que se me olvido el nombre xddddddddddddddddddddddd",
+                beta_p1: "Ola a tos los fologüers y bisitantes. Tas emtrando ofisialmete a las pruebas tecnicas de la pajina flama de <strong>MrTube</strong> XD.",
                 beta_p2: "Mira esto antes de toquetear nada xd:",
-                beta_p3: "â¢ No ai bideos: Por ahora la cosa esta rota en mantemimieto. Beras que sice 'Prosimamete' mientas subimos los enlaÃ§es xd.",
-                beta_p4: "â¢ Errores raris: Como tamos probando los reproductores integrados, ai cositas que ban a ir re lentas en tu celupatata XD.",
-                beta_p5: "GraÃ§ias por la paÃ§ienÃ§ia y por apollar las animasiones de los estudios xd.",
+                beta_p3: "• No ai bideos: Por ahora la cosa esta rota en mantemimieto. Beras que sice 'Prosimamete' mientas subimos los enlaçes xd.",
+                beta_p4: "• Errores raris: Como tamos probando los reproductores integrados, ai cositas que ban a ir re lentas en tu celupatata XD.",
+                beta_p5: "Graçias por la paçiençia y por apollar las animasiones de los estudios xd.",
                 scroll_text: "Baja para abajo para de jarte pasar xd",
-                btn_continue: "Dale akin para entrar a las Flipantes aventura de la pajina que se me olvido el nomble por 8373633836737363938 veces xdddddddddddddd osea literal denle clik d duna ves xq si tengo q recordarles el nonbre d la pajina una ves mas me va a explotar la unica neurona q me queda jskajskaj xdxd rre funable mi comentario de bdd pero esq q flojera con la jente q no se aprende ni el nonbre del sitio dnde ven sus series favoritas xd de bdd q da alta peresa tener q poner un texto tan largo q casi rompe el diseÃ±o d la pajina xdxd pero bueno mentira jiji se les qre un montonaso <3 xd por sicierto muchisimas grasias por todo el apoyo incondisinal q le dan siempre a las animasiones y prolletos d bdd xd son los mas cracks de todo el planeta tierra xd d todo corason se les agradese un universo entero x aguantar mis uevadas y x estar ai siempre al pie del caÃ±on xd enserio son la rre clave jente muchisimas gracias totales xd sigan asi d cracks xd",
-                recommended_title: "Bideos Recomendados pal man que entro a la wev xd osea literal miren estos capis xq si entraron a la pajina y no ven lo q les recomiendo d bdd q no se para que entran jskajskaj xdxd rre funable mi comentario de bdd pero esq q flojera con la jente q entra a un sitio de animasiones y se queda viendo la pantalla en blanco sin darle clik a nada xd de bdd q da alta peresa ponerles las cosas en bandeja d plata con calidad trillonaria para q al final no bean nada xdxd usen el mause o el dedo che xd pero bueno mentira jiji se les qre un monton <3 xd por sicierto muchisimas grasias por todo el apoyo incondisinal q le dan siempre a las animasiones y prolletos d bdd xd son los mas cracks de todo el planeta tierra xd d todo corason se les agradese un universo entero x aguantar mis uevadas y x estar ai siempre al pie del caÃ±on xd enserio son la rre clave jente muchisimas gracias totales xd sigan asi d cracks xd",
-                coming_soon: "Prosimamete xd osea literal esperense un cacho xq las cosas buenas toman tiempo jente xdxd q flojera con la jente q quiere todo ya d inmediato como si animar con calidad trillonaria fuera soplar y aser botellas jskajskaj xd rre funable mi comentario de bdd pero esq si no tienen pasensia les va a dar un patatÃºs xd de bdd q da alta peresa ver q preguntan cada sinto segundos cuando sale el prosimo capi o el prosimo prolleto xdxd dehen trabajar a los estudios en pas che xd pero bueno mentira jiji se les qre un montonaso <3 xd por sicierto muchisimas grasias por todo el apoyo incondisinal q le dan siempre a las animasiones y series d bdd xd son los mas cracks de todo el planeta tierra xd d todo corason se les agradese un universo entero x aguantar mis uevadas y x estar ai siempre firmes al pie del caÃ±on xd enserio son la rre clave jente muchisimas gracias totales xd sigan asi d cracks xd",
+                btn_continue: "Dale akin para entrar a las Flipantes aventura de la pajina que se me olvido el nomble por 8373633836737363938 veces xdddddddddddddd osea literal denle clik d duna ves xq si tengo q recordarles el nonbre d la pajina una ves mas me va a explotar la unica neurona q me queda jskajskaj xdxd rre funable mi comentario de bdd pero esq q flojera con la jente q no se aprende ni el nonbre del sitio dnde ven sus series favoritas xd de bdd q da alta peresa tener q poner un texto tan largo q casi rompe el diseño d la pajina xdxd pero bueno mentira jiji se les qre un montonaso <3 xd por sicierto muchisimas grasias por todo el apoyo incondisinal q le dan siempre a las animasiones y prolletos d bdd xd son los mas cracks de todo el planeta tierra xd d todo corason se les agradese un universo entero x aguantar mis uevadas y x estar ai siempre al pie del cañon xd enserio son la rre clave jente muchisimas gracias totales xd sigan asi d cracks xd",
+                recommended_title: "Bideos Recomendados pal man que entro a la wev xd osea literal miren estos capis xq si entraron a la pajina y no ven lo q les recomiendo d bdd q no se para que entran jskajskaj xdxd rre funable mi comentario de bdd pero esq q flojera con la jente q entra a un sitio de animasiones y se queda viendo la pantalla en blanco sin darle clik a nada xd de bdd q da alta peresa ponerles las cosas en bandeja d plata con calidad trillonaria para q al final no bean nada xdxd usen el mause o el dedo che xd pero bueno mentira jiji se les qre un monton <3 xd por sicierto muchisimas grasias por todo el apoyo incondisinal q le dan siempre a las animasiones y prolletos d bdd xd son los mas cracks de todo el planeta tierra xd d todo corason se les agradese un universo entero x aguantar mis uevadas y x estar ai siempre al pie del cañon xd enserio son la rre clave jente muchisimas gracias totales xd sigan asi d cracks xd",
+                coming_soon: "Prosimamete xd osea literal esperense un cacho xq las cosas buenas toman tiempo jente xdxd q flojera con la jente q quiere todo ya d inmediato como si animar con calidad trillonaria fuera soplar y aser botellas jskajskaj xd rre funable mi comentario de bdd pero esq si no tienen pasensia les va a dar un patatús xd de bdd q da alta peresa ver q preguntan cada sinto segundos cuando sale el prosimo capi o el prosimo prolleto xdxd dehen trabajar a los estudios en pas che xd pero bueno mentira jiji se les qre un montonaso <3 xd por sicierto muchisimas grasias por todo el apoyo incondisinal q le dan siempre a las animasiones y series d bdd xd son los mas cracks de todo el planeta tierra xd d todo corason se les agradese un universo entero x aguantar mis uevadas y x estar ai siempre firmes al pie del cañon xd enserio son la rre clave jente muchisimas gracias totales xd sigan asi d cracks xd",
                 sub_text: "Suscribise XD osea literal vayan a romper ese boton d una ves xq si entran a ver las series gratis y ni se suscriben de bdd q no tienen corason xdxd q flojera estar animando horas y horas con calidad trillonaria para jente q ve los capis y se va sin dehar su lay jskajskaj xd rre funable pero sicierto xd de bdd q si no se suscriben les va a caer la maldision del lag eterno en el cel xdxd pero bueno mentira jiji se les qre un monton <3 xd por sicierto muchisimas grasias por todo el apoyo incondisinal q le dan siempre a los prolletos y a los canales xd son los mas cracks d todo el planeta tierra d bdd xd d todo corason se les agradese un universo entero x aguantar mis uevadas y x estar ai siempre firmes xd son la rre clave jente enserio xd muchisimas gracias totales xd sigan asi d cracks xd",
-                subbed_text: "Ya tas Suscrito xd osea oviamente si ya le diste clik antes ya eres parte del bando d los cracks xd aunque d seguro Schuyler andas dÃ¡ndole clik otra ves solo para ver q sale xq no tienes nada mas q aser jskajskaj xdxd rre funable el comentario d bdd pero esq q flojera con la jente q le da clik a lo tonto a los botones q ya estan activados xd de bdd q me da una peresa trillonaria ver q intentan romper el sistema xdxd pero bueno mentira jiji se les qre un montonaso <3 xd de bdd muchisimas gracias por ser un suscriptor fiel y x todo el apoyo q le dan siempre a las series y animasiones xd son la rre clave de todo el multiverso jente xd d todo corason muchisimas gracias x bancarme en cada locura xd enserio se les agradese un trillon xd muchisimas gracias totales xd sigan asi d cracks xd",
-                sub_count_suffix: "suscritores â¢ ABG ProductionsÂ® Xd osea miren ese numero jente xd ay bamos subiendo de a poquitisimo xq seguro ai un monton d jente filtrada q ve los capis piratas o ni deha su lay jskajskaj xdxd rre funable pero sicierto xd q flojera con la jente q no se suscribe al canal oficial para llegar mas rapido a las placas d yutub de bdd xd q peresa trillonaria me da pensar en eso xd pero bueno mentira jiji se les qre un montonaso <3 xd de bdd muchisimas gracias a los suscritores fiels q de verdad apoyan a los estudios y se ven todas las series completitas xd son la rre clave de todo el multiverso jente xd d todo corason muchisimas gracias x bancarme en cada locura y en cada animasion xd enserio se les agradese un trillon xd muchisimas gracias totales xd sigan asi d cracks xd",
-                settings_title: "Ajutes del Äitio (pa q no te aburas aka xd) osea literal entren aki a rebisar las opsiones xq si entran a la pajina y dehan todo por defecto d bdd q son alta peresa jskajskaj xdxd rre funable mi comentario d bdd pero esq q flojera programar un panel de konfigurasion con calidad trillonaria para q la jente ni se digne a darle clik xd de bdd q si se aburren es x su culpa x no picarle a los botones xdxd usen las opsiones che xd pero bueno mentira jiji se les qre un monton <3 xd por sicierto muchisimas grasias por todo el apoyo incondisinal q le dan siempre a los prolletos y a las animasiones xd son los mas cracks d todo el planeta tierra d bdd xd d todo corason se les agradese un universo entero x aguantar mis uevadas y x estar ai siempre firmes xd son la rre clave jente enserio xd muchisimas gracias totales xd sigan asi d cracks xd",
-                theme_title: "Colo de fodo (aca puede canbiar el color a tu justo xd pero me da una peresa total xk el editor q me dise que aga esto no me pagua lo sufisiente Xd pa aser eta uevada xdxd ademas q flojera programar o diseÃ±ar para jente q seguro ni se ba a dar cuenta xd de bdd q a veses pienso q el publico no tiene ic xdxd rre funable el comentario jsnfkskd pero sicierto xd mentira jiji se les qre un monton <3 xd por sicierto muchisimas grasias por todo el apoyo incondisinal q le dan siempre a los prolletos y a las animasiones xd son los mas cracks d todo el planeta tierra d bdd xd d todo corason se les agradese un universo entero x aguantar mis uevadas y x estar ai siempre firmes xd son la rre clave jente enserio xd muchisimas gracias totales xd sigan asi d cracks xd",
-                logo_title: "Colo de Logo (acÃ¡ tanbiÃ«n puede cambiar el color xd osea si quieren cambienlo xq a mi la bdd q me da una flojera trillonaria xdxd aparte q flojera estar dÃ¡ndole opciones a jente q seguro usa el color mas feo q encuentre xd el bicho lo aria mejor jskajskaj xd rre funable pero sicierto xd de bdd q si no les usta el color q viene x defecto pues lo cambian y ya xd tampoco es ciencia espacial jente xdxd de bdd muchisimas gracias por todo el apoyo incondisinal q le dan a los canaloes xd son los mas cracks del multiverso xd se les qre un montonaso <3 xd de bdd grasias x aguantar mis uevadas y x ver mis videos xd son la rre clave jente enserio xd muchisimas grasias totales xdxd sigan asi de cracks xd)",
+                subbed_text: "Ya tas Suscrito xd osea oviamente si ya le diste clik antes ya eres parte del bando d los cracks xd aunque d seguro Schuyler andas dándole clik otra ves solo para ver q sale xq no tienes nada mas q aser jskajskaj xdxd rre funable el comentario d bdd pero esq q flojera con la jente q le da clik a lo tonto a los botones q ya estan activados xd de bdd q me da una peresa trillonaria ver q intentan romper el sistema xdxd pero bueno mentira jiji se les qre un montonaso <3 xd de bdd muchisimas gracias por ser un suscriptor fiel y x todo el apoyo q le dan siempre a las series y animasiones xd son la rre clave de todo el multiverso jente xd d todo corason muchisimas gracias x bancarme en cada locura xd enserio se les agradese un trillon xd muchisimas gracias totales xd sigan asi d cracks xd",
+                sub_count_suffix: "suscritores • ABG Productions® Xd osea miren ese numero jente xd ay bamos subiendo de a poquitisimo xq seguro ai un monton d jente filtrada q ve los capis piratas o ni deha su lay jskajskaj xdxd rre funable pero sicierto xd q flojera con la jente q no se suscribe al canal oficial para llegar mas rapido a las placas d yutub de bdd xd q peresa trillonaria me da pensar en eso xd pero bueno mentira jiji se les qre un montonaso <3 xd de bdd muchisimas gracias a los suscritores fiels q de verdad apoyan a los estudios y se ven todas las series completitas xd son la rre clave de todo el multiverso jente xd d todo corason muchisimas gracias x bancarme en cada locura y en cada animasion xd enserio se les agradese un trillon xd muchisimas gracias totales xd sigan asi d cracks xd",
+                settings_title: "Ajutes del ćitio (pa q no te aburas aka xd) osea literal entren aki a rebisar las opsiones xq si entran a la pajina y dehan todo por defecto d bdd q son alta peresa jskajskaj xdxd rre funable mi comentario d bdd pero esq q flojera programar un panel de konfigurasion con calidad trillonaria para q la jente ni se digne a darle clik xd de bdd q si se aburren es x su culpa x no picarle a los botones xdxd usen las opsiones che xd pero bueno mentira jiji se les qre un monton <3 xd por sicierto muchisimas grasias por todo el apoyo incondisinal q le dan siempre a los prolletos y a las animasiones xd son los mas cracks d todo el planeta tierra d bdd xd d todo corason se les agradese un universo entero x aguantar mis uevadas y x estar ai siempre firmes xd son la rre clave jente enserio xd muchisimas gracias totales xd sigan asi d cracks xd",
+                theme_title: "Colo de fodo (aca puede canbiar el color a tu justo xd pero me da una peresa total xk el editor q me dise que aga esto no me pagua lo sufisiente Xd pa aser eta uevada xdxd ademas q flojera programar o diseñar para jente q seguro ni se ba a dar cuenta xd de bdd q a veses pienso q el publico no tiene ic xdxd rre funable el comentario jsnfkskd pero sicierto xd mentira jiji se les qre un monton <3 xd por sicierto muchisimas grasias por todo el apoyo incondisinal q le dan siempre a los prolletos y a las animasiones xd son los mas cracks d todo el planeta tierra d bdd xd d todo corason se les agradese un universo entero x aguantar mis uevadas y x estar ai siempre firmes xd son la rre clave jente enserio xd muchisimas gracias totales xd sigan asi d cracks xd",
+                logo_title: "Colo de Logo (acá tanbiën puede cambiar el color xd osea si quieren cambienlo xq a mi la bdd q me da una flojera trillonaria xdxd aparte q flojera estar dándole opciones a jente q seguro usa el color mas feo q encuentre xd el bicho lo aria mejor jskajskaj xd rre funable pero sicierto xd de bdd q si no les usta el color q viene x defecto pues lo cambian y ya xd tampoco es ciencia espacial jente xdxd de bdd muchisimas gracias por todo el apoyo incondisinal q le dan a los canaloes xd son los mas cracks del multiverso xd se les qre un montonaso <3 xd de bdd grasias x aguantar mis uevadas y x ver mis videos xd son la rre clave jente enserio xd muchisimas grasias totales xdxd sigan asi de cracks xd)",
                 ade_title: "Fluides (ADE) xd",
                 ade_on: "ADE: Predido XD",
                 ade_off: "ADE: Apagao xd",
-                ade_desc: "Prendelo para que la pajina no te explote el cel xd osea literal prendanlo xq si no su telefono tercermundista va a terminar sies pies vajo tierra del lag jskajskaj xdxd rre funable mi comentario de bdd pero esq si no lo activan la pajina les va a minar asta el alma y les va a dehar el cel mas caliente que el sol xdxd que flojera optimizar para telefonos q parecesen ladrillos de bdd xd mentira jiji se les qre un monton <3 xd por sicierto muchisimas grasias por todo el apoyo que le dan siempre al canal de bdd xd son los mas cracks de todo el multiverso xd de todo corason muchisimas gracias x aguantar mis uevadas y x estar ai al pie del caÃ±on xd enserio se les agradese un trillon xdxd son la rre clave jente xd muchisimas gracias totales xd sigan asi de cracks xd.",
-                lang_title: "Idioma muy raro Xd osea literal activen esta uevada si quieren q toda la pajina se buelva un rrebolu d letras q seguro ni van a entender jskajskaj xdxd rre funable mi comentario d bdd pero esq a veses pienso q el publico no sabe ni ler y solo le dan clik a lo tonto a ber q pasa xd q flojera gastar codigo y neuronas en aser un idioma tan pro si piensan q es un error del sistema de bdd xdxd alta peresa da la jente asi pero bueno mentira jiji se les qre un montonaso <3 xd por sicierto muchisimas grasias por todo el apoyo incondisinal q le dan siempre a los prolletos y a las series d bdd xd son los mas cracks de todo el planeta tierra xd d todo corason se les agradese un universo entero x aguantar mis uevadas y x estar ai siempre al pie del caÃ±on xd enserio son la rre clave jente muchisimas gracias totales xd sigan asi d cracks xd",
+                ade_desc: "Prendelo para que la pajina no te explote el cel xd osea literal prendanlo xq si no su telefono tercermundista va a terminar sies pies vajo tierra del lag jskajskaj xdxd rre funable mi comentario de bdd pero esq si no lo activan la pajina les va a minar asta el alma y les va a dehar el cel mas caliente que el sol xdxd que flojera optimizar para telefonos q parecesen ladrillos de bdd xd mentira jiji se les qre un monton <3 xd por sicierto muchisimas grasias por todo el apoyo que le dan siempre al canal de bdd xd son los mas cracks de todo el multiverso xd de todo corason muchisimas gracias x aguantar mis uevadas y x estar ai al pie del cañon xd enserio se les agradese un trillon xdxd son la rre clave jente xd muchisimas gracias totales xd sigan asi de cracks xd.",
+                lang_title: "Idioma muy raro Xd osea literal activen esta uevada si quieren q toda la pajina se buelva un rrebolu d letras q seguro ni van a entender jskajskaj xdxd rre funable mi comentario d bdd pero esq a veses pienso q el publico no sabe ni ler y solo le dan clik a lo tonto a ber q pasa xd q flojera gastar codigo y neuronas en aser un idioma tan pro si piensan q es un error del sistema de bdd xdxd alta peresa da la jente asi pero bueno mentira jiji se les qre un montonaso <3 xd por sicierto muchisimas grasias por todo el apoyo incondisinal q le dan siempre a los prolletos y a las series d bdd xd son los mas cracks de todo el planeta tierra xd d todo corason se les agradese un universo entero x aguantar mis uevadas y x estar ai siempre al pie del cañon xd enserio son la rre clave jente muchisimas gracias totales xd sigan asi d cracks xd",
                 yt_title: "Keres ber mas bideos orijinalis? XD",
                 yt_desc: "Apoya el canal de Yutub para ma capis y prolletos como ete xd osea literal vayan a suscribirse y dejen su lay porfavor xq si no apoyan no pienso subir mas capitulos d bdd xd q flojeraesforzarse... mucho gracias totales xd",
                 yt_btn: "Suscribise en Yutub XD",
                 history_title: "HV (Bideos Vistos xd)",
                 history_empty: "No as bisto ningun bideo xd pa khe pueda ver tus bideos favoritos, o lo q sea, tendra khe obligatoriamete ver los Xd...",
                 history_clear: "Limpiar HV xd",
-                cf_title: "ð¤ CF (Letra de la web xd)",
-                vc_title: "ð» VC (Bersion de PC xd)",
+                cf_title: "🔤 CF (Letra de la web xd)",
+                vc_title: "💻 VC (Bersion de PC xd)",
                 vc_btn_on: "Volver al Celu xd",
                 vc_btn_off: "Poner como Compu xd",
-                dv_btn_text: "ð¥ DV: adi degcarga el bideo xd (aki podÃ©g decargar cualkien biedeo q se te antoje) osea literal podes bajarte el video que quieras para verlo un millon de veses xq seguro tu internet de carton no aguanta ni cargarlo en 360p de un solo golpe jskajskaj xdxd rre funable mi comentario d bdd pero esq q flojera con la jente q quiere todo en 4k pero tiene un wifi q se cae si pasa una mosca xd de bdd q da alta peresa optimizar el servidor para q descarguen a la velocidad d la lus pero lo acemos con calidad trillonaria x amor al arte xdxd pero bueno mentira jiji se les qre un montonaso <3 xd por sicierto muchisimas grasias por todo el apoyo incondisinal q le dan siempre a las animasiones y prolletos d bdd xd son los mas cracks de todo el planeta tierra xd d todo corason se les agradese un universo entero x aguantar mis uevadas y x estar ai siempre al pie del caÃ±on xd enserio son la rre clave jente muchisimas gracias totales xd sigan asi d cracks xd"
+                dv_btn_text: "📥 DV: adi degcarga el bideo xd (aki podég decargar cualkien biedeo q se te antoje) osea literal podes bajarte el video que quieras para verlo un millon de veses xq seguro tu internet de carton no aguanta ni cargarlo en 360p de un solo golpe jskajskaj xdxd rre funable mi comentario d bdd pero esq q flojera con la jente q quiere todo en 4k pero tiene un wifi q se cae si pasa una mosca xd de bdd q da alta peresa optimizar el servidor para q descarguen a la velocidad d la lus pero lo acemos con calidad trillonaria x amor al arte xdxd pero bueno mentira jiji se les qre un montonaso <3 xd por sicierto muchisimas grasias por todo el apoyo incondisinal q le dan siempre a las animasiones y prolletos d bdd xd son los mas cracks de todo el planeta tierra xd d todo corason se les agradese un universo entero x aguantar mis uevadas y x estar ai siempre al pie del cañon xd enserio son la rre clave jente muchisimas gracias totales xd sigan asi d cracks xd"
             },
             es: {
-                beta_title: "â ï¸ Â¡Bienvenido a la Version Beta de Prueba!",
+                beta_title: "⚠️ ¡Bienvenido a la Version Beta de Prueba!",
                 beta_p1: "Hola a todos los seguidores y visitantes. Estas ingresando oficialmente a la fase d pruebas tecnicas y optimizacion d la plataforma independiente MrTube.",
                 beta_p2: "Por favor, ten en cuenta lo siguiente antes de continuar:",
-                beta_p3: "â¢ Videos Faltantes: Por el momento, la grilla esta en mantenimiento. Veras que varios apartados del sitio tienen la etiqueta de 'Proximamente' mientras se indexan los archivos correspondientes.",
-                beta_p4: "â¢ Errores Temporales: Debido a que estamos probando las conexiones y los reproductores integrados, algunas funciones de interfaz de usuario podrian presentar retrasos leves de carga en dispositivos moviles.",
+                beta_p3: "• Videos Faltantes: Por el momento, la grilla esta en mantenimiento. Veras que varios apartados del sitio tienen la etiqueta de 'Proximamente' mientras se indexan los archivos correspondientes.",
+                beta_p4: "• Errores Temporales: Debido a que estamos probando las conexiones y los reproductores integrados, algunas funciones de interfaz de usuario podrian presentar retrasos leves de carga en dispositivos moviles.",
                 beta_p5: "Agradecomendos profundamente tu paciencia, reporte de fallas y apoyo continuo para expandir nuestras producciones a toda la comunidad.",
                 scroll_text: "Desliza hacia abajo para continuar",
                 btn_continue: "Continuar",
@@ -1058,7 +1069,7 @@
                 coming_soon: "Proximamente",
                 sub_text: "Suscribirse",
                 subbed_text: "Suscrito",
-                sub_count_suffix: "suscriptores â¢ ABG ProductionsÂ®",
+                sub_count_suffix: "suscriptores • ABG Productions®",
                 settings_title: "Configuracion",
                 theme_title: "Tema Visual",
                 logo_title: "Color del Logo",
@@ -1067,24 +1078,24 @@
                 ade_off: "ADE: Apagado",
                 ade_desc: "Activalo para consumir menos recursos y hacer la navegacion muy fluida.",
                 lang_title: "Idioma de la Interfaz",
-                yt_title: "Â¿Quieres ver mas contenido oficial?",
+                yt_title: "¿Quieres ver mas contenido oficial?",
                 yt_desc: "Apoya las producciones originales del canal directamente en YouTube.",
                 yt_btn: "Suscribirse en YouTube",
                 history_title: "HV (Historial de Videos)",
-                history_empty: "Â¡No has visto ningun video!",
+                history_empty: "¡No has visto ningun video!",
                 history_clear: "Borrar HV",
-                cf_title: "â¢ CF (Cambiar Fuente)",
-                vc_title: "â¢ VC (VersiÃ³n de Computadora)",
-                vc_btn_on: "Volver a Modo MÃ³vil",
+                cf_title: "• CF (Cambiar Fuente)",
+                vc_title: "• VC (Versión de Computadora)",
+                vc_btn_on: "Volver a Modo Móvil",
                 vc_btn_off: "Activar el Modo Computadora",
-                dv_btn_text: "ð¥ DV: Descargar Video Seguro"
+                dv_btn_text: "📥 DV: Descargar Video Seguro"
             },
             en: {
-                beta_title: "â ï¸ Welcome to the Beta Test Version!",
+                beta_title: "⚠️ Welcome to the Beta Test Version!",
                 beta_p1: "Hello to all followers and visitors. You are officially entering the technical testing phase of the independent platform MrTube.",
                 beta_p2: "Please keep the following in mind before continuing:",
-                beta_p3: "â¢ Missing Videos: For now, the grid is undergoing maintenance.",
-                beta_p4: "â¢ Temporary Errors: Delay might occur on mobile connections.",
+                beta_p3: "• Missing Videos: For now, the grid is undergoing maintenance.",
+                beta_p4: "• Temporary Errors: Delay might occur on mobile connections.",
                 beta_p5: "We appreciate your support to expand our productions.",
                 scroll_text: "Scroll down to continue",
                 btn_continue: "Continue",
@@ -1092,7 +1103,7 @@
                 coming_soon: "Coming Soon",
                 sub_text: "Subscribe",
                 subbed_text: "Subscribed",
-                sub_count_suffix: "subscribers â¢ ABG ProductionsÂ®",
+                sub_count_suffix: "subscribers • ABG Productions®",
                 settings_title: "Settings",
                 theme_title: "Visual Theme",
                 logo_title: "Logo Color",
@@ -1107,86 +1118,86 @@
                 history_title: "HV (Video History)",
                 history_empty: "You haven't watched any videos yet",
                 history_clear: "Clear HV",
-                cf_title: "â¢ CF (Change Font)",
-                vc_title: "â¢ VC (Computer Version)",
+                cf_title: "• CF (Change Font)",
+                vc_title: "• VC (Computer Version)",
                 vc_btn_on: "Switch to Mobile Mode",
                 vc_btn_off: "Switch to Desktop Mode",
-                dv_btn_text: "ð¥ DV: Download Video Secure"
+                dv_btn_text: "📥 DV: Download Video Secure"
             },
             fr: {
-                beta_title: "â ï¸ Bienvenue dans la Version Beta !",
-                beta_p1: "Bonjour Ã  todos los abonnÃ©s et visiteurs. Vous entrez officiellement dans la phase de test de MrTube.",
+                beta_title: "⚠️ Bienvenue dans la Version Beta !",
+                beta_p1: "Bonjour à todos los abonnés et visiteurs. Vous entrez officiellement dans la phase de test de MrTube.",
                 beta_p2: "Veuillez noter les points suivants avant de continuer :",
-                beta_p3: "â¢ VidÃ©os Manquantes : Pour le moment, la grille est en maintenance.",
-                beta_p4: "â¢ Erreres Temporaires : Des ralentissements lÃ©gers peuvent survenir sur mobile.",
+                beta_p3: "• Vidéos Manquantes : Pour le moment, la grille est en maintenance.",
+                beta_p4: "• Erreres Temporaires : Des ralentissements légers peuvent survenir sur mobile.",
                 beta_p5: "Merci pour votre patience et votre soutien continu.",
-                scroll_text: "Faites dÃ©filer vers le bas pour continuer",
+                scroll_text: "Faites défiler vers le bas pour continuer",
                 btn_continue: "Continuer",
-                recommended_title: "VidÃ©os RecommandÃ©es",
-                coming_soon: "Ã venir",
+                recommended_title: "Vidéos Recommandées",
+                coming_soon: "À venir",
                 sub_text: "S'abonner",
-                subbed_text: "AbonnÃ©",
-                sub_count_suffix: "abonnÃ©s â¢ ABG ProductionsÂ®",
+                subbed_text: "Abonné",
+                sub_count_suffix: "abonnés • ABG Productions®",
                 settings_title: "Configuration",
-                theme_title: "ThÃ¨me Visuel",
+                theme_title: "Thème Visuel",
                 logo_title: "Couleur du Logo",
                 ade_title: "Performance (ADE)",
-                ade_on: "ADE: ActivÃ©",
-                ade_off: "ADE: DÃ©sactivÃ©",
+                ade_on: "ADE: Activé",
+                ade_off: "ADE: Désactivé",
                 ade_desc: "Activez-le pour rendre la navigation super fluide.",
                 lang_title: "Langue de l'interface",
                 yt_title: "Voir plus de contenido officiel ?",
                 yt_desc: "Soutenez les productions originales directement sur YouTube.",
                 yt_btn: "S'abonner sur YouTube",
-                history_title: "HV (Historique VidÃ©o)",
-                history_empty: "Aucune vidÃ©o vue pour le moment",
+                history_title: "HV (Historique Vidéo)",
+                history_empty: "Aucune vidéo vue pour le moment",
                 history_clear: "Effacer l'historique",
-                cf_title: "â¢ CF (Changer la Police)",
-                vc_title: "â¢ VC (Version Ordinateur)",
+                cf_title: "• CF (Changer la Police)",
+                vc_title: "• VC (Version Ordinateur)",
                 vc_btn_on: "Retour au Mode Mobile",
                 vc_btn_off: "Passer en Mode Ordinateur",
-                dv_btn_text: "ð¥ DV: TÃ©lÃ©charger la VidÃ©o"
+                dv_btn_text: "📥 DV: Télécharger la Vidéo"
             },
             de: {
-                beta_title: "â ï¸ Willkommen in der Beta-Testversion!",
-                beta_p1: "Hallo an alle Follower und Besucher. Sie betreten Ð¾ÑÐ¸ÑÐ¸Ð°Ð»ÑÐ½Ð¾ die Testphase von MrTube.",
+                beta_title: "⚠️ Willkommen in der Beta-Testversion!",
+                beta_p1: "Hallo an alle Follower und Besucher. Sie betreten официально die Testphase von MrTube.",
                 beta_p2: "Bitte beachten Sie Folgendes, bevor Sie fortfahren:",
-                beta_p3: "â¢ Fehlende Videos: Das Raster befindet sich derzeit in Wartung.",
-                beta_p4: "â¢ TemporÃ¤re Fehler: Bei mobilen Verbindungen kann es zu VerzÃ¶gerungen kommen.",
-                beta_p5: "Vielen Dank fÃ¼r Ihre Geduld und UnterstÃ¼tzung.",
+                beta_p3: "• Fehlende Videos: Das Raster befindet sich derzeit in Wartung.",
+                beta_p4: "• Temporäre Fehler: Bei mobilen Verbindungen kann es zu Verzögerungen kommen.",
+                beta_p5: "Vielen Dank für Ihre Geduld und Unterstützung.",
                 scroll_text: "Scrollen Sie nach unten, um fortzufahren",
                 btn_continue: "Weiter",
                 recommended_title: "Empfohlene Videos",
-                coming_soon: "DemnÃ¤chst",
+                coming_soon: "Demnächst",
                 sub_text: "Abonnieren",
                 subbed_text: "Abonniert",
-                sub_count_suffix: "Abonnenten â¢ ABG ProductionsÂ®",
+                sub_count_suffix: "Abonnenten • ABG Productions®",
                 settings_title: "Einstellungen",
                 theme_title: "Visuelles Thema",
                 logo_color: "Logo-Farbe",
                 ade_title: "Leistung (ADE)",
                 ade_on: "ADE: Eingeschaltet",
                 ade_off: "ADE: Ausgeschaltet",
-                ade_desc: "Aktivieren, um das Surfen extrem flÃ¼ssig zu machen.",
-                lang_title: "OberflÃ¤chensprache",
+                ade_desc: "Aktivieren, um das Surfen extrem flüssig zu machen.",
+                lang_title: "Oberflächensprache",
                 yt_title: "Mehr offizielle Inhalte sehen?",
-                yt_desc: "UnterstÃ¼tzen Sie Originalproduktionen auf YouTube.",
+                yt_desc: "Unterstützen Sie Originalproduktionen auf YouTube.",
                 yt_btn: "Auf YouTube abonnieren",
                 history_title: "HV (Video-Verlauf)",
                 history_empty: "Sie haben noch keine Videos gesehen",
-                history_clear: "Verlauf lÃ¶schen",
-                cf_title: "â¢ CF (Schriftart Ã¤ndern)",
-                vc_title: "â¢ VC (Computerversion)",
+                history_clear: "Verlauf löschen",
+                cf_title: "• CF (Schriftart ändern)",
+                vc_title: "• VC (Computerversion)",
                 vc_btn_on: "Zum mobilen Modus wechseln",
                 vc_btn_off: "Zum Desktop-Modus wechseln",
-                dv_btn_text: "ð¥ DV: Video Sicher Herunterladen"
+                dv_btn_text: "📥 DV: Video Sicher Herunterladen"
             },
             id: {
-                beta_title: "â ï¸ Selamat Datang di Versi Uji Coba Beta!",
-                beta_p1: "Halo untuk semua pengikut y pengunjung. Anda resmi memasuki fase pengujian tÃ©cnicos platform MrTube.",
+                beta_title: "⚠️ Selamat Datang di Versi Uji Coba Beta!",
+                beta_p1: "Halo untuk semua pengikut y pengunjung. Anda resmi memasuki fase pengujian técnicos platform MrTube.",
                 beta_p2: "Harap perhatikan hal-hal berikut antes de continuar:",
-                beta_p3: "â¢ Video Hilang: Untuk saat ini, sistem kisi sedang dalam pemeliharaan.",
-                beta_p4: "â¢ Kesalahan Sementara: Keterlambatan ringan mungkin terjadi pada koneksi seluler.",
+                beta_p3: "• Video Hilang: Untuk saat ini, sistem kisi sedang dalam pemeliharaan.",
+                beta_p4: "• Kesalahan Sementara: Keterlambatan ringan mungkin terjadi pada koneksi seluler.",
                 beta_p5: "Kami sangat berterima kasih atas kesabaran dan dukungan berkelanjutan Anda.",
                 scroll_text: "Gulir ke bawah para melanjutkan",
                 btn_continue: "Lanjutkan",
@@ -1194,7 +1205,7 @@
                 coming_soon: "Segera Hadir",
                 sub_text: "Berlangganan",
                 subbed_text: "Subscribed",
-                sub_count_suffix: "pelanggan â¢ ABG ProductionsÂ®",
+                sub_count_suffix: "pelanggan • ABG Productions®",
                 settings_title: "Pengaturan",
                 theme_title: "Tema Visual",
                 logo_title: "Warna Logo",
@@ -1209,18 +1220,18 @@
                 history_title: "HV (Riwayat Video)",
                 history_empty: "Anda belum menonton video apa pun",
                 history_clear: "Hapus Riwayat",
-                cf_title: "â¢ CF (Ubah Font)",
-                vc_title: "â¢ VC (Versi Komputer)",
+                cf_title: "• CF (Ubah Font)",
+                vc_title: "• VC (Versi Komputer)",
                 vc_btn_on: "Kembali to Mode Seluler",
                 vc_btn_off: "Paksa Mode Komputer",
-                dv_btn_text: "ð¥ DV: Unduh Video Aman"
+                dv_btn_text: "📥 DV: Unduh Video Aman"
             },
             it: {
-                beta_title: "â ï¸ Benvenuto nella Versione Beta di Prova!",
+                beta_title: "⚠️ Benvenuto nella Versione Beta di Prova!",
                 beta_p1: "Ciao a todos i follower e visitatori. Stai entrando ufficialmente nella fase di test di MrTube.",
                 beta_p2: "Si prega di tenere a mente quanto segue prima di continuare:",
-                beta_p3: "â¢ Video Mancanti: Al momento, la griglia Ã¨ in manutenzione.",
-                beta_p4: "â¢ Errori Temporanei: Potrebbero verificarsi lievi ritardi su dispositivi mobili.",
+                beta_p3: "• Video Mancanti: Al momento, la griglia è in manutenzione.",
+                beta_p4: "• Errori Temporanei: Potrebbero verificarsi lievi ritardi su dispositivi mobili.",
                 beta_p5: "Grazie mille per la pazienza e il supporto continuo.",
                 scroll_text: "Scorri verso il basso per continuare",
                 btn_continue: "Continua",
@@ -1228,7 +1239,7 @@
                 coming_soon: "Prossimamente",
                 sub_text: "Iscriviti",
                 subbed_text: "Iscritto",
-                sub_count_suffix: "iscritti â¢ ABG ProductionsÂ®",
+                sub_count_suffix: "iscritti • ABG Productions®",
                 settings_title: "Impostazioni",
                 theme_title: "Tema Visivo",
                 logo_color: "Colore del Logo",
@@ -1243,56 +1254,56 @@
                 history_title: "HV (Cronologia Video)",
                 history_empty: "Non hai ancora guardato nessun video",
                 history_clear: "Cancella Cronologia",
-                cf_title: "â¢ CF (Cambia Carattere)",
-                vc_title: "â¢ VC (Versione Computer)",
-                vc_btn_on: "Torna alla ModalitÃ  Mobile",
-                vc_btn_off: "Passa alla ModalitÃ  Computer",
-                dv_btn_text: "ð¥ DV: Scarica Video Sicuro"
+                cf_title: "• CF (Cambia Carattere)",
+                vc_title: "• VC (Versione Computer)",
+                vc_btn_on: "Torna alla Modalità Mobile",
+                vc_btn_off: "Passa alla Modalità Computer",
+                dv_btn_text: "📥 DV: Scarica Video Sicuro"
             },
             zh_mv: {
-                beta_title: "â ï¸ æ¬¢è¿æ¥å°æµè¯çæ¬ï¼",
-                beta_p1: "åä½ç²ä¸åè®¿å®¢å¤§å®¶å¥½ãæ¨ç°å¨å·²æ­£å¼è¿å¥ç¬ç«å¹³å° MrTube çææ¯æµè¯ä¸ä¼åé¶æ®µã",
-                beta_p2: "å¨ç»§ç»­ä¹åï¼è¯·æ³¨æä»¥ä¸å ç¹ï¼",
-                beta_p3: "â¢ è§é¢ç¼ºå¤±ï¼ç®åç½æ ¼ç³»ç»æ­£å¨ç»´æ¤ä¸­ãå¨æä»¶å»ºç«ç´¢å¼æ¶ï¼æ¨ä¼çå°âå³å°æ¨åºâçæ ç­¾ã",
-                beta_p4: "â¢ ä¸´æ¶éè¯¯ï¼ç±äºæ­£å¨æµè¯è¿æ¥ä¸éææ­æ¾å¨ï¼ç§»å¨è®¾å¤ä¸ççé¢å¯è½ä¼æè½»å¾®å è½½å»¶è¿ã",
-                beta_p5: "æä»¬è¡·å¿æè°¢æ¨çèå¿ç­å¾ãéè¯¯åé¦ä»¥åå¯¹æå±ç¤¾åºä½åçæç»­æ¯æã",
-                scroll_text: "åä¸æ»å¨ä»¥ç»§ç»­",
-                btn_continue: "ç»§ç»­",
-                recommended_title: "æ¨èè§é¢",
-                coming_soon: "å³å°æ¨åº",
-                sub_text: "è®¢é",
-                subbed_text: "å·²è®¢é",
-                sub_count_suffix: "ä½è®¢éè â¢ ABG ProductionsÂ®",
-                settings_title: "è®¾ç½®",
-                theme_title: "è§è§ä¸»é¢",
-                logo_title: "æ å¿é¢è²",
-                ade_title: "æ§è½æ¨¡å¼ (ADE)",
-                ade_on: "ADE: å¼å¯",
-                ade_off: "ADE: å³é­",
-                ade_desc: "å¼å¯æ­¤åè½å¯åå°èµæºæ¶èï¼è®©æµè§éå¸¸æµçã",
-                lang_title: "çé¢è¯­è¨",
-                yt_title: "æ³çæ´å¤å®æ¹åå®¹åï¼",
-                yt_desc: "åå¾ YouTube å®æ¹é¢éæ¯ææä»¬çååä½åã",
-                yt_btn: "å¨ YouTube ä¸è®¢é",
-                history_title: "HV (æ­æ¾åå²è®°å½)",
-                history_empty: "æ¨è¿æ²¡æç è¿ any è§é¢",
-                history_clear: "æ¸é¤åå²",
-                cf_title: "â¢ CF (æ´æ¹å­ä½)",
-                vc_title: "â¢ VC (çµèçç½ç«)",
-                vc_btn_on: "åæ¢åææºæ¨¡å¼",
-                vc_btn_off: "åæ¢å°çµèæ¨¡å¼",
-                dv_btn_text: "ð¥ DV: å®å¨ä¸è½½è§é¢"
+                beta_title: "⚠️ 欢迎来到测试版本！",
+                beta_p1: "各位粉丝和访客大家好。您现在已正式进入独立平台 MrTube 的技术测试与优化阶段。",
+                beta_p2: "在继续之前，请注意以下几点：",
+                beta_p3: "• 视频缺失：目前网格系统正在维护中。在文件建立索引时，您会看到‘即将推出’的标签。",
+                beta_p4: "• 临时错误：由于正在测试连接与集成播放器，移动设备上的界面可能会有轻微加载延迟。",
+                beta_p5: "我们衷心感谢您的耐心等待、错误反馈以及对拓展社区作品的持续支持。",
+                scroll_text: "向下滚动以继续",
+                btn_continue: "继续",
+                recommended_title: "推荐视频",
+                coming_soon: "即将推出",
+                sub_text: "订阅",
+                subbed_text: "已订阅",
+                sub_count_suffix: "位订阅者 • ABG Productions®",
+                settings_title: "设置",
+                theme_title: "视觉主题",
+                logo_title: "标志颜色",
+                ade_title: "性能模式 (ADE)",
+                ade_on: "ADE: 开启",
+                ade_off: "ADE: 关闭",
+                ade_desc: "开启此功能可减少资源消耗，让浏览非常流畅。",
+                lang_title: "界面语言",
+                yt_title: "想看更多官方内容吗？",
+                yt_desc: "前往 YouTube 官方频道支持我们的原创作品。",
+                yt_btn: "在 YouTube 上订阅",
+                history_title: "HV (播放历史记录)",
+                history_empty: "您还没有看 过 any 视频",
+                history_clear: "清除历史",
+                cf_title: "• CF (更改字体)",
+                vc_title: "• VC (电脑版网站)",
+                vc_btn_on: "切换回手机模式",
+                vc_btn_off: "切换到电脑模式",
+                dv_btn_text: "📥 DV: 安全下载视频"
             },
-            ar: { beta_title: "â ï¸ ÙØ±Ø­Ø¨ÙØ§ Ø¨Ù ÙÙ Ø§ÙÙØ³Ø®Ø© Ø§ÙØªØ¬Ø±ÙØ¨ÙØ©!", beta_p1: "ÙØ±Ø­Ø¨ÙØ§ Ø¨Ø¬ÙÙØ¹ Ø§ÙÙØªØ§Ø¨Ø¹ÙÙ ÙØ§ÙØ²ÙØ§Ø±.", beta_p2: "ÙØ±Ø¬Ù ÙØ±Ø§Ø¹Ø§Ø© ÙØ§ ÙÙÙ:", beta_p3: "â¢ ÙÙØ¯ÙÙÙØ§Øª ÙÙÙÙØ¯Ø©", beta_p4: "â¢ Ø£Ø®Ø·Ø§Ø¡ ÙØ¤ÙØªØ©", beta_p5: "ÙØ´ÙØ±ÙÙ Ø¹ÙÙ Ø¯Ø¹ÙÙÙ.", scroll_text: "ÙÙ Ø¨Ø§ÙØªÙØ±ÙØ± ÙØ£Ø³ÙÙ", btn_continue: "ÙØªØ§Ø¨Ø¹Ø©", recommended_title: "ÙÙØ¯ÙÙÙØ§Øª ÙÙØªØ±Ø­Ø©", coming_soon: "ÙØ±ÙØ¨ÙØ§", sub_text: "Ø§Ø´ØªØ±Ø§Ù", subbed_text: "ÙØ´ØªØ±Ù", sub_count_suffix: "ÙØ´ØªØ±ÙÙÙ â¢ ABG ProductionsÂ®", settings_title: "Ø§ÙØ¥Ø¹Ø¯Ø§Ø¯Ø§Øª", theme_title: "Ø§ÙÙØ¸ÙØ± Ø§ÙØ¨ØµØ±Ù", logo_title: "ÙÙÙ Ø§ÙØ´Ø¹Ø§Ø±", ade_title: "Ø§ÙØ£Ø¯Ø§Ø¡ (ADE)", ade_on: "ØªÙØ¹ÙÙ ADE", ade_off: "Ø¥ÙÙØ§Ù ADE", ade_desc: "Ø§Ø¬Ø¹Ù Ø§ÙØªØµÙØ­ Ø³ÙØ³ÙØ§ ÙÙØºØ§ÙØ©.", lang_title: "ÙØºØ© Ø§ÙÙØ§Ø¬ÙØ©", yt_title: "Ø§ÙÙØ­ØªÙÙ Ø§ÙØ±Ø³ÙÙØ", yt_desc: "Ø§Ø¯Ø¹Ù Ø§ÙÙÙØ§Ø© Ø¹ÙÙ YouTube.", yt_btn: "Ø§ÙØ§Ø´ØªØ±Ø§Ù", history_title: "HV (Ø³Ø¬Ù Ø§ÙÙÙØ¯ÙÙÙØ§Øª)", history_empty: "ÙÙ ØªØ´Ø§ÙØ¯ Ø£Ù ÙÙØ¯ÙÙ", history_clear: "ÙØ­Ù", cf_title: "CF (ØªØºÙÙØ± Ø§ÙØ®Ø·)", vc_title: "VC (ÙØ³Ø®Ø© Ø§ÙÙÙØ¨ÙÙØªØ±)", vc_btn_on: "ØªØ­ÙÙÙ Ø¥ÙÙ Ø§ÙÙØ§ØªÙ", vc_btn_off: "ØªØ­ÙÙÙ Ø¥ÙÙ Ø§ÙÙÙØ¨ÙÙØªØ±", dv_btn_text: "ð¥ DV: ØªØ­ÙÙÙ Ø§ÙÙÙØ¯ÙÙ Ø¨Ø£ÙØ§Ù" },
-            morse: { beta_title: "â ï¸ â¢â â¢â¢â¢â", beta_p1: "<strong>MrTube</strong>", beta_p2: "â¢âââ¢", beta_p3: "â¢ â¢â¢â¢â", beta_p4: "â¢ â¢âââ¢", beta_p5: "ââ", scroll_text: "â¢â¢â", btn_continue: "â¢â", recommended_title: "â¢â¢â", coming_soon: "â¢âââ¢", sub_text: "â¢â¢â¢", subbed_text: "â¢â¢â¢ â¢ââ¢", sub_count_suffix: "ABG ProductionsÂ®", settings_title: "ââ", theme_title: "ââ", logo_title: "â¢ââ¢â¢", ade_title: "â¢â", ade_on: "â¢â â¢ââ¢ââ¢", ade_off: "ââ â¢â¢ââ¢", ade_desc: "â¢â¢â¢", lang_title: "â¢ââ¢â¢", yt_title: "â¢ââ¢", yt_desc: "â¢â¢â¢", yt_btn: "YouTube", history_title: "HV", history_empty: "â¢ ââ", history_clear: "â¢â¢ââ¢â¢", cf_title: "CF", vc_title: "VC", vc_btn_on: "Mobile â¢â", vc_btn_off: "PC ââ¢â", dv_btn_text: "DV â¢ââ¢â¢" },
-            af: { beta_title: "â ï¸ Welkom by Beta!", beta_p1: "Hallo aan alle volgelinge.", beta_p2: "Hou asseblief in gedagte:", beta_p3: "â¢ Ontbrekende video's", beta_p4: "â¢ Tydelike foute", beta_p5: "Ons waardeer u geduld.", scroll_text: "Rolle af", btn_continue: "Voortgaan", recommended_title: "Aanbevole Video's", coming_soon: "Binnekort", sub_text: "Teken in", subbed_text: "Ingeteken", sub_count_suffix: "intekenare â¢ ABG ProductionsÂ®", settings_title: "Instellings", theme_title: "Visuele Tema", logo_title: "Logo Kleur", ade_title: "Prestasie (ADE)", ade_on: "ADE: AAN", ade_off: "ADE: AF", ade_desc: "Blaai uiters glad te maak.", lang_title: "Koppelvlak-taal", yt_title: "Amptelike inhoud sien?", yt_desc: "Ondersteun op YouTube.", yt_btn: "Teken in", history_title: "HV (Geskiedenis)", history_empty: "Geen video's", history_clear: "Vee HV uit", cf_title: "CF (Verander Lettertipe)", vc_title: "VC (Rekenaar Weergawe)", vc_btn_on: "Skakel na Mobiel", vc_btn_off: "Skakel na Rekenaar", dv_btn_text: "ð¥ DV: Laai Video Veilig Af" },
-            ru: { beta_title: "â ï¸ ÐÐµÑÐ°-Ð²ÐµÑÑÐ¸Ñ!", beta_p1: "ÐÑÐ¸Ð²ÐµÑÑÑÐ²ÑÐµÐ¼ Ð²ÑÐµÑ.", beta_p2: "ÐÐ±ÑÐ°ÑÐ¸ÑÐµ Ð²Ð½Ð¸Ð¼Ð°Ð½Ð¸Ðµ:", beta_p3: "â¢ ÐÐµÑ <p>Ð²Ð¸Ð´ÐµÐ¾", beta_p4: "â¢ ÐÑÐ¸Ð±ÐºÐ¸", beta_p5: "Ð¡Ð¿Ð°ÑÐ¸Ð±Ð¾ Ð·Ð° ÑÐµÑÐ¿ÐµÐ½Ð¸Ðµ.", scroll_text: "ÐÑÐ¾ÐºÑÑÑÐ¸ÑÐµ Ð²Ð½Ð¸Ð·", btn_continue: "ÐÑÐ¾Ð´Ð¾Ð»Ð¶Ð¸ÑÑ", recommended_title: "Ð ÐµÐºÐ¾Ð¼ÐµÐ½Ð´ÑÐµÐ¼ÑÐµ", coming_soon: "Ð¡ÐºÐ¾ÑÐ¾", sub_text: "ÐÐ¾Ð´Ð¿Ð¸ÑÐ°ÑÑÑÑ", subbed_text: "ÐÑ Ð¿Ð¾Ð´Ð¿Ð¸ÑÐ°Ð½Ñ", sub_count_suffix: "Ð¿Ð¾Ð´Ð¿Ð¸ÑÑÐ¸ÐºÐ¾Ð² â¢ ABG ProductionsÂ®", settings_title: "ÐÐ°ÑÑÑÐ¾Ð¹ÐºÐ¸", theme_title: "Ð¢ÐµÐ¼Ð°", logo_title: "Ð¦Ð²ÐµÑ Ð»Ð¾Ð³Ð¾", ade_title: "Ð ÐµÐ½Ð´ÐµÑÐ¸Ð½Ð³ (ADE)", ade_on: "ADE: ÐÐÐ", ade_off: "ADE: ÐÐ«ÐÐ", ade_desc: "ÐÐ»Ð°Ð²Ð½Ð°Ñ ÑÐ°Ð±Ð¾ÑÐ° Ð¸Ð½ÑÐµÑÑÐµÐ¹ÑÐ°.", lang_title: "Ð¯Ð·ÑÐº", yt_title: "ÐÐ¾Ð»ÑÑÐµ ÐºÐ¾Ð½ÑÐµÐ½ÑÐ°?", yt_desc: "ÐÐ¾Ð´Ð´ÐµÑÐ¶Ð¸ÑÐµ Ð½Ð° YouTube.", yt_btn: "ÐÐ¾Ð´Ð¿Ð¸ÑÐ°ÑÑÑÑ", history_title: "HV (ÐÑÑÐ¾ÑÐ¸Ñ)", history_empty: "ÐÑÑÑÐ¾", history_clear: "ÐÑÐ¸ÑÑÐ¸ÑÑ", cf_title: "CF (ÐÐ·Ð¼ÐµÐ½Ð¸ÑÑ Ð¨ÑÐ¸ÑÑ)", vc_title: "VC (ÐÐµÑÑÐ¸Ñ Ð´Ð»Ñ ÐÐ)", vc_btn_on: "ÐÐ¾Ð±Ð¸Ð»ÑÐ½ÑÐ¹ ÑÐµÐ¶Ð¸Ð¼", vc_btn_off: "Ð ÐµÐ¶Ð¸Ð¼ ÐÐ", dv_btn_text: "ð¥ DV: Ð¡ÐºÐ°ÑÐ°ÑÑ Ð²Ð¸Ð´ÐµÐ¾ Ð±ÐµÐ·Ð¾Ð¿Ð°ÑÐ½Ð¾" },
-            pt: { beta_title: "â ï¸ VersÃ£o Beta!", beta_p1: "OlÃ¡ a todos.", beta_p2: "Lembre-se:", beta_p3: "â¢ VÃ­deos Ausentes", beta_p4: "â¢ Erros", beta_p5: "Agradecemos o apoio.", scroll_text: "Deslize para baixo", btn_continue: "Continuar", recommended_title: "Recomendados", coming_soon: "Em breve", sub_text: "Inscrever-se", subbed_text: "Inscrito", sub_count_suffix: "inscritos â¢ ABG ProductionsÂ®", settings_title: "ConfiguraÃ§Ãµes", theme_title: "Tema", logo_title: "Cor do Logo", ade_title: "Desempenho (ADE)", ade_on: "ADE: Ligado", ade_off: "ADE: Desligado", ade_desc: "Navegar de forma super fluida.", lang_title: "Idioma", yt_title: "ConteÃºdo oficial?", yt_desc: "Apoie no YouTube.", yt_btn: "Inscrever-se", history_title: "HV (HistÃ³rico)", history_empty: "Vazio", history_clear: "Limpar", cf_title: "CF (Mudar Fonte)", vc_title: "VC (VersÃ£o de PC)", vc_btn_on: "Mudar para Celular", vc_btn_off: "Mudar para Computador", dv_btn_text: "ð¥ DV: Baixar VÃ­deo Seguro" },
-            zh: { beta_title: "â ï¸ æµè¯çæ¬ï¼", grid_p1: "ç²ä¸å¤§å®¶å¥½ã", beta_p2: "è¯·æ³¨æï¼", beta_p3: "â¢ è§é¢ç¼ºå¤±", beta_p4: "â¢ ä¸´æ¶éè¯¯", beta_p5: "æè°¢æ¯æã", scroll_text: "åä¸æ»å¨", btn_continue: "ç»§ç»­", recommended_title: "æ¨èè§é¢", coming_soon: "å³å°æ¨åº", sub_text: "è®¢é", subbed_text: "å·²è®¢é", sub_count_suffix: "ä½è®¢éè â¢ ABG ProductionsÂ®", settings_title: "è®¾ç½®", theme_title: "ä¸»é¢", logo_title: "æ å¿é¢è²", ade_title: "æ§è½ (ADE)", ade_on: "ADE: å¼å¯", ade_off: "ADE: å³é­", ade_desc: "è®©é¡µé¢æµçè¿è¡ã", lang_title: "è¯­è¨", yt_title: "å®æ¹åå®¹ï¼", yt_desc: "åå¾ YouTube æ¯æã", yt_btn: "è®¢é", history_title: "HV (åå²)", history_empty: "æ åå²è®°å½", history_clear: "æ¸é¤åå²", cf_title: "CF (ä¿®æ¹å­ä½)", vc_title: "VC (çµèæ¨¡å¼)", vc_btn_on: "åæ¢åææº", vc_btn_off: "åæ¢å°çµè", dv_btn_text: "ð¥ DV: å®å¨ä¸è½½è§é¢" },
-            ja: { beta_title: "â ï¸ ãã¼ã¿çï¼", beta_p1: "çæ§ããã«ã¡ã¯ã", beta_p2: "ãæ³¨æï¼", beta_p3: "â¢ åç»æªç»é²", beta_p4: "â¢ ã¨ã©ã¼ã®å¯è½æ§", beta_p5: "ãååæè¬ãã¾ãã", scroll_text: "ä¸ã¸ã¹ã¯ã­ã¼ã«", btn_continue: "ç¶è¡", recommended_title: "ãããã", coming_soon: "ã¾ããªãå¬é", sub_text: "ç»é²", subbed_text: "ç»é²æ¸ã¿", sub_count_suffix: "äºº â¢ ABG ProductionsÂ®", settings_title: "è¨­å®", theme_title: "ãã¼ã", logo_color: "ã­ã´ã®è²", ade_title: "çé»å (ADE)", ade_on: "ADE: ãªã³", ade_off: "ADE: ãªã", ade_desc: "åä½ãè»½ããã¾ãã", lang_title: "è¨èª", yt_title: "å¬å¼åç»ï¼", yt_desc: "YouTubeã§å¿æ´ã", yt_btn: "ç»é²ãã", history_title: "HV (åçå±¥æ­´)", history_empty: "å±¥æ­´ãªã", history_clear: "åé¤", cf_title: "CF (ãã©ã³ãå¤æ´)", vc_title: "VC (PCçãµã¤ã)", vc_btn_on: "ã¹ããçã«æ»ã", vc_btn_off: "PCçã«åãæ¿ã", dv_btn_text: "ð¥ DV: å®å¨ã«åç»ããã¦ã³ã­ã¼ã" },
-            ko: { beta_title: "â ï¸ ë² í ë²ì !", beta_p1: "ìëíì¸ì êµ¬ëì ì¬ë¬ë¶.", beta_p2: "ì£¼ì ì¬í­:", beta_p3: "â¢ ëë½ë ë¹ëì¤", beta_p4: "â¢ ë¡ë© ì§ì° ì¤ë¥", beta_p5: "ê°ì¬í©ëë¤.", scroll_text: "ìëë¡ ì¤í¬ë¡¤", btn_continue: "ê³ìíê¸°", recommended_title: "ì¶ì² ìì", coming_soon: "ê°ë´ ë°ë", sub_text: "êµ¬ë", subbed_text: "êµ¬ëì¤", sub_count_suffix: "ëª â¢ ABG ProductionsÂ®", settings_title: "ì¤ì ", theme_title: "ìê° íë§", logo_title: "ë¡ê³  ìì", ade_title: "ì±ë¥ ëª¨ë (ADE)", ade_on: "ADE: ì¼ì§", ade_off: "ADE: êº¼ì§", ade_desc: "ì¹ì ë¹ ë¥´ê² ë§ë­ëë¤.", lang_title: "ì¸ì´ ì¤ì ", yt_title: "ê³µì ì½íì¸ ?", yt_desc: "YouTube ìì.", yt_btn: "êµ¬ëíê¸°", history_title: "HV (ìì²­ ê¸°ë¡)", history_empty: "ê¸°ë¡ ìì", history_clear: "ê¸°ë¡ ì­ì ", cf_title: "CF (ê¸ê¼´ ë³ê²½)", vc_title: "VC (PC ë²ì )", vc_btn_on: "ëª¨ë°ì¼ ëª¨ë", vc_btn_off: "ì»´í¨í° ëª¨ë", dv_btn_text: "ð¥ DV: ìì í ë¹ëì¤ ë¤ì´ë¡ë" },
-            es_es: { beta_title: "â ï¸ VersiÃ³n Beta!", beta_p1: "Saludos a todos.", beta_p2: "A tener en cuenta:", beta_p3: "â¢ Parrilla en mantenimiento", beta_p4: "â¢ Errores temporales", beta_p5: "Gracias por vuestra paciencia.", scroll_text: "Desliza abajo", btn_continue: "Continuar", recommended_title: "Recomendados", coming_soon: "Proximamente", sub_text: "Suscribirse", subbed_text: "Suscrito", sub_count_suffix: "suscriptores â¢ ABG ProductionsÂ®", settings_title: "Ajustes", theme_title: "Estilo Visual", logo_title: "Color del Logo", ade_title: "Rendimiento (ADE)", ade_on: "ADE: Activado", ade_off: "ADE: Desactivado", ade_desc: "Navegar con total fluidez.", lang_title: "Idioma", yt_title: "Contenido oficial?", yt_desc: "Apoya en YouTube.", yt_btn: "Suscribirse", history_title: "HV (Historial)", history_empty: "Sin vÃ­deos", history_clear: "Borrar", cf_title: "CF (Cambiar Letra)", vc_title: "VC (VersiÃ³n PC)", vc_btn_on: "Volver a MÃ³vil", vc_btn_off: "Poner modo PC", dv_btn_text: "ð¥ DV: Descargar VÃ­deo Seguro" },
-            es_la: { beta_title: "â ï¸ VersiÃ³n Beta!", beta_p1: "Hola a todos.", beta_p2: "Ten en cuenta:", beta_p3: "â¢ Grilla en mantenimiento", beta_p4: "â¢ Retrasos leves", beta_p5: "Gracias por tu apoyo.", scroll_text: "Desliza abajo", btn_continue: "Continuar", recommended_title: "Recomendados", coming_soon: "Proximamente", sub_text: "Suscribirse", subbed_text: "Suscrito", sub_count_suffix: "suscriptores â¢ ABG ProductionsÂ®", settings_title: "Configuracion", theme_title: "Tema Visual", logo_title: "Color del Logo", ade_title: "Rendimiento (ADE)", ade_on: "ADE: Activado", ade_off: "ADE: Desactivado", ade_desc: "Hace que la pagina vaya super fluida.", lang_title: "Idioma", yt_title: "Contenido oficial?", yt_desc: "Apoya en YouTube.", yt_btn: "Suscribirse", history_title: "HV (Historial)", history_empty: "Sin videos", history_clear: "Borrar HV", cf_title: "CF (Cambiar Letra)", vc_title: "VC (Modo Escritorio)", vc_btn_on: "Regresar a Celular", vc_btn_off: "Forzar Modo Computadora", dv_btn_text: "ð¥ DV: Descargar Video Seguro" }
+            ar: { beta_title: "⚠️ مرحبًا بك في النسخة التجريبية!", beta_p1: "مرحبًا بجميع المتابعين والزوار.", beta_p2: "يرجى مراعاة ما يلي:", beta_p3: "• فيديوهات مفقودة", beta_p4: "• أخطاء مؤقتة", beta_p5: "نشكركم على دعمكم.", scroll_text: "قم بالتمرير لأسفل", btn_continue: "متابعة", recommended_title: "فيديوهات مقترحة", coming_soon: "قريبًا", sub_text: "اشتراك", subbed_text: "مشترك", sub_count_suffix: "مشتركين • ABG Productions®", settings_title: "الإعدادات", theme_title: "المظهر البصري", logo_title: "لون الشعار", ade_title: "الأداء (ADE)", ade_on: "تفعيل ADE", ade_off: "إيقاف ADE", ade_desc: "اجعل التصفح سلسًا للغاية.", lang_title: "لغة الواجهة", yt_title: "المحتوى الرسمي؟", yt_desc: "ادعم القناة على YouTube.", yt_btn: "الاشتراك", history_title: "HV (سجل الفيديوهات)", history_empty: "لم تشاهد أي فيديو", history_clear: "محي", cf_title: "CF (تغيير الخط)", vc_title: "VC (نسخة الكمبيوتر)", vc_btn_on: "تحويل إلى الهاتف", vc_btn_off: "تحويل إلى الكمبيوتر", dv_btn_text: "📥 DV: تحميل الفيديو بأمان" },
+            morse: { beta_title: "⚠️ •— •••—", beta_p1: "<strong>MrTube</strong>", beta_p2: "•——•", beta_p3: "• •••—", beta_p4: "• •——•", beta_p5: "——", scroll_text: "••—", btn_continue: "•—", recommended_title: "••—", coming_soon: "•——•", sub_text: "•••", subbed_text: "••• •—•", sub_count_suffix: "ABG Productions®", settings_title: "——", theme_title: "——", logo_title: "•—••", ade_title: "•—", ade_on: "•— •—•—•", ade_off: "—— ••—•", ade_desc: "•••", lang_title: "•—••", yt_title: "•—•", yt_desc: "•••", yt_btn: "YouTube", history_title: "HV", history_empty: "• ——", history_clear: "••—••", cf_title: "CF", vc_title: "VC", vc_btn_on: "Mobile •—", vc_btn_off: "PC —•—", dv_btn_text: "DV •—••" },
+            af: { beta_title: "⚠️ Welkom by Beta!", beta_p1: "Hallo aan alle volgelinge.", beta_p2: "Hou asseblief in gedagte:", beta_p3: "• Ontbrekende video's", beta_p4: "• Tydelike foute", beta_p5: "Ons waardeer u geduld.", scroll_text: "Rolle af", btn_continue: "Voortgaan", recommended_title: "Aanbevole Video's", coming_soon: "Binnekort", sub_text: "Teken in", subbed_text: "Ingeteken", sub_count_suffix: "intekenare • ABG Productions®", settings_title: "Instellings", theme_title: "Visuele Tema", logo_title: "Logo Kleur", ade_title: "Prestasie (ADE)", ade_on: "ADE: AAN", ade_off: "ADE: AF", ade_desc: "Blaai uiters glad te maak.", lang_title: "Koppelvlak-taal", yt_title: "Amptelike inhoud sien?", yt_desc: "Ondersteun op YouTube.", yt_btn: "Teken in", history_title: "HV (Geskiedenis)", history_empty: "Geen video's", history_clear: "Vee HV uit", cf_title: "CF (Verander Lettertipe)", vc_title: "VC (Rekenaar Weergawe)", vc_btn_on: "Skakel na Mobiel", vc_btn_off: "Skakel na Rekenaar", dv_btn_text: "📥 DV: Laai Video Veilig Af" },
+            ru: { beta_title: "⚠️ Бета-версия!", beta_p1: "Приветствуем всех.", beta_p2: "Обратите внимание:", beta_p3: "• Нет <p>видео", beta_p4: "• Ошибки", beta_p5: "Спасибо за терпение.", scroll_text: "Прокрутите вниз", btn_continue: "Продолжить", recommended_title: "Рекомендуемые", coming_soon: "Скоро", sub_text: "Подписаться", subbed_text: "Вы подписаны", sub_count_suffix: "подписчиков • ABG Productions®", settings_title: "Настройки", theme_title: "Тема", logo_title: "Цвет лого", ade_title: "Рендеринг (ADE)", ade_on: "ADE: ВКЛ", ade_off: "ADE: ВЫКЛ", ade_desc: "Плавная работа интерфейса.", lang_title: "Язык", yt_title: "Больше контента?", yt_desc: "Поддержите на YouTube.", yt_btn: "Подписаться", history_title: "HV (История)", history_empty: "Пусто", history_clear: "Очистить", cf_title: "CF (Изменить Шрифт)", vc_title: "VC (Версия для ПК)", vc_btn_on: "Мобильный режим", vc_btn_off: "Режим ПК", dv_btn_text: "📥 DV: Скачать видео безопасно" },
+            pt: { beta_title: "⚠️ Versão Beta!", beta_p1: "Olá a todos.", beta_p2: "Lembre-se:", beta_p3: "• Vídeos Ausentes", beta_p4: "• Erros", beta_p5: "Agradecemos o apoio.", scroll_text: "Deslize para baixo", btn_continue: "Continuar", recommended_title: "Recomendados", coming_soon: "Em breve", sub_text: "Inscrever-se", subbed_text: "Inscrito", sub_count_suffix: "inscritos • ABG Productions®", settings_title: "Configurações", theme_title: "Tema", logo_title: "Cor do Logo", ade_title: "Desempenho (ADE)", ade_on: "ADE: Ligado", ade_off: "ADE: Desligado", ade_desc: "Navegar de forma super fluida.", lang_title: "Idioma", yt_title: "Conteúdo oficial?", yt_desc: "Apoie no YouTube.", yt_btn: "Inscrever-se", history_title: "HV (Histórico)", history_empty: "Vazio", history_clear: "Limpar", cf_title: "CF (Mudar Fonte)", vc_title: "VC (Versão de PC)", vc_btn_on: "Mudar para Celular", vc_btn_off: "Mudar para Computador", dv_btn_text: "📥 DV: Baixar Vídeo Seguro" },
+            zh: { beta_title: "⚠️ 测试版本！", grid_p1: "粉丝大家好。", beta_p2: "请注意：", beta_p3: "• 视频缺失", beta_p4: "• 临时错误", beta_p5: "感谢支持。", scroll_text: "向下滚动", btn_continue: "继续", recommended_title: "推荐视频", coming_soon: "即将推出", sub_text: "订阅", subbed_text: "已订阅", sub_count_suffix: "位订阅者 • ABG Productions®", settings_title: "设置", theme_title: "主题", logo_title: "标志颜色", ade_title: "性能 (ADE)", ade_on: "ADE: 开启", ade_off: "ADE: 关闭", ade_desc: "让页面流畅运行。", lang_title: "语言", yt_title: "官方内容？", yt_desc: "前往 YouTube 支持。", yt_btn: "订阅", history_title: "HV (历史)", history_empty: "无历史记录", history_clear: "清除历史", cf_title: "CF (修改字体)", vc_title: "VC (电脑模式)", vc_btn_on: "切换回手机", vc_btn_off: "切换到电脑", dv_btn_text: "📥 DV: 安全下载视频" },
+            ja: { beta_title: "⚠️ ベータ版！", beta_p1: "皆様こんにちは。", beta_p2: "ご注意：", beta_p3: "• 動画未登録", beta_p4: "• エラーの可能性", beta_p5: "ご協力感謝します。", scroll_text: "下へスクロール", btn_continue: "続行", recommended_title: "おすすめ", coming_soon: "まもなく公開", sub_text: "登録", subbed_text: "登録済み", sub_count_suffix: "人 • ABG Productions®", settings_title: "設定", theme_title: "テーマ", logo_color: "ロゴの色", ade_title: "省電力 (ADE)", ade_on: "ADE: オン", ade_off: "ADE: オフ", ade_desc: "動作を軽くします。", lang_title: "言語", yt_title: "公式動画？", yt_desc: "YouTubeで応援。", yt_btn: "登録する", history_title: "HV (再生履歴)", history_empty: "履歴なし", history_clear: "削除", cf_title: "CF (フォント変更)", vc_title: "VC (PC版サイト)", vc_btn_on: "スマホ版に戻す", vc_btn_off: "PC版に切り替え", dv_btn_text: "📥 DV: 安全に動画をダウンロード" },
+            ko: { beta_title: "⚠️ 베타 버전!", beta_p1: "안녕하세요 구독자 여러분.", beta_p2: "주의 사항:", beta_p3: "• 누락된 비디오", beta_p4: "• 로딩 지연 오류", beta_p5: "감사합니다.", scroll_text: "아래로 스크ロール", btn_continue: "계속하기", recommended_title: "추천 영상", coming_soon: "개봉 박두", sub_text: "구독", subbed_text: "구독중", sub_count_suffix: "명 • ABG Productions®", settings_title: "설정", theme_title: "시각 테마", logo_title: "로고 색상", ade_title: "성능 모드 (ADE)", ade_on: "ADE: 켜짐", ade_off: "ADE: 꺼짐", ade_desc: "웹을 빠르게 만듭니다.", lang_title: "언어 설정", yt_title: "공식 콘텐츠?", yt_desc: "YouTube 응원.", yt_btn: "구독하기", history_title: "HV (시청 기록)", history_empty: "기록 없음", history_clear: "기록 삭제", cf_title: "CF (글꼴 변경)", vc_title: "VC (PC 버전)", vc_btn_on: "모바일 모드", vc_btn_off: "컴퓨터 모드", dv_btn_text: "📥 DV: 안전한 비디오 다운로드" },
+            es_es: { beta_title: "⚠️ Versión Beta!", beta_p1: "Saludos a todos.", beta_p2: "A tener en cuenta:", beta_p3: "• Parrilla en mantenimiento", beta_p4: "• Errores temporales", beta_p5: "Gracias por vuestra paciencia.", scroll_text: "Desliza abajo", btn_continue: "Continuar", recommended_title: "Recomendados", coming_soon: "Proximamente", sub_text: "Suscribirse", subbed_text: "Suscrito", sub_count_suffix: "suscriptores • ABG Productions®", settings_title: "Ajustes", theme_title: "Estilo Visual", logo_title: "Color del Logo", ade_title: "Rendimiento (ADE)", ade_on: "ADE: Activado", ade_off: "ADE: Desactivado", ade_desc: "Navegar con total fluidez.", lang_title: "Idioma", yt_title: "Contenido oficial?", yt_desc: "Apoya en YouTube.", yt_btn: "Suscribirse", history_title: "HV (Historial)", history_empty: "Sin vídeos", history_clear: "Borrar", cf_title: "CF (Cambiar Letra)", vc_title: "VC (Versión PC)", vc_btn_on: "Volver a Móvil", vc_btn_off: "Poner modo PC", dv_btn_text: "📥 DV: Descargar Vídeo Seguro" },
+            es_la: { beta_title: "⚠️ Versión Beta!", beta_p1: "Hola a todos.", beta_p2: "Ten en cuenta:", beta_p3: "• Grilla en mantenimiento", beta_p4: "• Retrasos leves", beta_p5: "Gracias por tu apoyo.", scroll_text: "Desliza abajo", btn_continue: "Continuar", recommended_title: "Recomendados", coming_soon: "Proximamente", sub_text: "Suscribirse", subbed_text: "Suscrito", sub_count_suffix: "suscriptores • ABG Productions®", settings_title: "Configuracion", theme_title: "Tema Visual", logo_title: "Color del Logo", ade_title: "Rendimiento (ADE)", ade_on: "ADE: Activado", ade_off: "ADE: Desactivado", ade_desc: "Hace que la pagina vaya super fluida.", lang_title: "Idioma", yt_title: "Contenido oficial?", yt_desc: "Apoya en YouTube.", yt_btn: "Suscribirse", history_title: "HV (Historial)", history_empty: "Sin videos", history_clear: "Borrar HV", cf_title: "CF (Cambiar Letra)", vc_title: "VC (Modo Escritorio)", vc_btn_on: "Regresar a Celular", vc_btn_off: "Forzar Modo Computadora", dv_btn_text: "📥 DV: Descargar Video Seguro" }
         };
 
         function entrarAMrTube() {
@@ -1329,17 +1340,17 @@
             localStorage.setItem('mrtube_logo_color', color);
         }
 
-        // CONTROL DE EFECTOS DE SONIDO PARA CUALQUIER BOTÃN
+        // CONTROL DE EFECTOS DE SONIDO PARA CUALQUIER BOTÓN
         function toggleEfectosSonido() {
             efectosSonidoActivos = !efectosSonidoActivos;
             var btn = document.getElementById('sound-btn');
             if(efectosSonidoActivos) {
                 btn.style.backgroundColor = "#00aa00";
-                btn.innerText = "Sonido: Encendido ð";
-                audioEfecto.play().catch(function(e){ console.log("InteracciÃ³n requerida"); });
+                btn.innerText = "Sonido: Encendido 🔊";
+                audioEfecto.play().catch(function(e){ console.log("Interacción requerida"); });
             } else {
                 btn.style.backgroundColor = "#333";
-                btn.innerText = "Sonido: Apagado ð";
+                btn.innerText = "Sonido: Apagado 🔇";
             }
         }
 
@@ -1406,7 +1417,7 @@
             if (ursActivo) {
                 document.body.classList.add('urs-mode');
                 btn.classList.add('active');
-                btn.innerText = "URS: ACTIVADO ð¥";
+                btn.innerText = "URS: ACTIVADO 🔥";
                 if(!adeActivo) toggleADE();
             } else {
                 document.body.classList.remove('urs-mode');
@@ -1445,27 +1456,27 @@
         }
 
         // ==========================================
-        // SISTEMA DE SHORTS ABG âï¸
+        // SISTEMA DE SHORTS ABG ⚒️
         // ==========================================
         const listaShorts = [
-            {id: "TzUY2hB47yg", titulo: "Â¿QuiÃ©n es el Chicken Gunero mÃ¡s Famoso de tu PaÃ­s? ðð¥"},
-            {id: "Us8NSRe5aRQ", titulo: "Â¡Solo los verdaderos fans de EMDCG llorarÃ¡n con esto! ð­ð "},
-            {id: "aOzmmXTwzIw", titulo: "POV: El multiverso de ABG Productions se sale de control y ya no sabes si estÃ¡s en Chicken Gun o en Sprunki... ðð¤"},
-            {id: "surZNTLGZW8", titulo: "Â¿PENSABAS QUE ERA FÃCIL? ðµï¸ââï¸ð | El Misterio de Chicken Gun (TRÃILER)"},
-            {id: "i5ojRXXihXY", titulo: "Â¡APARECÃ EN EL VIDEO DE JR CRACK! ð¥³ð¥"},
-            {id: "crIqFBZuGNM", titulo: "Â¿CÃ³mo que Sprunki animado se sitÃºa en el aÃ±o 2860? ð¹ð±"},
-            {id: "wZ5XXG4nJTk", titulo: "Â¡La Temporada 2 serÃ¡ LA ÃLTIMA! ð¨ (El Misterio de Chicken Gun) ð¥"},
-            {id: "Oo13NA14IqI", titulo: "Magenta Sprunki ðð¹"},
-            {id: "9YtzEEgYzqY", titulo: "Â¡EL TOUR DEFINITIVO POR CHICKEN GUN! ðð¥ | Todos Los Mapas P1"},
-            {id: "cwRx1sdB0zM", titulo: "SPIT IT OUT ð¹"},
-            {id: "7pc5wVNsvKU", titulo: "Rainbow Money ð"},
-            {id: "aEMg8lehXXs", titulo: "PRIMER ANIVERSARIO: El Comienzo de Todo (2024-2026) ðð¬"},
-            {id: "fC_CJEp3zBU", titulo: "Los Episodios De Miedo De El Misterio De Chicken Gun ð¬ð»"},
-            {id: "xRPsnua0_Vo", titulo: "Â¡NO HAY SALIDA! ðª"},
-            {id: "HxM1drymBao", titulo: "Â¡MI IA ADQUIRIÃ CONCIENCIA REAL! ð¤"},
-            {id: "NQlzY4hRoik", titulo: "Â¡La Rueda de Colores! ðð¡"},
-            {id: "4-Ssohw1DrY", titulo: "Â¡LOS MAPAS QUE YA NO EXISTEN! ð« | Mapas Eliminados / VacÃ­os ð¥â¨"},
-            {id: "vztwvymJ__E", titulo: "EL REGRESO DEL LÃDER ð´ð¶ï¸ | El Misterio de Chicken Gun T2"}
+            {id: "TzUY2hB47yg", titulo: "¿Quién es el Chicken Gunero más Famoso de tu País? 🌎🔥"},
+            {id: "Us8NSRe5aRQ", titulo: "¡Solo los verdaderos fans de EMDCG llorarán con esto! 😭🏠"},
+            {id: "aOzmmXTwzIw", titulo: "POV: El multiverso de ABG Productions se sale de control y ya no sabes si estás en Chicken Gun o en Sprunki... 🌀🤔"},
+            {id: "surZNTLGZW8", titulo: "¿PENSABAS QUE ERA FÁCIL? 🕵️‍♂️🍗 | El Misterio de Chicken Gun (TRÁILER)"},
+            {id: "i5ojRXXihXY", titulo: "¡APARECÍ EN EL VIDEO DE JR CRACK! 🥳🐥"},
+            {id: "crIqFBZuGNM", titulo: "¿Cómo que Sprunki animado se sitúa en el año 2860? 🎹😱"},
+            {id: "wZ5XXG4nJTk", titulo: "¡La Temporada 2 será LA ÚLTIMA! 🚨 (El Misterio de Chicken Gun) 🐥"},
+            {id: "Oo13NA14IqI", titulo: "Magenta Sprunki 💜🎹"},
+            {id: "9YtzEEgYzqY", titulo: "¡EL TOUR DEFINITIVO POR CHICKEN GUN! 🐔🔥 | Todos Los Mapas P1"},
+            {id: "cwRx1sdB0zM", titulo: "SPIT IT OUT 🎹"},
+            {id: "7pc5wVNsvKU", titulo: "Rainbow Money 😏"},
+            {id: "aEMg8lehXXs", titulo: "PRIMER ANIVERSARIO: El Comienzo de Todo (2024-2026) 💎🎬"},
+            {id: "fC_CJEp3zBU", titulo: "Los Episodios De Miedo De El Misterio De Chicken Gun 🔬👻"},
+            {id: "xRPsnua0_Vo", titulo: "¡NO HAY SALIDA! 🚪"},
+            {id: "HxM1drymBao", titulo: "¡MI IA ADQUIRIÓ CONCIENCIA REAL! 🤖"},
+            {id: "NQlzY4hRoik", titulo: "¡La Rueda de Colores! 🌈🎡"},
+            {id: "4-Ssohw1DrY", titulo: "¡LOS MAPAS QUE YA NO EXISTEN! 🚫 | Mapas Eliminados / Vacíos 🐥✨"},
+            {id: "vztwvymJ__E", titulo: "EL REGRESO DEL LÍDER 🔴🕶️ | El Misterio de Chicken Gun T2"}
         ];
 
         let shortsOrdenados = [];
@@ -1526,7 +1537,7 @@
             const video = shortsOrdenados[indiceShortActual];
             document.getElementById('shorts-title').innerText = video.titulo;
             const liked = localStorage.getItem('like_short_' + video.id);
-            document.getElementById('like-btn').innerText = liked ? 'â¤ï¸' : 'ð¤';
+            document.getElementById('like-btn').innerText = liked ? '❤️' : '🤍';
         }
 
         function siguienteShort() {
@@ -1544,10 +1555,10 @@
             const btnLike = document.getElementById('like-btn');
             if(localStorage.getItem(key)) {
                 localStorage.removeItem(key);
-                btnLike.innerText = 'ð¤';
+                btnLike.innerText = '🤍';
             } else {
                 localStorage.setItem(key, 'true');
-                btnLike.innerText = 'â¤ï¸';
+                btnLike.innerText = '❤️';
             }
         }
 
@@ -1556,10 +1567,10 @@
             const btn = document.getElementById('btn-autoscroll');
             if(autoScrollShorts) {
                 btn.style.color = '#00ffcc';
-                btn.innerText = 'âï¸ Auto: ON';
+                btn.innerText = '↕️ Auto: ON';
             } else {
                 btn.style.color = 'white';
-                btn.innerText = 'âï¸ Auto: OFF';
+                btn.innerText = '↕️ Auto: OFF';
             }
         }
 
@@ -1570,7 +1581,7 @@
             }
         }
 
-        // ACCIÃN DEL BOTÃN DV (DESCARGADOR DE VIDEOS DIRECTO)
+        // ACCIÓN DEL BOTÓN DV (DESCARGADOR DE VIDEOS DIRECTO)
         function descargarVideoActual() {
             var videoId = "";
             if (urlVideoActual.includes('/embed/')) {
@@ -1581,7 +1592,7 @@
             window.open(enlaceDescarga, '_blank');
         }
 
-        // ACCIÃN DEL BOTÃN BV (BUSCADOR DE VIDEOS INTEGRADO)
+        // ACCIÓN DEL BOTÓN BV (BUSCADOR DE VIDEOS INTEGRADO)
         function filtrarVideos() {
             var input = document.getElementById('video-search-bar').value.toLowerCase();
             var grid = document.getElementById('recommended-video-grid');
@@ -1644,7 +1655,7 @@
                         '<img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG">' +
                         '<div class="card-text">' +
                             '<h4>' + video.titulo + '</h4>' +
-                            '<p>ABG ProductionsÂ®</p>' +
+                            '<p>ABG Productions®</p>' +
                         '</div>' +
                     '</div>';
                 grid.appendChild(card);
@@ -1738,12 +1749,12 @@
     <div id="shorts-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:black; z-index:9999;">
         <div id="shorts-player" style="width:100%; height:100%;"></div>
         
-        <button onclick="cerrarShorts()" style="position:absolute; top:20px; left:20px; background:rgba(0,0,0,0.5); border:none; color:white; font-size:24px; z-index:10000; cursor:pointer;">â</button>
+        <button onclick="cerrarShorts()" style="position:absolute; top:20px; left:20px; background:rgba(0,0,0,0.5); border:none; color:white; font-size:24px; z-index:10000; cursor:pointer;">❌</button>
         <h3 id="shorts-title" style="color:white; position:absolute; bottom:120px; width:100%; text-align:center; text-shadow: 2px 2px 4px #000; pointer-events:none;"></h3>
         
-        <button id="like-btn" onclick="toggleLike()" style="position:absolute; bottom:50px; right:20px; right: 20px; background:none; border:none; font-size:30px; z-index:10000; cursor:pointer;">ð¤</button>
-        <button onclick="siguienteShort()" style="position:absolute; bottom:50px; left:20px; background:rgba(255,255,255,0.2); border:none; color:white; padding:10px; border-radius:10px; z-index:10000; cursor:pointer;">â­ï¸ Siguiente</button>
-        <button id="btn-autoscroll" onclick="toggleAutoScroll()" style="position:absolute; top:20px; right:20px; background:rgba(0,0,0,0.5); border:none; color:white; padding:8px; border-radius:10px; z-index:10000; cursor:pointer;">âï¸ Auto: OFF</button>
+        <button id="like-btn" onclick="toggleLike()" style="position:absolute; bottom:50px; right:20px; right: 20px; background:none; border:none; font-size:30px; z-index:10000; cursor:pointer;">🤍</button>
+        <button onclick="siguienteShort()" style="position:absolute; bottom:50px; left:20px; background:rgba(255,255,255,0.2); border:none; color:white; padding:10px; border-radius:10px; z-index:10000; cursor:pointer;">⏭️ Siguiente</button>
+        <button id="btn-autoscroll" onclick="toggleAutoScroll()" style="position:absolute; top:20px; right:20px; background:rgba(0,0,0,0.5); border:none; color:white; padding:8px; border-radius:10px; z-index:10000; cursor:pointer;">↕️ Auto: OFF</button>
     </div>
 </body>
 </html>
